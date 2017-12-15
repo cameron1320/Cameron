@@ -12,3 +12,16 @@ main.pdf
 main.lot
 main.synctex.gz
 main.toc
+*.aux
+*.bbl
+*.blg
+*.glo
+*.idx
+*.ist
+*.lof
+*.log
+*.out
+*.pdf
+*.lot
+*.synctex.gz
+*.toc
