@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="BeamFBD.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path10079"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <linearGradient
+       id="linearGradient10072"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#aaccee;stop-opacity:1;"
+         offset="0"
+         id="stop10070" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="324.89036"
+     inkscape:cy="493.96229"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1033"
+     inkscape:window-x="0"
+     inkscape:window-y="47"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot73"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion75"><rect
+           id="rect77"
+           width="42.857143"
+           height="114.28571"
+           x="137.14285"
+           y="68.233971" /></flowRegion><flowPara
+         id="flowPara79"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot81"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion83"><rect
+           id="rect85"
+           width="251.42857"
+           height="71.428574"
+           x="37.142857"
+           y="48.233971" /></flowRegion><flowPara
+         id="flowPara87"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot89"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion91"><rect
+           id="rect93"
+           width="11.428572"
+           height="48.57143"
+           x="120"
+           y="111.09111" /></flowRegion><flowPara
+         id="flowPara95"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot135"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion137"><rect
+           id="rect139"
+           width="308.57144"
+           height="225.71428"
+           x="102.85714"
+           y="148.23398" /></flowRegion><flowPara
+         id="flowPara141"></flowPara></flowRoot>    <g
+       id="g455"
+       transform="matrix(0.26458333,0,0,0.26458333,62.128669,125.61047)">
+      <path
+         id="path385"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="M 10,90 H 251.63"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:0.86675662;stroke-miterlimit:10" />
+      <path
+         id="path387"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 256.88,90 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+      <path
+         id="path389"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="M 10,150 V 36.37"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+      <path
+         id="path391"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 10,31.12 3.5,7 -3.5,-1.75 -3.5,1.75 z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+      <g
+         id="g397"
+         transform="translate(244.32231,81.106602)">
+        <switch
+           id="switch395">
+          <foreignObject
+             requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+             height="12"
+             width="38"
+             pointer-events="all"
+             style="overflow:visible;">
+            <xhtml:div
+               style="display: inline-block; font-size: 12px; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+              <xhtml:div
+                 style="display:inline-block;text-align:inherit;text-decoration:inherit;">$$x$$</xhtml:div>
+            </xhtml:div>
+          </foreignObject>
+          <text
+             id="text393"
+             font-size="12px"
+             y="12"
+             x="19"
+             style="font-size:12px;font-family:'Times New Roman';text-anchor:middle;fill:#000000">
+            <tspan
+               style="font-size:13.33333397px"
+               id="tspan525">$x$</tspan>
+          </text>
+        </switch>
+      </g>
+      <g
+         id="g403"
+         transform="translate(-8.6421358,11.591373)">
+        <switch
+           id="switch401">
+          <foreignObject
+             requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+             height="12"
+             width="38"
+             pointer-events="all"
+             style="overflow:visible;">
+            <xhtml:div
+               style="display: inline-block; font-size: 12px; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+              <xhtml:div
+                 style="display:inline-block;text-align:inherit;text-decoration:inherit;">$$y$$</xhtml:div>
+            </xhtml:div>
+          </foreignObject>
+          <text
+             id="text399"
+             font-size="12px"
+             y="12"
+             x="19"
+             style="font-size:12px;font-family:'Times New Roman';text-anchor:middle;fill:#000000">
+            <tspan
+               style="font-size:13.33333397px"
+               id="tspan499">$y$</tspan>
+          </text>
+          <flowRoot
+             xml:space="preserve"
+             id="flowRoot501"
+             style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             transform="translate(-321.03131,-485.81968)"><flowRegion
+               id="flowRegion503"><rect
+                 id="rect505"
+                 width="564.17023"
+                 height="307.59146"
+                 x="245.97214"
+                 y="417.93829" /></flowRegion><flowPara
+               id="flowPara507"></flowPara></flowRoot>          <flowRoot
+             xml:space="preserve"
+             id="flowRoot509"
+             style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             transform="translate(-321.03131,-485.81968)"><flowRegion
+               id="flowRegion511"><rect
+                 id="rect513"
+                 width="400.52548"
+                 height="234.86047"
+                 x="292.94424"
+                 y="465.92053" /></flowRegion><flowPara
+               id="flowPara515"></flowPara></flowRoot>        </switch>
+      </g>
+      <path
+         id="path405"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 83.119343,71.764474 52.772617,1.959577 -0.0893,36.013519 -52.683337,2.46203 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:#000000;stroke-width:1.27066672;stroke-miterlimit:10;stroke-dasharray:none"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         id="path407"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 59.214286,115.42857 v 0 c 0,0 -17.102858,-16.399523 -1.594286,-41.19857"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10"
+         sodipodi:nodetypes="csc" />
+      <path
+         id="path409"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 61.54,69.69 -2.2,8.67 -1.72,-4.13 -4.34,-1.1 z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:2;stroke-miterlimit:10" />
+      <path
+         id="path411"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 150,116 v 0 c 0,0 20.87047,-16.017143 5.04,-43.48"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10"
+         sodipodi:nodetypes="ccc" />
+      <path
+         id="path413"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 151.37,67.77 8.05,3.88 -4.38,0.87 -1.95,4.03 z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:2;stroke-miterlimit:10" />
+      <path
+         id="path415"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="M 70,110 V 74.24"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10" />
+      <path
+         id="path417"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 70,68.24 4,8 -4,-2 -4,2 z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:2;stroke-miterlimit:10" />
+      <path
+         id="path419"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 141,70 v 35.76"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10" />
+      <path
+         id="path421"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 141,111.76 -4,-8 4,2 4,-2 z"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:2;stroke-miterlimit:10" />
+      <g
+         id="g427"
+         transform="translate(43.5,138.5)">
+        <switch
+           id="switch425">
+          <foreignObject
+             requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+             height="12"
+             width="62"
+             pointer-events="all"
+             style="overflow:visible;">
+            <xhtml:div
+               style="display: inline-block; font-size: 12px; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+              <xhtml:div
+                 style="display:inline-block;text-align:inherit;text-decoration:inherit;">$$F(x,t)$$</xhtml:div>
+            </xhtml:div>
+          </foreignObject>
+          <text
+             id="text423"
+             font-size="12px"
+             y="12"
+             x="31"
+             style="font-size:12px;font-family:'Times New Roman';text-anchor:middle;fill:#000000">
+            <tspan
+               style="font-size:13.33333397px"
+               id="tspan519">$F(x,t)$</tspan>
+          </text>
+        </switch>
+      </g>
+      <path
+         id="path429"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 73.65,137 -2.8,-20.69"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+      <path
+         id="path431"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 70.15,111.11 3.25,6.62 -2.55,-1.42 -2.08,2.05 z"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+      <g
+         id="g437"
+         transform="translate(130.5,31.5)">
+        <switch
+           id="switch435">
+          <foreignObject
+             requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+             height="12"
+             width="119"
+             pointer-events="all"
+             style="overflow:visible;">
+            <xhtml:div
+               style="display: inline-block; font-size: 12px; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+              <xhtml:div
+                 style="display:inline-block;text-align:inherit;text-decoration:inherit;">$$F(x+\Delta x,t)$$</xhtml:div>
+            </xhtml:div>
+          </foreignObject>
+          <text
+             id="text433"
+             font-size="12px"
+             y="12"
+             x="60"
+             style="font-size:12px;font-family:'Times New Roman';text-anchor:middle;fill:#000000">
+            <tspan
+               style="font-size:13.33333397px"
+               id="tspan521">$F(x+\Delta x,t)$</tspan>
+          </text>
+        </switch>
+      </g>
+      <path
+         id="path439"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="M 173.33,50 145.46,66.72"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+      <path
+         id="path441"
+         pointer-events="none"
+         stroke-miterlimit="10"
+         d="m 140.96,69.42 4.8,-5.6 -0.3,2.9 2.7,1.1 z"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+      <g
+         id="g447"
+         transform="translate(129.95431,70.984771)">
+        <switch
+           id="switch445">
+          <foreignObject
+             requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+             height="12"
+             width="123"
+             pointer-events="all"
+             style="overflow:visible;">
+            <xhtml:div
+               style="display: inline-block; font-size: 12px; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+              <xhtml:div
+                 style="display:inline-block;text-align:inherit;text-decoration:inherit;">$$M(x+\Delta x,t)$$</xhtml:div>
+            </xhtml:div>
+          </foreignObject>
+          <text
+             id="text443"
+             font-size="12px"
+             y="12"
+             x="62"
+             style="font-size:12px;font-family:'Times New Roman';text-anchor:middle;fill:#000000">
+            <tspan
+               style="font-size:13.33333397px"
+               id="tspan523">$M(x+\Delta x,t)$</tspan>
+          </text>
+        </switch>
+      </g>
+      <g
+         id="g453"
+         transform="translate(1.5,59.5)">
+        <switch
+           id="switch451">
+          <foreignObject
+             requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+             height="12"
+             width="66"
+             pointer-events="all"
+             style="overflow:visible;">
+            <xhtml:div
+               style="display: inline-block; font-size: 12px; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+              <xhtml:div
+                 style="display:inline-block;text-align:inherit;text-decoration:inherit;">$$M(x,t)$$</xhtml:div>
+            </xhtml:div>
+          </foreignObject>
+          <text
+             id="text449"
+             font-size="12px"
+             y="12"
+             x="33"
+             style="font-size:12px;font-family:'Times New Roman';text-anchor:middle;fill:#000000">
+            <tspan
+               style="font-size:13.33333397px"
+               id="tspan517">$M(x,t)$</tspan>
+          </text>
+        </switch>
+      </g>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+         d="M 108.7544,89.05715 V 32.62858"
+         id="path14999"
+         inkscape:connector-curvature="0" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="84.099709"
+       y="132.76933"
+       id="text15099"><tspan
+         sodipodi:role="line"
+         id="tspan15097"
+         x="84.099709"
+         y="132.76933"
+         style="font-size:3.52777767px;stroke-width:0.26458332px">$v(x,t)$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="89.580353"
+       y="152.23511"
+       id="text15109"><tspan
+         sodipodi:role="line"
+         id="tspan15107"
+         x="89.580353"
+         y="152.23511"
+         style="font-size:3.52777767px;stroke-width:0.26458332px">$G$</tspan></text>
+  </g>
+</svg>
