@@ -16,7 +16,7 @@
 		The theoretical model used to simulate the experimental apparatus is depicted in Figures \ref{fig:Figure_1} and \ref{fig:Figure_2}. Equations of motion \ref{math:1} are determined using conservation of momentum and a dynamic analysis of the disk mass and inertial changes. The forcing functions on the right hand side of \ref{math:1} include forces due to acceleration of the shaft so that the simulation can include change in speed of the shaft and gyroscopic effects, such as a start-up or run-down. Moment equations are presented as pertaining to the change in angular momentum of the disk (\cite{Genta}, \cite{Muszynska},\cite{Gunter 93}).\par
 		\begin{equation}
 			\centering
-			\includegraphics[scale=0.25]{./figures/Images/Math_1.png}
+			\includegraphics[scale=0.25]{./figures/Images/Math_1}
 			\label{math:1}
 			\centering
 		\end{equation}
@@ -24,14 +24,14 @@
 			
 			\begin{subfigure}[b]{.5\textwidth}
  				\centering
- 				 \includegraphics[width=.75\linewidth]{./figures/Images/Figure_1a.png}
+ 				 \includegraphics[width=.75\linewidth]{./figures/Images/Figure_1a}
  				 \caption{Displacements, rotations, forces and moments}
  				 \label{fig:Figure_1a}
  				 \centering
 			\end{subfigure}%
 			\begin{subfigure}[b]{.5\textwidth}
   				\centering
-  				\includegraphics[width=.75\linewidth]{./figures/Images/Figure_1b.png}
+  				\includegraphics[width=.75\linewidth]{./figures/Images/Figure_1b}
   				\caption{Depiction of skew angle $\chi$}
   				\label{fig:Figure_1b}
   				\centering
@@ -42,7 +42,7 @@
 		\end{figure}
 		\begin{figure}[h]
 			\centering
-			\includegraphics[scale=.25]{./figures/Images/Figure_2.png}
+			\includegraphics[scale=.25]{./figures/Images/Figure_2}
 			\caption{Diagram showing important parameters}
 			\label{fig:Figure_2}
 			\centering
@@ -132,7 +132,7 @@
 		\begin{table}[H]
 			\centering
 			\caption{Rotor parameters}
-			\includegraphics[scale=.25]{./figures/Images/Table_1.png}
+			\includegraphics[scale=.25]{./figures/Images/Table_1}
 			\label{tab:Table_1}
 			\centering
 		\end{table}
@@ -140,7 +140,7 @@
 		With the experimental data we were able to identify the natural frequency in the horizontal and vertical directions from the Bode plot of each horizontal and vertical transducer. From the theoretical equations of motion, the eigenvalue problem can be used to solve for the natural frequencies of the system. Since the system includes gyroscopic moments that depend on the rotational speed of the rotor, the natural frequency is a function of the speed of the rotor. The Campbell Diagram is a plot of the natural frequency as it changes with the increasing speed of the rotor. This diagram can be used to tune the bearing stiffness. The parameters that affect the natural frequency that are not evident from the description of the system is the stiffness of the bearings in each $xz$ and $yz$ plane. To solve for the stiffness values, a Campbell Diagram is created for each value of stiffness until the point at which the natural frequency line intersects the rotor speed line is the same value as the experimental natural frequency. An example of a Campbell diagram can be seen in Figure \ref{fig:Figure_4}. The Campbell diagram gives a good depiction of how the natural frequency changes with speed and how negative natural frequencies decrease in frequency, while the positive natural frequency increases. The stiffness of the bearings was determined to be about 91000 N/m in the xz plane and about 120000 N/m in the $yz$ plane.\par 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=.75]{./figures/Images/Figure_4.png}
+			\includegraphics[scale=.75]{./figures/Images/Figure_4}
 			\caption{Example Campbell diagram}
 			\label{fig:Figure_4}
 		\end{figure}
@@ -148,13 +148,13 @@
 		The skew angle, $\chi$, and the eccentricity, $\varepsilon$, are determined next by independent methods. Eccentricity can be determined by simulating the theoretical model under varying eccentricities until the magnitude of the vibration is equivalent to that of the experimental results. The value was determined to be $9\e{-4}  m$. The skew angle can be quantified using a similar technique. But the skew angle is closely related to the amplitude of vibration in the two orthogonal directions, $x$ and $y$, as well as the disk tilting angles, $\theta_x$ and $\theta_y$. In order to measure the tilting angles in the experiment, there were two sets of orthogonal transducers. One before the disk on the shaft and the other after the disk. This displacement between the two sets of transducers allows for an approximation of the angles of tilt. Assuming no bending of the shaft, the angle is deduced from a pivot about Bearing B, with the angle being equal to the inverse tangent of the ratio of difference in displacement between the transducers, and the distance between the transducers. Then the simulation is run with varying values of $\chi$ to match the amplitude of angles and displacements to the experiment. The value was determined to be 0.09 radians.\par 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=.75\linewidth]{./figures/Images/Figure_5.png}
+			\includegraphics[width=.75\linewidth]{./figures/Images/Figure_5}
 			\caption{3D cascading plot demonstrating the impact of stiffness anisotropy on positive/negative frequencies}
 			\label{fig:Figure_5}
 		\end{figure}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=.75\linewidth]{./figures/Images/Figure_6.png}
+			\includegraphics[width=.75\linewidth]{./figures/Images/Figure_6}
 			\caption{3D cascading plot demonstrating the impact of stiffness anisotropy on horizontal/vertical frequencies}
 			\label{fig:Figure_6}
 		\end{figure}
