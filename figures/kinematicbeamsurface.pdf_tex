@@ -1,0 +1,70 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'kinematicbeamsurface.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{160.35539356bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.75099631)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{kinematicbeamsurface.pdf}}%
+    \put(0.76675386,0.00659546){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[lb]{\smash{$x$}}}%
+    \put(0.24201748,0.72220285){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[lb]{\smash{$y$}}}%
+    \put(-0.00283184,0.1630096){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[lb]{\smash{$z$}}}%
+    \put(0.46398933,0.15150559){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c$}}}%
+    \put(0.52214743,0.2988962){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p$}}}%
+    \put(0.74150354,0.4011586){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c^\prime$}}}%
+    \put(0.27927175,0.22755176){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\vec{r_c}$}}}%
+    \put(0.77571792,0.53168087){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p^\prime$}}}%
+    \put(0.36208662,0.30660236){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\vec{r}$}}}%
+    \put(0.6083627,0.40354372){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\vec{r_c^\prime}$}}}%
+    \put(0.68167363,0.49209832){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\vec{r^\prime}$}}}%
+    \put(-0.51765175,1.07123982){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{2.25041781\unitlength}\centering \end{minipage}}}%
+    \put(0.60130215,0.24657649){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$u$}}}%
+    \put(0.71040917,0.25016071){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$v$}}}%
+    \put(0.78065216,0.38116702){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$w$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{kinematicbeamsurface.pdf}}%
+  \end{picture}%
+\endgroup%

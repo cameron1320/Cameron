@@ -70,3 +70,36 @@ This is the governing differential equation for transverse motion of a slender b
 \begin{equation} \label{eq:FEGoverning}
 u(x,y,z,t)=N(x,y,z)q(t)
 \end{equation}
+
+\subsection{Timoshenko Beam Equations}
+\begin{figure}
+	\centering
+	\def\svgwidth{400pt}
+	\import{figures/}{BeamElement.pdf_tex}
+	\caption{Beam Element with nodal displacements.}
+	\label{fig:BeamElem}
+\end{figure}
+\begin{figure}
+	\centering
+	\def\svgwidth{400pt}
+	\import{figures/}{kinematicbeamsurface.pdf_tex}
+	\caption{Beam Element with nodal displacements.}
+	\label{fig:KineBeamElem}
+\end{figure}
+In the element depicted in Figure \ref{fig:BeamElem} the generalized strains can be identified as 
+\begin{empheq}[left=\empheqlbrace]{align}
+&\kappa_x=-\theta^\prime \label{eq:kx}\\
+&\kappa_y=\phi^\prime \label{eq:ky}\\
+&\gamma_x=u^\prime -\theta \label{eq:gx}\\
+&\gamma_y=v^\prime +\phi \label{eq:gy}
+\end{empheq}
+where $\kappa$ \& $\gamma$ represent the curvature and shear strain respectively. Combining these generalized strains leads to summarize non-trivial strains as
+\begin{empheq}[left=\empheqlbrace]{align}
+&\epsilon_{zz}=\kappa_xx + \kappa_yy \label{eq:ezz}\\
+&\epsilon_{zx}=\gamma_x \label{eq:ezx}\\
+&\epsilon_{zy}=\gamma_y  \label{eq:ezy}
+\end{empheq}
+Using the principle of virtual displacements expresses virtual strain energy as
+\begin{equation} \label{eq:virtual_strain_energy}
+\delta U=\int_{\volume}(\sigma_{zz}\delta\epsilon_{zz}+\sigma_{zx}\delta\epsilon_{zx}+\sigma_{zy}\delta\epsilon_{zy})d\volume
+\end{equation}
