@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{160.35539356bp}%
+    \setlength{\unitlength}{173.22559941bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,23 +48,29 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.75099631)%
+  \begin{picture}(1,0.71638805)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{kinematicbeamsurface.pdf}}%
-    \put(0.76675386,0.00659546){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[lb]{\smash{$x$}}}%
-    \put(0.24201748,0.72220285){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[lb]{\smash{$y$}}}%
-    \put(-0.00283184,0.1630096){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[lb]{\smash{$z$}}}%
-    \put(0.46398933,0.15150559){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c$}}}%
-    \put(0.52214743,0.2988962){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p$}}}%
-    \put(0.74150354,0.4011586){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c^\prime$}}}%
-    \put(0.27927175,0.22755176){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\vec{r_c}$}}}%
-    \put(0.77571792,0.53168087){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p^\prime$}}}%
-    \put(0.36208662,0.30660236){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\vec{r}$}}}%
-    \put(0.6083627,0.40354372){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\vec{r_c^\prime}$}}}%
-    \put(0.68167363,0.49209832){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\vec{r^\prime}$}}}%
-    \put(-0.51765175,1.07123982){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{2.25041781\unitlength}\centering \end{minipage}}}%
-    \put(0.60130215,0.24657649){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$u$}}}%
-    \put(0.71040917,0.25016071){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$v$}}}%
-    \put(0.78065216,0.38116702){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$w$}}}%
+    \put(0.24225649,0.68674034){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[b]{\smash{$x$}}}%
+    \put(0.01692021,0.17584951){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[b]{\smash{$y$}}}%
+    \put(0.72360125,0.02871752){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[b]{\smash{$z$}}}%
+    \put(0.43254134,0.16284973){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c$}}}%
+    \put(0.50910003,0.29632824){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p$}}}%
+    \put(0.70656094,0.37673583){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c^\prime$}}}%
+    \put(0.31844503,0.27228357){\color[rgb]{0,0,0}\rotatebox{-29}{\makebox(0,0)[lb]{\smash{$\vec{r_c}$}}}}%
+    \put(0.73823328,0.50621987){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p^\prime$}}}%
+    \put(0.35594757,0.29761252){\color[rgb]{0,0,0}\rotatebox{-5}{\makebox(0,0)[lb]{\smash{$\vec{r}$}}}}%
+    \put(0.56427352,0.38894575){\color[rgb]{0,0,0}\rotatebox{12}{\makebox(0,0)[rb]{\smash{$\vec{r_c^\prime}$}}}}%
+    \put(0.51468065,0.41662965){\color[rgb]{0,0,0}\rotatebox{21}{\makebox(0,0)[b]{\smash{$\vec{r^\prime}$}}}}%
+    \put(-0.45904243,1.00569101){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{2.08321769\unitlength}\centering \end{minipage}}}%
+    \put(0.57165162,0.24372098){\color[rgb]{0,0,0}\transparent{0.58200002}\rotatebox{-30}{\makebox(0,0)[b]{\smash{$u$}}}}%
+    \put(0.68299189,0.24698331){\color[rgb]{0,0,0}\transparent{0.58200002}\rotatebox{30.420648}{\makebox(0,0)[b]{\smash{$v$}}}}%
+    \put(0.72752843,0.35181282){\color[rgb]{0,0,0}\transparent{0.58200002}\rotatebox{90}{\makebox(0,0)[b]{\smash{$w$}}}}%
+    \put(0.4762796,0.19567815){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{}}}%
+    \put(0.4762796,0.19567815){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{}}}%
+    \put(0.71048889,0.43811982){\color[rgb]{0,0,0}\rotatebox{77}{\makebox(0,0)[b]{\smash{$\vec{t^\prime}$}}}}%
+    \put(0.49358671,0.20106654){\color[rgb]{0,0,0}\rotatebox{68}{\makebox(0,0)[lb]{\smash{$\vec{t}$}}}}%
+    \put(0.30274068,0.13898667){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$S$}}}%
+    \put(0.79028433,0.44819803){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$S^\prime$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{kinematicbeamsurface.pdf}}%
   \end{picture}%
 \endgroup%

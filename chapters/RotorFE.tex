@@ -61,24 +61,13 @@ T=k\delta
 \end{equation}
 
 This is the governing differential equation for transverse motion of a slender beam. This equation is not suitable for an application involving lengths that are not much greater than the width of the beam \cite{genta2007dynamics}.
-\begin{figure}[h!]
-	\centering
-	\input{figures/test1.tex}
-	\caption{Damping Figure.}
-	\label{fig:Damp_Fig}
-\end{figure}
+
 \begin{equation} \label{eq:FEGoverning}
 u(x,y,z,t)=N(x,y,z)q(t)
 \end{equation}
 
 \subsection{Timoshenko Beam Equations}
-\begin{figure}
-	\centering
-	\def\svgwidth{400pt}
-	\import{figures/}{BeamElement.pdf_tex}
-	\caption{Beam Element with nodal displacements.}
-	\label{fig:BeamElem}
-\end{figure}
+
 \begin{figure}
 	\centering
 	\def\svgwidth{400pt}
@@ -86,6 +75,75 @@ u(x,y,z,t)=N(x,y,z)q(t)
 	\caption{Beam Element with nodal displacements.}
 	\label{fig:KineBeamElem}
 \end{figure}
+\begin{equation}\label{eq:r}
+\vec{r}=\vec{r}_c+\vec{t}
+\end{equation}
+\begin{equation}\label{eq:rprime}
+\vec{r}^\prime=\vec{r}_c^\prime+\vec{t}^\prime
+\end{equation}
+\begin{equation}\label{eq:trot}
+\vec{t}^\prime=\underline{R}\vec{t}
+\end{equation}
+\begin{equation}\label{eq:rtrans}
+\vec{r}_c^\prime=\vec{r}_c+\vec{u}_c
+\end{equation}
+\begin{equation}\label{eq:RotTransformation}
+\underline{R}=exp\left(\tilde{\underline{\Psi}}\right), \quad where\quad \tilde{\underline{\Psi}}=\left[\begin{array}{ccc}
+0&-\theta&\psi\\
+\theta&0&-\phi\\
+-\psi&\phi&0
+\end{array}\right]
+\end{equation}
+\begin{equation}\label{eq:RotTransformationExpanded}
+R=\underline{I}+\tilde{\underline{\Psi}}+1/2\left(\tilde{\underline{\Psi}}\right)^2+...
+\end{equation}
+\begin{equation}\label{eq:RotTransformationApprox}
+R\approx\underline{I}+\tilde{\underline{\Psi}}
+\end{equation}
+\begin{equation}\label{eq:DispVectorrpr}
+\vec{u}=\vec{r^\prime}-\vec{r}
+\end{equation}
+\begin{equation}\label{eq:DispVectorrptprt}
+\vec{u}=\vec{r_c^\prime}+\vec{t^\prime}-\vec{r}_c+\vec{t}
+\end{equation}
+\begin{equation}\label{eq:DispVectRotTranst}
+\vec{u}=\vec{u}_c+(\underline{R}-\underline{I})\vec{t}
+\end{equation}
+\begin{equation}\label{DispVectExpanded}
+\vec{u} = \left\{\begin{array}{c}
+	u\\
+	v\\
+	w\end{array}\right\}=\left\{\begin{array}{c}
+	u_c\\
+	v_c\\
+	w_c\end{array}\right\}+\left[\begin{array}{ccc}
+	0&-\theta&\psi\\
+	\theta&0&-\phi\\
+	-\psi&\phi&0
+	\end{array}\right]\left\{\begin{array}{c}
+	0\\
+	y\\
+	z\end{array}\right\}
+\end{equation}
+\begin{equation}\label{eq:}
+\vec{u}=\left\{\begin{array}{c}
+u_c-\theta y+\psi z\\
+v_c-\phi z\\
+w_c+\phi y\end{array}\right\}
+\end{equation}
+
+\begin{equation}\label{key}
+\sigma_{ij}=\lambda\delta_{ij}\epsilon_{kk}+2\mu\epsilon_{ij}
+\end{equation}
+\begin{equation}\label{key}
+2\epsilon_{ij}=u_{i,j}+u_{j,i}
+\end{equation}
+\begin{equation}\label{key}
+\sigma_{ij}=\lambda\delta_{ij}\epsilon_{kk}+\mu\left(u_{i,j}+u_{j,i}\right)
+\end{equation}
+\begin{equation}\label{key}
+\delta V = \int_{\volume}\sigma_{ij}\epsilon_{ij}d\volume
+\end{equation}
 In the element depicted in Figure \ref{fig:BeamElem} the generalized strains can be identified as 
 \begin{empheq}[left=\empheqlbrace]{align}
 &\kappa_x=-\theta^\prime \label{eq:kx}\\
@@ -103,3 +161,10 @@ Using the principle of virtual displacements expresses virtual strain energy as
 \begin{equation} \label{eq:virtual_strain_energy}
 \delta U=\int_{\volume}(\sigma_{zz}\delta\epsilon_{zz}+\sigma_{zx}\delta\epsilon_{zx}+\sigma_{zy}\delta\epsilon_{zy})d\volume
 \end{equation}
+\begin{figure}
+	\centering
+	\def\svgwidth{400pt}
+	\import{figures/}{BeamElement.pdf_tex}
+	\caption{Beam Element with nodal displacements.}
+	\label{fig:BeamElem}
+\end{figure}

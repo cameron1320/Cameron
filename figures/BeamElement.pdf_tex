@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{254.90135322bp}%
+    \setlength{\unitlength}{183.09091349bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,28 +48,7 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.38782715)%
+  \begin{picture}(1,0.54698311)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{BeamElement.pdf}}%
-    \put(0.23541777,0.35966828){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$x$}}}%
-    \put(0.05213902,0.00846682){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$y$}}}%
-    \put(0.97366092,0.11176307){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$z$}}}%
-    \put(0.21393756,0.26506365){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$u_1$}}}%
-    \put(0.3244031,0.26545977){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\phi_1$}}}%
-    \put(0.65976558,0.26952192){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$u_2$}}}%
-    \put(0.77023107,0.26397369){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\phi_2$}}}%
-    \put(0.89290307,0.06254296){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\Omega$}}}%
-    \put(0.51908136,0.09010075){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\theta_2$}}}%
-    \put(0.08068379,0.1079339){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\theta_1$}}}%
-    \put(0.09356397,0.05701062){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$v_1$}}}%
-    \put(0.54087803,0.04363569){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$v_2$}}}%
-    \put(0.46833884,0.27328782){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$u(z)$}}}%
-    \put(0.38579699,0.3981703){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
-    \put(0.34991428,0.15816146){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$z$}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{BeamElement.pdf}}%
-    \put(0.54938115,0.2561805){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\phi(z)$}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{BeamElement.pdf}}%
-    \put(0.31324204,0.0940927){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$\theta(z)$}}}%
-    \put(0.3300553,0.04680552){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$v(z)$}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{BeamElement.pdf}}%
   \end{picture}%
 \endgroup%
