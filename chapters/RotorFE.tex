@@ -87,19 +87,20 @@ u(x,y,z,t)=N(x,y,z)q(t)
 \begin{equation}\label{eq:rtrans}
 \vec{r}_c^\prime=\vec{r}_c+\vec{u}_c
 \end{equation}
+The first order rotational matrix for small angles is represented by $\underline{R}$
 \begin{equation}\label{eq:RotTransformation}
-\underline{R}=exp\left(\tilde{\underline{\Psi}}\right), \quad where\quad \tilde{\underline{\Psi}}=\left[\begin{array}{ccc}
-0&-\theta&\psi\\
-\theta&0&-\phi\\
--\psi&\phi&0
+\underline{R}=\left[\begin{array}{ccc}
+1&-\theta&\psi\\
+\theta&1&-\phi\\
+-\psi&\phi&1
 \end{array}\right]
 \end{equation}
-\begin{equation}\label{eq:RotTransformationExpanded}
-R=\underline{I}+\tilde{\underline{\Psi}}+1/2\left(\tilde{\underline{\Psi}}\right)^2+...
-\end{equation}
-\begin{equation}\label{eq:RotTransformationApprox}
-R\approx\underline{I}+\tilde{\underline{\Psi}}
-\end{equation}
+%\begin{equation}\label{eq:RotTransformationExpanded}
+%R=\underline{I}+\tilde{\underline{\Psi}}+1/2\left(\tilde{\underline{\Psi}}\right)^2+...
+%\end{equation}
+%\begin{equation}\label{eq:RotTransformationApprox}
+%R\approx\underline{I}+\tilde{\underline{\Psi}}
+%\end{equation}
 \begin{equation}\label{eq:DispVectorrpr}
 \vec{u}=\vec{r^\prime}-\vec{r}
 \end{equation}
@@ -136,18 +137,46 @@ w_c+\phi y\end{array}\right\}
 \end{equation}
 \begin{equation}\label{eq:StrainEvaluated}
 \underline{\epsilon}=\frac{1}{2}\left[\begin{array}{ccc}
-2\left(\frac{\partial u}{\partial x}-\frac{\partial\theta}{\partial x}y+\frac{\partial\psi}{\partial x}z\right) & \frac{\partial v}{\partial x}-\frac{\partial\phi}{\partial x}z-\theta & \frac{\partial w}{\partial x}+\frac{\partial \phi}{\partial x}y+\psi\\
-\frac{\partial v}{\partial x}-\frac{\partial\phi}{\partial x}z-\theta &0&0\\
-\frac{\partial w}{\partial x}+\frac{\partial \phi}{\partial x}y+\psi&0&0\end{array}\right]
+2\left(\frac{\partial u_c}{\partial x}-\frac{\partial\theta}{\partial x}y+\frac{\partial\psi}{\partial x}z\right) & \frac{\partial v_c}{\partial x}-\frac{\partial\phi}{\partial x}z-\theta & \frac{\partial w_c}{\partial x}+\frac{\partial \phi}{\partial x}y+\psi\\
+\frac{\partial v_c}{\partial x}-\frac{\partial\phi}{\partial x}z-\theta &0&0\\
+\frac{\partial w_c}{\partial x}+\frac{\partial \phi}{\partial x}y+\psi&0&0\end{array}\right]
 \end{equation}
+Now the subscript c is dropped and $ u $,$ v $, and $ w $ are representative of the displacements on the beam axis. Since all strains will be collapsed into strain energy of the entire beam cross section. Here the strains are given for the timoshenko beam element. Note that in the case of the Euler-Bernoulli beam derivation the slope in the y direction displacement is equal to the face angle about the z-axis, i.e., $v'=\theta$ and $w'=\psi$.
+\begin{equation}\label{eq:StrainEvaluatedSimple}
+\left\{\begin{array}{l}
+\epsilon_{xx}=u'-\theta'y+\psi'z\\
+\epsilon_{xy}=v'-\phi'z-\theta\\
+\epsilon_{xz}=w'+\phi'y+\psi
+\end{array}\right.
+\end{equation}
+Introducing generalized strains that group strain contributions above as axial, bending, torsion, and shear, represented by the symbols $ \varepsilon^A $, $ \kappa^{B} $, $ \kappa^T $, $ \gamma^S $,respectively
+\begin{equation}\label{eq:GeneralizedStrains}
+\left\{\begin{array}{l}
+\varepsilon^A=u'\\
+\kappa^{B}_{y}=-\theta'\\
+\kappa^{B}_{z}=\psi'\\
+\kappa^T=\phi'\\
+\gamma^{S}_{y}=v'-\theta\\
+\gamma^{S}_{z}=w'+\psi\end{array}\right.
+\end{equation}
+allowing the representation of the strains from eq \ref{eq:StrainEvaluatedSimple} using the generalized strains as:
+\begin{equation}\label{eq:StrainEvaluatedSimpleGeneralized}
+\left\{\begin{array}{l}
+\epsilon_{xx}=\varepsilon^A+\kappa^B_yy+\kappa^B_zz\\
+\epsilon_{xy}=\gamma^S_y-\kappa^Tz\\
+\epsilon_{xz}=\gamma^S_z+\kappa^Ty
+\end{array}\right.
+\end{equation}
+Stress at the beam axis is expressed using Hooke's Law for linear isotropic homogeneous material
 \begin{equation}\label{LinearElasticStressStrainRelationship}
 \sigma_{ij}=\lambda\delta_{ij}\epsilon_{kk}+2\mu\epsilon_{ij}
 \end{equation}
+expanded out 
 \begin{equation}\label{StressEvaluated}
 \underline{\sigma}=\left[\begin{array}{ccc}
-(\lambda+2\mu)(\frac{\partial u}{\partial x}-\frac{\partial\theta}{\partial x}y+\frac{\partial\psi}{\partial x}z)&\mu(\frac{\partial v}{\partial x}-\frac{\partial\phi}{\partial x}z-\theta)&\mu(\frac{\partial w}{\partial x}+\frac{\partial\phi}{\partial x}y+\psi)\\
-\mu(\frac{\partial v}{\partial x}-\frac{\partial\phi}{\partial x}z-\theta)&0&0\\
-\mu(\frac{\partial w}{\partial x}+\frac{\partial\phi}{\partial x}y+\psi)&0&0
+(\lambda+2\mu)(u'-\theta'y+\psi'z)&\mu(v'-\phi'z-\theta)&\mu(w'+\phi'y+\psi)\\
+\mu(v'-\phi'z-\theta)&\lambda(u'-\theta'y+\psi'z)&0\\
+\mu(w'+\phi'y+\psi)&0&\lambda(u'-\theta'y+\psi'z)
 \end{array}\right]
 \end{equation}
 %\begin{equation}\label{key}
@@ -158,13 +187,27 @@ w_c+\phi y\end{array}\right\}
 \end{equation}
 Now the inner product of the total virtual strain energy can be expanded, and it is realized that each term of the expression in the integral can be set equal to zero.
 \begin{equation}\label{eq:TotalVirtualStrainEnergyExpanded}
-\left.\begin{array}{rc}
-\sigma_{xx}\delta\epsilon_{xx}:&(\lambda+2\mu)(\frac{\partial u}{\partial x}-\frac{\partial\theta}{\partial x}y+\frac{\partial\psi}{\partial x}z)\delta\epsilon_{xx}=0\\
-\sigma_{xy}\delta\epsilon_{xy}+\sigma_{yx}\delta\epsilon_{yx}=2\sigma_{xy}\delta\epsilon_{xy}:&\mu(\frac{\partial v}{\partial x}-\frac{\partial\phi}{\partial x}z-\theta)\delta\epsilon_{xy}=0\\
-\sigma_{xz}\delta\epsilon_{xz}+\sigma_{zx}\delta\epsilon_{zx}=2\sigma_{xz}\delta\epsilon_{xz}:&\mu(\frac{\partial w}{\partial x}+\frac{\partial\phi}{\partial x}y+\psi)\delta\epsilon_{xz}=0
-\end{array}\right\}
+\delta V=\int_{\volume}\left[\sigma_{xx}\delta\epsilon_{xx}+\sigma_{xy}\delta\epsilon_{xy}+\sigma_{xz}\delta\epsilon_{xz}\right]d\volume
 \end{equation}
-Then expand virtual strains into the generalized strains corresponding to the degrees of freedom
+Then expand virtual strains into the generalized strains corresponding to the degrees of freedom of the beam element and collect terms on generalized strains
+\begin{equation}\label{eq:TotalVirtualStrainEnergyExpandedGeneralized}
+\delta V=\int_{\volume}\left[\sigma_{xx}\varepsilon^A+\sigma_{xx}y\delta\kappa^B_y+\sigma_{xx}z\delta\kappa^B_z+\sigma_{xy}\delta\gamma^S_y-\sigma_{xy}z\delta\kappa^T+\sigma_{xz}\delta\gamma^S_z+\sigma_{xz}y\delta\kappa^T\right]d\volume
+\end{equation}
+recognize stresses conjugate with each generalized strain as the corresponding stress for that phenomena, and integrating to determine the forces and moments
+\begin{equation}\label{eq:generalizedForces}
+\left\{\begin{array}{l}
+N=\int_A\sigma_{xx}dA=\\
+M_y=\int_A\sigma_{xx}zdA\\
+M_z=\int_A\sigma_{xx}ydA\\
+Q_y=\int_A\sigma_{xy}dA\\
+Q_z=\int_A\sigma_{xz}dA\\
+M_x=\int_A(\sigma_{xz}y-\sigma_{xy}z)dA
+\end{array}\right.
+\end{equation}
+%\begin{equation}\label{eq:TotalVirtualStrainEnergyExpandedGeneralized}
+%\delta V = \int_{\volume}\left[
+%\end{equation}
+
 
 %In the element depicted in Figure \ref{fig:BeamElem} the generalized strains can be identified as 
 %\begin{empheq}[left=\empheqlbrace]{align}
@@ -175,9 +218,9 @@ Then expand virtual strains into the generalized strains corresponding to the de
 %\end{empheq}
 %where $\kappa$ \& $\gamma$ represent the curvature and shear strain respectively. Combining these generalized strains leads to summarize non-trivial strains as
 %\begin{empheq}[left=\empheqlbrace]{align}
-%&\epsilon_{zz}=\kappa_xx + \kappa_yy \label{eq:ezz}\\
-%&\epsilon_{zx}=\gamma_x \label{eq:ezx}\\
-%&\epsilon_{zy}=\gamma_y  \label{eq:ezy}
+%&\epsilon_{xx}=\kappa_yy + \kappa_zz \label{eq:ezz}\\
+%&\epsilon_{xy}=\gamma_y \label{eq:ezx}\\
+%&\epsilon_{xz}=\gamma_z  \label{eq:ezy}
 %\end{empheq}
 %Using the principle of virtual displacements expresses virtual strain energy as
 %\begin{equation} \label{eq:virtual_strain_energy}
