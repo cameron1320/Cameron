@@ -193,15 +193,15 @@ Then expand virtual strains into the generalized strains corresponding to the de
 \begin{equation}\label{eq:TotalVirtualStrainEnergyExpandedGeneralized}
 \delta V=\int_{\volume}\left[\sigma_{xx}\varepsilon^A+\sigma_{xx}y\delta\kappa^B_y+\sigma_{xx}z\delta\kappa^B_z+\sigma_{xy}\delta\gamma^S_y-\sigma_{xy}z\delta\kappa^T+\sigma_{xz}\delta\gamma^S_z+\sigma_{xz}y\delta\kappa^T\right]d\volume
 \end{equation}
-recognize stresses conjugate with each generalized strain as the corresponding stress for that phenomena, and integrating to determine the forces and moments
+recognize stresses conjugate with each generalized strain as the corresponding stress for that phenomena, and integrating to determine the forces and moments related to the generalized strains.
 \begin{equation}\label{eq:generalizedForces}
 \left\{\begin{array}{l}
-N=\int_A\sigma_{xx}dA=\\
-M_y=\int_A\sigma_{xx}zdA\\
-M_z=\int_A\sigma_{xx}ydA\\
-Q_y=\int_A\sigma_{xy}dA\\
-Q_z=\int_A\sigma_{xz}dA\\
-M_x=\int_A(\sigma_{xz}y-\sigma_{xy}z)dA
+N=\int_A\sigma_{xx}dA=(\lambda+2\mu)(\varepsilon^AA+\kappa^B_yA_y+\kappa^B_zA_z)\\
+M_y=\int_A\sigma_{xx}zdA=(\lambda+2\mu)(\varepsilon^AA_z+\kappa^B_yJ+\kappa^B_zI_z)\\
+M_z=\int_A\sigma_{xx}ydA=(\lambda+2\mu)(\varepsilon^AA_y+\kappa^B_yI_y+\kappa^B_zJ)\\
+Q_y=\int_A\sigma_{xy}dA=\mu(\gamma^S_yA-\kappa^TA_z)\\
+Q_z=\int_A\sigma_{xz}dA=\mu(\gamma^S_zA+\kappa^TA_y)\\
+M_x=\int_A(\sigma_{xz}y-\sigma_{xy}z)dA=\mu\gamma^S_zAz-\mu\gamma^S_yA_y+\mu\kappa^T(I_y+I_z)
 \end{array}\right.
 \end{equation}
 %\begin{equation}\label{eq:TotalVirtualStrainEnergyExpandedGeneralized}
