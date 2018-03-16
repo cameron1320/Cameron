@@ -63,9 +63,6 @@ T=k\delta
 
 This is the governing differential equation for transverse motion of a slender beam. This equation is not suitable for an application involving lengths that are not much greater than the width of the beam \cite{genta2007dynamics}.
 
-\begin{equation} \label{eq:FEGoverning}
-u(x,y,z,t)=N(x,y,z)q(t)
-\end{equation}
 
 \subsection{Timoshenko Beam Equations}
 \begin{figure}
@@ -176,23 +173,23 @@ where, $ G=\frac{E}{2(1+\nu)} $. Strains are derived from displacements of equat
 %\end{equation}
 The subscript c is dropped and $ u $,$ v $, and $ w $ are taken to be representative of the displacements on the beam axis. Since all strains will be collapsed into strain energy of the entire beam cross section. 
 \begin{equation}\label{eq:StrainEvaluatedSimple}
-\left\{\begin{array}{l}
-\epsilon_{xx}=u'-\theta'y+\psi'z\\
-\epsilon_{xy}=\frac{1}{2}(v'-\phi'z-\theta)\\
-\epsilon_{xz}=\frac{1}{2}(w'+\phi'y+\psi)
+\left\{\arraycolsep=1pt\begin{array}{rl}
+\epsilon_{xx}&=u'-\theta'y+\psi'z\\
+\epsilon_{xy}&=\frac{1}{2}(v'-\phi'z-\theta)\\
+\epsilon_{xz}&=\frac{1}{2}(w'+\phi'y+\psi)
 \end{array}\right.
 \end{equation}
 Note that in the case of the Euler-Bernoulli beam derivation the slope in the y direction displacement is equal to the face angle about the z-axis, i.e., $v'=\theta$ and $w'=\psi$.\
 
 It will be proven useful to introduce generalized strains that group strain contributions above as axial, bending, torsion, and shear, represented by the symbols $ \varepsilon $, $ \rho $, $ \varphi $, $ \gamma $,respectively.
 \begin{equation}\label{eq:GeneralizedStrains}
-\left\{\begin{array}{l}
-\varepsilon=u'\\
-\rho_{y}=-\theta'\\
-\rho_{z}=\psi'\\
-\varphi=\phi'\\
-\gamma_{y}=v'-\theta\\
-\gamma_{z}=w'+\psi\end{array}\right.
+\left\{\arraycolsep=1pt\begin{array}{rl}
+\varepsilon&=u'\\
+\rho_{y}&=-\theta'\\
+\rho_{z}&=\psi'\\
+\varphi&=\phi'\\
+\gamma_{y}&=v'-\theta\\
+\gamma_{z}&=w'+\psi\end{array}\right.
 \end{equation}
 allowing the representation of the strains from eq \ref{eq:StrainEvaluatedSimple} using the generalized strains as:
 \begin{equation}\label{eq:StrainEvaluatedSimpleGeneralized}
@@ -240,34 +237,34 @@ Then expand virtual strains into the generalized strains corresponding to the de
 \end{equation}
 recognize stresses conjugate with each generalized strain as the corresponding stress for that phenomena, and integrating to determine the forces and moments related to the generalized strains.
 \begin{equation}\label{eq:generalizedForces}
-\left\{\begin{array}{l}
-N=\int_A\sigma_{xx}dA=E( A\varepsilon+S_y\rho_y+S_z\rho_z)\\
-M_y=\int_A\sigma_{xx}zdA=E(S_z\varepsilon+I_{xy}\rho_y+I_y\rho_z)\\
-M_z=\int_A\sigma_{xx}ydA=E(S_y\varepsilon+I_z\rho_y+I_{xy}\rho_z)\\
-Q_y=\int_A\sigma_{xy}dA=\kappa G(A\gamma_y-S_z\varphi)\\
-Q_z=\int_A\sigma_{xz}dA=\kappa G(A\gamma_z+S_y\varphi)\\
-M_x=\int_A(\sigma_{xz}y-\sigma_{xy}z)dA=\kappa G\left(A_y\gamma_z-A_z\gamma_y+J_x\varphi\right)
+\left\{\arraycolsep=1pt\begin{array}{rcl}
+N=&\int_A\sigma_{xx}dA&=E( A\varepsilon+S_y\rho_y+S_z\rho_z)\\
+M_y=&\int_A\sigma_{xx}zdA&=E(S_z\varepsilon+I_{xy}\rho_y+I_y\rho_z)\\
+M_z=&\int_A\sigma_{xx}ydA&=E(S_y\varepsilon+I_z\rho_y+I_{xy}\rho_z)\\
+Q_y=&\int_A\sigma_{xy}dA&=\kappa G(A\gamma_y-S_z\varphi)\\
+Q_z=&\int_A\sigma_{xz}dA&=\kappa G(A\gamma_z+S_y\varphi)\\
+M_x=&\int_A(\sigma_{xz}y-\sigma_{xy}z)dA&=\kappa G\left(A_y\gamma_z-A_z\gamma_y+J_x\varphi\right)
 \end{array}\right.
 \end{equation}
 \begin{center}where, $ \left\{\begin{array}{l}
 \ \kappa=\frac{6(1+\nu)}{7+6\nu}, \textit{for circular cross sections.}\\
-\begin{array}{ll}
-A=\int_AdA&S_y=\int_A ydA\\
-S_z=\int_AzdA&I_y=\int_Az^2dA\\
-I_z=\int_Ay^2dA&J_x=I_y+I_z
+\arraycolsep=.75pt\begin{array}{rlccccrl}
+A&=\int_AdA&&&&&S_y&=\int_A ydA\\
+S_z&=\int_AzdA&&&&&I_y&=\int_Az^2dA\\
+I_z&=\int_Ay^2dA&&&&&J_x&=I_y+I_z
 \end{array}
 \end{array}\right. $\\\end{center}
 $ \kappa $ is the shear coefficient which attempts to correct for the fact that the shear strain is not constant over the beam cross section. Assuming the central axis of the beam is coincident with the shear center, then $ A_y=A_z=I_{xy}=0 $. Which simplifies the conjugate forces to
 
 
 \begin{equation}\label{eq:generalizedForcesSimplified}
-\left\{\begin{array}{l}
-N=EA\varepsilon=EAu'\\
-M_y=EI_y\rho_z=EI_y\psi'\\
-M_z=EI_z\rho_y=-EI_z\theta'\\
-Q_y=\kappa G A\gamma_y=\kappa G A(v'-\theta)\\
-Q_z=\kappa G A\gamma_z=\kappa G A(w'+\psi)\\
-M_x=\kappa G J_x\varphi=\kappa G J_x\phi'
+\left\{\arraycolsep=1pt\begin{array}{rll}
+N&=EA\varepsilon&=EAu'\\
+M_y&=EI_y\rho_z&=EI_y\psi'\\
+M_z&=EI_z\rho_y&=-EI_z\theta'\\
+Q_y&=\kappa G A\gamma_y&=\kappa G A(v'-\theta)\\
+Q_z&=\kappa G A\gamma_z&=\kappa G A(w'+\psi)\\
+M_x&=\kappa G J_x\varphi&=\kappa G J_x\phi'
 \end{array}\right.
 \end{equation}
 
@@ -295,18 +292,139 @@ M_x=\kappa G J_x\varphi=\kappa G J_x\phi'
 %leaving $ \delta U_b $ as the boundary value terms to be neglected. The principle of virtual work for a quasistatic beam with no external work gives $ \delta U=0 $. Therefore, each term in the integrand of \ref{eq:TotalVirtualStrainEnergyDisplacementRel} must equal zero.
 \subsection{Equations of Motion}
 Now the equations are motion are derived for the Timoshenko beam element. The derivation is the same as for a Euler-Bernoulli beam with the exception of the constitutive relations combined at the end.
-\begin{subequations}\label{eq:EulerLagrangianEquations}
-	\begin{empheq}[left={\empheqlbrace\,}]{align}
-	&\tilde{E}Au''=0 \label{eq:EulerLagrangianAxial}\\
-	&\kappa GA(v''-\theta')=0 \label{eq:EulerLagrangianSheary}\\
-	&\kappa GA(w''+\psi')=0 \label{eq:EulerLagrangianShearz}\\
-	&\tilde{E}I_y\psi''-\kappa G A(w'+\psi)=0 \label{eq:EulerLagrangianBendingy}\\
-	&\tilde{E}I_z\theta''+\kappa G A(v'-\theta)=0 \label{eq:EulerLagrangianBendingz}\\
-	&\kappa G J_x\phi''=0 \label{eq:EulerLagrangianTorsion}
-	\end{empheq}
-\end{subequations}
-These are the governing differential equations for a Timoshenko beam element.
+\begin{figure}
+	\centering
+	\def\svgwidth{600pt}
+	\import{figures/}{BeamDifferentialSection.pdf_tex}
+	\caption{Beam differential element with generalized forces.}
+	\label{fig:BeamDifferentialSection}
+\end{figure}
+Using conservation of momentum and conservation of the moment of momentum a relationship between inertia and internal forces is developed. Applying summation of forces in the x-direction
+\begin{equation}\label{key}
+(N+\frac{1}{2}\frac{\partial N}{\partial x}dx)-(N-\frac{1}{2}\frac{\partial N}{\partial x}dx)=\rho A dx \frac{\partial^2u}{\partial x^2}
+\end{equation}
+which simplifies to
+\begin{equation}\label{key}
+\frac{\partial N}{\partial x}=\rho A\frac{\partial^2 u}{\partial x^2}
+\end{equation}
+similarly for the other directions, and summing moments about the center of mass
+\begin{equation}\label{eq:EquilibriumEquations}
+\left\{\arraycolsep=1pt\begin{array}{rl}
+\frac{\partial Q_y}{\partial x}&=\rho A\frac{\partial^2 v}{\partial x^2}\\
+\frac{\partial Q_z}{\partial x}&=\rho A\frac{\partial^2 w}{\partial x^2}\\
+\frac{\partial M_y}{\partial x}-Q_z&=\rho I_y \frac{\partial^2\psi}{\partial x^2} + \rho J_x\Omega\frac{\partial\theta}{\partial x}\\
+\frac{\partial M_z}{\partial x}+Q_y&=\rho I_z \frac{\partial^2\theta}{\partial x^2} - \rho J_x\Omega\frac{\partial\psi}{\partial x}\\
+\frac{\partial M_x}{\partial x}&=\rho J_x\frac{\partial^2\phi}{\partial x^2}
+\end{array}\right.
+\end{equation}
+The generalized forces of equation \ref{eq:generalizedForcesSimplified} are substituted in the equilibrium equations \ref{eq:EquilibriumEquations}
+\begin{equation}\label{eq:EquationsOfMotionIndependent}
+\left\{\arraycolsep=1pt\begin{array}{rl}
+EAu''&=\rho A\ddot{u}\\
+\kappa GA(v''-\theta')&=\rho A\ddot{v}\\
+\kappa GA(w''+\psi')&=\rho A\ddot{w}\\
+EI_y\psi''-\kappa GA(w'-\theta)&=\rho I_y\ddot{\psi}+\rho J_x\Omega\dot{\theta}\\
+EI_z\theta''+\kappa GA(v'+\psi)&=\rho I_z\ddot{\theta}-\rho J_x\Omega\dot{\psi}\\
+\kappa GJ_z\phi''&=\rho J_x\ddot{\phi}
+\end{array}\right.
+\end{equation}
+In Matrix form, this system of equations can be represented by this equation
+\begin{equation}\label{key}
+\bunderline{\mathfrak{M}}\ddot{\vec{\mathbf{u}}}+\bunderline{\mathfrak{G}}\dot{\vec{\mathbf{u}}}-\frac{\partial}{\partial x}\bunderline{\mathcal{S}}\vec{\mathbf{u}}-\bunderline{\mathcal{P}}\bunderline{\mathcal{S}}\vec{\mathbf{u}}
+\end{equation}
+where,
+\begin{equation}\label{key}
+\def\cs{2em}
+\newcommand{\SetToWidest}[1]{\makebox[\cs]{$#1$}}%
+\left\{\begin{array}{@{}rll}
+\bunderline{\mathfrak{M}}&=\left[\arraycolsep=-.5pt\begin{array}{cccccc}
+\SetToWidest{\rho A}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}\\
+0&\rho A&0&0&0&0\\
+0&0&\rho I_y&0&0&0\\
+0&0&0&\rho I_z&0&0\\
+0&0&0&0&\rho A&0\\
+0&0&0&0&0&\rho J_x
+\end{array}\right]&\bunderline{\mathfrak{G}}=\left[\arraycolsep=-.5pt\begin{array}{cccccc}
+\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
+0&0&0&0&0&0\\
+0&0&0&\rho J_x\Omega&0&0\\
+0&0&\rho J_x\Omega&0&0&0\\
+0&0&0&0&0&0\\
+0&0&0&0&0&0
+\end{array}\right]\\
+\bunderline{\mathcal{P}}&=\left[\arraycolsep=-.5pt\begin{array}{cccccc}
+\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}\\
+0&0&0&0&0&0\\
+0&-1&0&0&0&0\\
+1&0&0&0&0&0\\
+0&0&0&0&0&0\\
+0&0&0&0&0&0
+\end{array}\right]&\bunderline{\mathcal{S}}=\left[\arraycolsep=1.8pt\begin{array}{cccccc}
+\makebox[\cs]{$\kappa GA \frac{\partial}{\partial x}$}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{$-\kappa G \frac{\partial}{\partial x}$}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
+0&\kappa GA\frac{\partial}{\partial x}&\kappa GA&0&0&0\\
+0&0&EI_y\frac{\partial}{\partial x}&0&0&0\\
+0&0&0&EI_z\frac{\partial}{\partial x}&0&0\\
+0&0&0&0&EA\frac{\partial}{\partial x}&0\\
+0&0&0&0&0&\kappa GJ_x\frac{\partial}{\partial x}
+\end{array}\right]
+\end{array}\right.
+\end{equation}
+and $ \vec{\mathbf{u}}=[v,w,\psi,\theta,u,\phi]^{\T} $The principle of virtual displacements is utilized on the equations of motion to and integrated over the length of the beam.
+\begin{equation}\label{key}
+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{M}}\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{G}}\dot{\vec{\mathbf{u}}}-\int_0^l\delta\vec{\mathbf{u}}^\T\frac{\partial}{\partial x}\bunderline{\mathcal{S}}\vec{\mathbf{u}}dx-\int_0^l\delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{P}}\bunderline{\mathcal{S}}\vec{\mathbf{u}}dx=0
+\end{equation}
+integration by parts on the third term and replacing $ \underline{\mathcal{S}} $ with $ \bunderline{\mathcal{D}}\bunderline{\mathcal{B}} $
+\begin{equation}\label{key}
+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{M}}\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{G}}\dot{\vec{\mathbf{u}}}+\int_0^l\delta\vec{\mathbf{u}}^\T(\frac{\partial}{\partial x}\bunderline{I}-\bunderline{\mathcal{P}})\bunderline{\mathcal{D}}\bunderline{\mathcal{B}}\vec{\mathbf{u}}dx=0
+\end{equation}
+\begin{equation}\label{key}
+\def\cs{1.5em}
+\bunderline{\mathcal{D}}=\left[\arraycolsep=1.8pt\begin{array}{cccccc}
+\makebox[\cs]{$\kappa GA$}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
+0&\kappa GA&0&0&0&0\\
+0&0&EI_y&0&0&0\\
+0&0&0&EI_z&0&0\\
+0&0&0&0&EA&0\\
+0&0&0&0&0&\kappa GJ_x
+\end{array}\right] \&\quad \bunderline{\mathcal{B}}=\left[\arraycolsep=1.8pt\begin{array}{cccccc}
+\makebox[\cs]{$\frac{\partial}{\partial x}$}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{-1}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
+0&\frac{\partial}{\partial x}&1&0&0&0\\
+0&0&\frac{\partial}{\partial x}&0&0&0\\
+0&0&0&\frac{\partial}{\partial x}&0&0\\
+0&0&0&0&\frac{\partial}{\partial x}&0\\
+0&0&0&0&0&\frac{\partial}{\partial x}
+\end{array}\right]
+\end{equation}
+Notice that $ \frac{\partial}{\partial x}\bunderline{I}-\bunderline{\mathcal{P}}=\bunderline{\mathcal{B}}^\T $ so the equation of motion becomes
+\begin{equation}\label{eq:EqauationOfMotionVirtual}
+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{M}}\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{G}}\dot{\vec{\mathbf{u}}}+\int_0^l\delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{B}}^\T\bunderline{\mathcal{D}}\bunderline{\mathcal{B}}\vec{\mathbf{u}}dx=0
+\end{equation}
+Now the solution of this differential system motivates a separation of variables.
+\subsection{Shape Functions}
+The displacements thus far have been assumed to be functions of both position and time. Now the total displacement is seperated into functions that depend on time and functions that depend on position. This is a fundamental part of the discretization of the beam element, and the use the finite element method. 
+\begin{equation} \label{eq:FEGoverning}
+\vec{\mathbf{u}}(x,t)=\bunderline{\mathbf{N}}(x)\vec{\mathbf{q}}(t)
+\end{equation}
+
+%\begin{subequations}\label{eq:EulerLagrangianEquations}
+%	\begin{empheq}[left={\empheqlbrace\,}]{align}
+%	&EAu''=0 \label{eq:EulerLagrangianAxial}\\
+%	&\kappa GA(v''-\theta')=0 \label{eq:EulerLagrangianSheary}\\
+%	&\kappa GA(w''+\psi')=0 \label{eq:EulerLagrangianShearz}\\
+%	&\tilde{E}I_y\psi''-\kappa G A(w'+\psi)=0 \label{eq:EulerLagrangianBendingy}\\
+%	&\tilde{E}I_z\theta''+\kappa G A(v'-\theta)=0 \label{eq:EulerLagrangianBendingz}\\
+%	&\kappa G J_x\phi''=0 \label{eq:EulerLagrangianTorsion}
+%	\end{empheq}
+%\end{subequations}
+%These are the governing differential equations for a Timoshenko beam element.
 \subsection{Timoshenko Beam Finite Element}
+\begin{figure}
+	\centering
+	\def\svgwidth{400pt}
+	\import{figures/}{BeamElement.pdf_tex}
+	\caption{Beam Element with nodal displacements.}
+	\label{fig:BeamElem}
+\end{figure}
 Beam element is discretized into nodal displacements and rotations at the ends of a beam element. These nodal degrees of freedom, depicted in Figure \ref{fig:BeamElem} are used as points to interpolate between using polynomial functions that satisfy the boundary conditions. Functions used to interpolate are listed in Equation \ref{eq:DisplacementInterpolationFunctionsChosen}. axial displacement, $ u $, and torsional rotation, $ \phi $ are independent, so their interpolation functions are chosen as polynomials that satisfy the differential equation. Conversely, transverse displacements, $ v $ \& $ w $, and bending rotations, $ \psi $ \& $ \theta $ are coupled. Polynomial functions are chosen for $ v $ \& $ w $ and their rotational counterparts are derived using the differential relations.
 \begin{subequations}\label{eq:DisplacementInterpolationFunctionsChosen}
 \begin{empheq}[left={\empheqlbrace\,}]{align}
@@ -376,10 +494,3 @@ R_{\theta_1}=\frac{1}{1+\alpha_z}(\zeta^3+3\zeta^2-(4+\alpha_z)\zeta+\alpha_z)&R
 \end{array}\right.
 \end{equation*}
 where, $ \alpha_y=2K_y/l^2=\frac{12EI_y}{\kappa GAl^2} $, $ \alpha_z=2K_z/l^2=\frac{12EI_z}{\kappa GAl^2} $, \& $ \zeta=x/l $
-\begin{figure}
-	\centering
-	\def\svgwidth{400pt}
-	\import{figures/}{BeamElement.pdf_tex}
-	\caption{Beam Element with nodal displacements.}
-	\label{fig:BeamElem}
-\end{figure}
