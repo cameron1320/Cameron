@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{173.22559941bp}%
+    \setlength{\unitlength}{171.89419477bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,29 +48,29 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.71638805)%
+  \begin{picture}(1,0.722397)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{kinematicbeamsurface.pdf}}%
-    \put(0.24225649,0.68674034){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[b]{\smash{$x$}}}%
-    \put(0.01692021,0.17584951){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[b]{\smash{$y$}}}%
-    \put(0.72360125,0.02871752){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[b]{\smash{$z$}}}%
-    \put(0.43254134,0.16284973){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c$}}}%
-    \put(0.50910003,0.29632824){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p$}}}%
-    \put(0.70656094,0.37673583){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c^\prime$}}}%
-    \put(0.31844503,0.27228357){\color[rgb]{0,0,0}\rotatebox{-29}{\makebox(0,0)[lb]{\smash{$\vec{r_c}$}}}}%
-    \put(0.73823328,0.50621987){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p^\prime$}}}%
-    \put(0.35594757,0.29761252){\color[rgb]{0,0,0}\rotatebox{-5}{\makebox(0,0)[lb]{\smash{$\vec{r}$}}}}%
-    \put(0.56427352,0.38894575){\color[rgb]{0,0,0}\rotatebox{12}{\makebox(0,0)[rb]{\smash{$\vec{r_c^\prime}$}}}}%
-    \put(0.51468065,0.41662965){\color[rgb]{0,0,0}\rotatebox{21}{\makebox(0,0)[b]{\smash{$\vec{r^\prime}$}}}}%
-    \put(-0.45904243,1.00569101){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{2.08321769\unitlength}\centering \end{minipage}}}%
-    \put(0.57165162,0.24372098){\color[rgb]{0,0,0}\transparent{0.58200002}\rotatebox{-30}{\makebox(0,0)[b]{\smash{$u$}}}}%
-    \put(0.68299189,0.24698331){\color[rgb]{0,0,0}\transparent{0.58200002}\rotatebox{30.420648}{\makebox(0,0)[b]{\smash{$v$}}}}%
-    \put(0.72752843,0.35181282){\color[rgb]{0,0,0}\transparent{0.58200002}\rotatebox{90}{\makebox(0,0)[b]{\smash{$w$}}}}%
-    \put(0.4762796,0.19567815){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{}}}%
-    \put(0.4762796,0.19567815){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{}}}%
-    \put(0.71048889,0.43811982){\color[rgb]{0,0,0}\rotatebox{77}{\makebox(0,0)[b]{\smash{$\vec{t^\prime}$}}}}%
-    \put(0.49358671,0.20106654){\color[rgb]{0,0,0}\rotatebox{68}{\makebox(0,0)[lb]{\smash{$\vec{t}$}}}}%
-    \put(0.30274068,0.13898667){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$S$}}}%
-    \put(0.79028433,0.44819803){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$S^\prime$}}}%
+    \put(0.2412789,0.69275827){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[b]{\smash{$y$}}}%
+    \put(0.01419728,0.17791033){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[b]{\smash{$z$}}}%
+    \put(0.72635191,0.02963873){\color[rgb]{0,0,0}\transparent{0.73500001}\makebox(0,0)[b]{\smash{$x$}}}%
+    \put(0.4330376,0.16480986){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c$}}}%
+    \put(0.51018928,0.29932223){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p$}}}%
+    \put(0.70917961,0.38035262){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$c^\prime$}}}%
+    \put(0.31805756,0.27509133){\color[rgb]{0,0,0}\rotatebox{-29}{\makebox(0,0)[lb]{\smash{$\vec{r_c}$}}}}%
+    \put(0.74109727,0.51083958){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$p^\prime$}}}%
+    \put(0.35585057,0.30061646){\color[rgb]{0,0,0}\rotatebox{-5}{\makebox(0,0)[lb]{\smash{$\vec{r}$}}}}%
+    \put(0.56579011,0.39265711){\color[rgb]{0,0,0}\rotatebox{12}{\makebox(0,0)[rb]{\smash{$\vec{r_c^\prime}$}}}}%
+    \put(0.51581311,0.42055543){\color[rgb]{0,0,0}\rotatebox{21}{\makebox(0,0)[b]{\smash{$\vec{r^\prime}$}}}}%
+    \put(-0.46545193,1.01417937){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{2.09935323\unitlength}\centering \end{minipage}}}%
+    \put(0.57322536,0.24630751){\color[rgb]{0,0,0}\transparent{0.58200002}\rotatebox{-30}{\makebox(0,0)[b]{\smash{$u$}}}}%
+    \put(0.68542801,0.2495951){\color[rgb]{0,0,0}\transparent{0.58200002}\rotatebox{30.420648}{\makebox(0,0)[b]{\smash{$v$}}}}%
+    \put(0.73030951,0.35523657){\color[rgb]{0,0,0}\transparent{0.58200002}\rotatebox{90}{\makebox(0,0)[b]{\smash{$w$}}}}%
+    \put(0.47711464,0.19789255){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{}}}%
+    \put(0.47711464,0.19789255){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{}}}%
+    \put(0.71313798,0.44221206){\color[rgb]{0,0,0}\rotatebox{77}{\makebox(0,0)[b]{\smash{$\vec{t^\prime}$}}}}%
+    \put(0.49455579,0.20332268){\color[rgb]{0,0,0}\rotatebox{68}{\makebox(0,0)[lb]{\smash{$\vec{t}$}}}}%
+    \put(0.30223157,0.14076198){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$S$}}}%
+    \put(0.79355148,0.45236833){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$S^\prime$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{kinematicbeamsurface.pdf}}%
   \end{picture}%
 \endgroup%
