@@ -318,16 +318,26 @@ similarly for the other directions, and summing moments about the center of mass
 \end{array}\right.
 \end{equation}
 The generalized forces of equation \ref{eq:generalizedForcesSimplified} are substituted in the equilibrium equations \ref{eq:EquilibriumEquations}
-\begin{equation}\label{eq:EquationsOfMotionIndependent}
-\left\{\arraycolsep=1pt\begin{array}{rl}
-EAu''&=\rho A\ddot{u}\\
-\kappa GA(v''-\theta')&=\rho A\ddot{v}\\
-\kappa GA(w''+\psi')&=\rho A\ddot{w}\\
-EI_y\psi''-\kappa GA(w'-\theta)&=\rho I_y\ddot{\psi}+\rho J_x\Omega\dot{\theta}\\
-EI_z\theta''+\kappa GA(v'+\psi)&=\rho I_z\ddot{\theta}-\rho J_x\Omega\dot{\psi}\\
-\kappa GJ_z\phi''&=\rho J_x\ddot{\phi}
-\end{array}\right.
-\end{equation}
+%\begin{equation}\label{eq:EquationsOfMotionIndependent}
+%\left\{\arraycolsep=1pt\begin{array}{rl}
+%EAu''&=\rho A\ddot{u}\\
+%\kappa GA(v''-\theta')&=\rho A\ddot{v}\\
+%\kappa GA(w''+\psi')&=\rho A\ddot{w}\\
+%EI_y\psi''-\kappa GA(w'-\theta)&=\rho I_y\ddot{\psi}+\rho J_x\Omega\dot{\theta}\\
+%EI_z\theta''+\kappa GA(v'+\psi)&=\rho I_z\ddot{\theta}-\rho J_x\Omega\dot{\psi}\\
+%\kappa GJ_z\phi''&=\rho J_x\ddot{\phi}
+%\end{array}\right.
+%\end{equation}
+\begin{subequations}\label{eq:EquationsOfMotionIndependent}
+\begin{empheq}[left={\empheqlbrace\,}]{align}
+EAu''&=\rho A\ddot{u}\label{eq:EquationsOfMotionIndependent_u}\\
+\kappa GA(v''-\theta')&=\rho A\ddot{v}\label{eq:EquationsOfMotionIndependent_v}\\
+\kappa GA(w''+\psi')&=\rho A\ddot{w}\label{eq:EquationsOfMotionIndependent_w}\\
+EI_y\psi''-\kappa GA(w'-\theta)&=\rho I_y\ddot{\psi}+\rho J_x\Omega\dot{\theta}\label{eq:EquationsOfMotionIndependent_psi}\\
+EI_z\theta''+\kappa GA(v'+\psi)&=\rho I_z\ddot{\theta}-\rho J_x\Omega\dot{\psi}\label{eq:EquationsOfMotionIndependent_theta}\\
+\kappa GJ_z\phi''&=\rho J_x\ddot{\phi}\label{eq:EquationsOfMotionIndependent_phi}
+\end{empheq}
+\end{subequations}
 In Matrix form, this system of equations can be represented by this equation
 \begin{equation}\label{key}
 \bunderline{\mathfrak{M}}\ddot{\vec{\mathbf{u}}}+\bunderline{\mathfrak{G}}\dot{\vec{\mathbf{u}}}-\frac{\partial}{\partial x}\bunderline{\mathcal{S}}\vec{\mathbf{u}}-\bunderline{\mathcal{P}}\bunderline{\mathcal{S}}\vec{\mathbf{u}}
@@ -336,7 +346,7 @@ where,
 \begin{equation}\label{key}
 \def\cs{2em}
 \newcommand{\SetToWidest}[1]{\makebox[\cs]{$#1$}}%
-\left\{\begin{array}{@{}rll}
+\left\{\def\arraystretch{1}\begin{array}{@{}rlrl}
 \bunderline{\mathfrak{M}}&=\left[\arraycolsep=-.5pt\begin{array}{cccccc}
 \SetToWidest{\rho A}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}\\
 0&\rho A&0&0&0&0\\
@@ -344,7 +354,7 @@ where,
 0&0&0&\rho I_z&0&0\\
 0&0&0&0&\rho A&0\\
 0&0&0&0&0&\rho J_x
-\end{array}\right]&\bunderline{\mathfrak{G}}=\left[\arraycolsep=-.5pt\begin{array}{cccccc}
+\end{array}\right]&\bunderline{\mathfrak{G}}&=\left[\arraycolsep=-.5pt\begin{array}{cccccc}
 \makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
 0&0&0&0&0&0\\
 0&0&0&\rho J_x\Omega&0&0\\
@@ -352,6 +362,7 @@ where,
 0&0&0&0&0&0\\
 0&0&0&0&0&0
 \end{array}\right]\\
+&&\\[-1em]
 \bunderline{\mathcal{P}}&=\left[\arraycolsep=-.5pt\begin{array}{cccccc}
 \SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}&\SetToWidest{0}\\
 0&0&0&0&0&0\\
@@ -359,7 +370,7 @@ where,
 1&0&0&0&0&0\\
 0&0&0&0&0&0\\
 0&0&0&0&0&0
-\end{array}\right]&\bunderline{\mathcal{S}}=\left[\arraycolsep=1.8pt\begin{array}{cccccc}
+\end{array}\right]&\bunderline{\mathcal{S}}&=\left[\arraycolsep=1.8pt\begin{array}{cccccc}
 \makebox[\cs]{$\kappa GA \frac{\partial}{\partial x}$}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{$-\kappa G \frac{\partial}{\partial x}$}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
 0&\kappa GA\frac{\partial}{\partial x}&\kappa GA&0&0&0\\
 0&0&EI_y\frac{\partial}{\partial x}&0&0&0\\
@@ -373,9 +384,9 @@ and $ \vec{\mathbf{u}}=[v,w,\psi,\theta,u,\phi]^{\T} $The principle of virtual d
 \begin{equation}\label{key}
 \int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{M}}\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{G}}\dot{\vec{\mathbf{u}}}-\int_0^l\delta\vec{\mathbf{u}}^\T\frac{\partial}{\partial x}\bunderline{\mathcal{S}}\vec{\mathbf{u}}dx-\int_0^l\delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{P}}\bunderline{\mathcal{S}}\vec{\mathbf{u}}dx=0
 \end{equation}
-integration by parts on the third term and replacing $ \underline{\mathcal{S}} $ with $ \bunderline{\mathcal{D}}\bunderline{\mathcal{B}} $
+integration by parts on the third term and replacing $ \underline{\mathcal{S}} $ with $ \bunderline{\mathcal{D}}\bunderline{\mathcal{B}} $, and making use of the Identity matrix, $ \bunderline[2]{\mathbf{I}} $
 \begin{equation}\label{key}
-\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{M}}\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{G}}\dot{\vec{\mathbf{u}}}+\int_0^l\delta\vec{\mathbf{u}}^\T(\frac{\partial}{\partial x}\bunderline{I}-\bunderline{\mathcal{P}})\bunderline{\mathcal{D}}\bunderline{\mathcal{B}}\vec{\mathbf{u}}dx=0
+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{M}}\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{G}}\dot{\vec{\mathbf{u}}}+\int_0^l\delta\vec{\mathbf{u}}^\T(\frac{\partial}{\partial x}\bunderline[2]{\mathbf{I}}-\bunderline{\mathcal{P}})\bunderline{\mathcal{D}}\bunderline{\mathcal{B}}\vec{\mathbf{u}}dx=0
 \end{equation}
 \begin{equation}\label{key}
 \def\cs{1.5em}
@@ -396,16 +407,21 @@ integration by parts on the third term and replacing $ \underline{\mathcal{S}} $
 \end{array}\right]
 \end{equation}
 Notice that $ \frac{\partial}{\partial x}\bunderline{I}-\bunderline{\mathcal{P}}=\bunderline{\mathcal{B}}^\T $ so the equation of motion becomes
-\begin{equation}\label{eq:EqauationOfMotionVirtual}
+\begin{equation}\label{eq:EquationOfMotionVirtual}
 \int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{M}}\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathfrak{G}}\dot{\vec{\mathbf{u}}}+\int_0^l\delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{B}}^\T\bunderline{\mathcal{D}}\bunderline{\mathcal{B}}\vec{\mathbf{u}}dx=0
 \end{equation}
-Now the solution of this differential system motivates a separation of variables.
+Now the solution of this differential system motivates a separation of variables that will be discussed in the next section.
 \subsection{Shape Functions}
 The displacements thus far have been assumed to be functions of both position and time. Now the total displacement is seperated into functions that depend on time and functions that depend on position. This is a fundamental part of the discretization of the beam element, and the use the finite element method. 
 \begin{equation} \label{eq:FEGoverning}
-\vec{\mathbf{u}}(x,t)=\bunderline{\mathbf{N}}(x)\vec{\mathbf{q}}(t)
+\left\{\begin{array}{rl}
+\vec{\mathbf{u}}(x,t)&=\bunderline{\mathbf{N}}(x)\vec{\mathbf{q}}(t)\\
+\dot{\vec{\mathbf{u}}}(x,t)&=\bunderline{\mathbf{N}}(x)\dot{\vec{\mathbf{q}}}(t)\\
+\ddot{\vec{\mathbf{u}}}(x,t)&=\bunderline{\mathbf{N}}(x)\ddot{\vec{\mathbf{q}}}(t)\\
+\delta\vec{\mathbf{u}}(x,t)&=\bunderline{\mathbf{N}}(x)\delta\vec{\mathbf{q}}(t)
+\end{array}\right.
 \end{equation}
-
+where, $ \vec{\mathbf{q}}=[v_1,w_1,\psi_1,\theta_1,v_2,w_2,\psi_2,\theta_2,u_1,\phi_1,u_2,\phi_2]^\T $. The specfic order of $ \vec{\mathbf{q}} $ is chosen with $ u $ and $ \phi $ at the end to ease the condensation of the axial and torsional degrees of freedom. The shape functions $ \bunderline{\mathbf{N}}(x) $ must solve the static portion of the differential equations \ref{eq:EquationsOfMotionIndependent}.
 %\begin{subequations}\label{eq:EulerLagrangianEquations}
 %	\begin{empheq}[left={\empheqlbrace\,}]{align}
 %	&EAu''=0 \label{eq:EulerLagrangianAxial}\\
@@ -417,7 +433,7 @@ The displacements thus far have been assumed to be functions of both position an
 %	\end{empheq}
 %\end{subequations}
 %These are the governing differential equations for a Timoshenko beam element.
-\subsection{Timoshenko Beam Finite Element}
+
 \begin{figure}
 	\centering
 	\def\svgwidth{400pt}
@@ -425,25 +441,25 @@ The displacements thus far have been assumed to be functions of both position an
 	\caption{Beam Element with nodal displacements.}
 	\label{fig:BeamElem}
 \end{figure}
-Beam element is discretized into nodal displacements and rotations at the ends of a beam element. These nodal degrees of freedom, depicted in Figure \ref{fig:BeamElem} are used as points to interpolate between using polynomial functions that satisfy the boundary conditions. Functions used to interpolate are listed in Equation \ref{eq:DisplacementInterpolationFunctionsChosen}. axial displacement, $ u $, and torsional rotation, $ \phi $ are independent, so their interpolation functions are chosen as polynomials that satisfy the differential equation. Conversely, transverse displacements, $ v $ \& $ w $, and bending rotations, $ \psi $ \& $ \theta $ are coupled. Polynomial functions are chosen for $ v $ \& $ w $ and their rotational counterparts are derived using the differential relations.
+These shape functions are chosen as a polynomials that satisfy the boundary nodal displacements and rotations at the ends of a beam element. These nodal degrees of freedom, depicted in Figure \ref{fig:BeamElem} are considered to be interpolated through the beam element by the shape functions. Interpolation functions chosen are listed in Equation \ref{eq:DisplacementInterpolationFunctionsChosen}. Axial displacement, $ u $, and torsional rotation, $ \phi $ are independent, so their shape functions are chosen as polynomials that satisfy the differential equation. Conversely, transverse displacements, $ v $ \& $ w $, and bending rotations, $ \psi $ \& $ \theta $ are coupled. Polynomial functions are chosen for $ v $ \& $ w $ and their rotational counterparts are derived using the differential relations.
 \begin{subequations}\label{eq:DisplacementInterpolationFunctionsChosen}
 \begin{empheq}[left={\empheqlbrace\,}]{align}
-&u=c_1+c_2x \label{eq:AxialInterpolationFunction}\\
-&v=c_3+c_4x+c_5x^2+c_6x^3 \label{eq:TransverseyInterpolationFunction}\\ 
-&w=c_7+c_8x+c_9x^2+c_{10}x^3 \label{eq:TransversezInterpolationFunction}\\
-&\phi=c_{11}+c_{12}x \label{eq:TorsionInterpolationFunction}
+u&=c_1+c_2x \label{eq:AxialInterpolationFunction}\\
+v&=c_3+c_4x+c_5x^2+c_6x^3 \label{eq:TransverseyInterpolationFunction}\\ 
+w&=c_7+c_8x+c_9x^2+c_{10}x^3 \label{eq:TransversezInterpolationFunction}\\
+\phi&=c_{11}+c_{12}x \label{eq:TorsionInterpolationFunction}
 \end{empheq}
 \end{subequations}
-Using polynomial definition of transverse displacement of equations \ref{eq:TransverseyInterpolationFunction} \& \ref{eq:TransversezInterpolationFunction} in the differential equations \ref{eq:EulerLagrangianBendingy}, \ref{eq:EulerLagrangianBendingz}, \ref{eq:EulerLagrangianSheary}, \ref{eq:EulerLagrangianShearz} the interpolation functions of bending rotations are derived as:
+Using polynomial definition of transverse displacement of equations \ref{eq:TransverseyInterpolationFunction} \& \ref{eq:TransversezInterpolationFunction} in the differential equations \ref{eq:EquationsOfMotionIndependent_v}, \ref{eq:EquationsOfMotionIndependent_w}, \ref{eq:EquationsOfMotionIndependent_psi}, \ref{eq:EquationsOfMotionIndependent_theta} the interpolation functions of bending rotations are derived as:
 \begin{subequations}\label{eq:DisplacmentInterpolationFunctionsDerived}
 \begin{empheq}[left={\empheqlbrace\,}]{align}
-&\psi=K_yc_{10}-c_8-2c_9x-3c_{10}x^2 \label{eq:RotationyInterpolationFunction}\\
-&\theta=K_zc_6+c_4+2c_5x+3c_{6}x^2 \label{eq:RotationzInterpolationFunction}
+\psi&=K_yc_{10}-c_8-2c_9x-3c_{10}x^2 \label{eq:RotationyInterpolationFunction}\\
+\theta&=K_zc_6+c_4+2c_5x+3c_{6}x^2 \label{eq:RotationzInterpolationFunction}
 \end{empheq}
 \end{subequations}
 where, $ K_y=\frac{6EI_y}{\kappa GA} $\& $ K_z=\frac{6EI_z}{\kappa GA} $
 \subsection{Boundary Conditions}
-Boundary conditions for the interpolation polynomials of equations \ref{eq:DisplacementInterpolationFunctionsChosen} \& \ref{eq:DisplacmentInterpolationFunctionsDerived} are arbitrarily defined as $ u_j=u(x_j) $ and similarily for other degrees of freedom. Where, $ j=1,2 $ and defines the two states. In this derivation, $ x_1=0 $ and $ x_2=l $. Application of these boundary condition results in this relation between the polynomial constants and the boundary conditions.
+Boundary conditions for the interpolation polynomials of equations \ref{eq:DisplacementInterpolationFunctionsChosen} \& \ref{eq:DisplacmentInterpolationFunctionsDerived} are defined as the components of the vector $ \vec{\mathbf{q}} $$ u_j=u(x_j) $ and similarily for other degrees of freedom. Where, $ j=1,2 $ and defines the two states. In this derivation, $ x_1=0 $ and $ x_2=l $. Application of these boundary condition results in this relation between the polynomial constants and the boundary conditions.
 \begin{equation}\label{DisplacementInterpolationBoundaryMatrix}
 \def\cs{4em}
 \newcommand{\WidestEntry}{$\scriptstyle K_y\!-\!3l^2$}%
@@ -484,13 +500,45 @@ with;
 \left\{\arraycolsep=.2em\begin{array}{@{}ll}
 N_1=1-\zeta&N_2=\zeta\\
 T_{v_1}=\frac{1}{1+\alpha_z}(2\zeta^3-3\zeta^2-\alpha_z\zeta+1+\alpha_z)&T_{v_2}=\frac{1}{1+\alpha_z}(-2\zeta^3+3\zeta^2+\alpha_z\zeta)\\
-T_{\theta_1}=\frac{l}{1+\alpha_z}[\zeta^3-\zeta^2(2+\frac{1}{2}\alpha_z)+(1+\frac{1}{2}\alpha_z)\zeta]&T_{\theta_2}=\frac{l}{1+\alpha_z}[\zeta^3-(1-\frac{1}{2}\alpha_z)\zeta^2-\frac{1}{2}\alpha_z\zeta]\\
+T_{\theta_1}=\frac{l}{1+\alpha_z}[\zeta^3-(2+\frac{1}{2}\alpha_z)\zeta^2+(1+\frac{1}{2}\alpha_z)\zeta]&T_{\theta_2}=\frac{l}{1+\alpha_z}[\zeta^3-(1-\frac{1}{2}\alpha_z)\zeta^2-\frac{1}{2}\alpha_z\zeta]\\
 T_{w_1}=\frac{1}{1+\alpha_y}(2\zeta^3-3\zeta^2-\alpha_y\zeta+1+\alpha_y)&T_{w_2}=\frac{1}{1+\alpha_y}(-2\zeta^3+3\zeta^2+\alpha_y\zeta)\\
 T_{\psi_1}=\frac{l}{1+\alpha_y}[-\zeta^3+(2+\frac{1}{2}\alpha_y)\zeta^2-(1+\frac{1}{2}\alpha_y)\zeta]&T_{\psi_2}=\frac{l}{1+\alpha_y}(-\zeta^3+(1-\frac{1}{2}\alpha_y)\zeta^2+\frac{1}{2}\alpha_y\zeta)\\
 R_{w_1}=\frac{6/l}{1+\alpha_y}(-\zeta^2+\zeta)&R_{w_2}=\frac{6/l}{1+\alpha_y}(\zeta^2-\zeta)\\
-R_{\psi_1}=\frac{1}{1+\alpha_y}(3\zeta^2-(4+\alpha_y)\zeta+1+\alpha_y)&R_{\psi_2}=\frac{1}{1+\alpha_y}(3\zeta^2-(2-\alpha_y)\zeta+1+\alpha_y)\\
+R_{\psi_1}=\frac{1}{1+\alpha_y}(3\zeta^2-(4+\alpha_y)\zeta+1+\alpha_y)&R_{\psi_2}=\frac{1}{1+\alpha_y}(3\zeta^2-(2-\alpha_y)\zeta)\\
 R_{v_1}=\frac{6/l}{1+\alpha_z}(\zeta^2-\zeta)&R_{v_2}=\frac{6/l}{1+\alpha_z}(-\zeta^2+\zeta)\\
-R_{\theta_1}=\frac{1}{1+\alpha_z}(\zeta^3+3\zeta^2-(4+\alpha_z)\zeta+\alpha_z)&R_{\theta_2}=\frac{1}{1+\alpha_z}(3\zeta^2-(2-\alpha_z)\zeta)
+R_{\theta_1}=\frac{1}{1+\alpha_z}(3\zeta^2-(4+\alpha_z)\zeta+1+\alpha_z)&R_{\theta_2}=\frac{1}{1+\alpha_z}(3\zeta^2-(2-\alpha_z)\zeta)
 \end{array}\right.
 \end{equation*}
-where, $ \alpha_y=2K_y/l^2=\frac{12EI_y}{\kappa GAl^2} $, $ \alpha_z=2K_z/l^2=\frac{12EI_z}{\kappa GAl^2} $, \& $ \zeta=x/l $
+where, $ \alpha_y=2K_y/l^2=\frac{12EI_y}{\kappa GAl^2} $, $ \alpha_z=2K_z/l^2=\frac{12EI_z}{\kappa GAl^2} $, \& $ \zeta=x/l $.
+\ref{eq:InterpolationFunctions} is expressed in matrix form as it appears in \ref{eq:FEGoverning} where
+\begin{equation}\label{ShapeFunctionMatrix}
+\bunderline{\mathbf{N}}(x)=\left[\begin{array}{cccccccccccc}
+T_{v_1}&0&0&T_{\theta_1}&T_{v_2}&0&0&T_{\theta_2}&0&0&0&0\\
+0&T_{w_1}&T_{\psi_1}&0&0&T_{w_2}&T_{\psi_2}&0&0&0&0&0\\
+0&R_{w_1}&R_{\psi_1}&0&0&R_{w_2}&R_{\psi_2}&0&0&0&0&0\\
+R_{v_1}&0&0&R_{\theta_1}&R_{v_2}&0&0&R_{\theta_2}&0&0&0&0\\
+0&0&0&0&0&0&0&0&N_1&0&N_2&0\\
+0&0&0&0&0&0&0&0&0&N_1&0&N_2
+\end{array}\right]
+\end{equation}
+\subsection{Beam Equations}
+Substitute \ref{eq:FEGoverning} into \ref{eq:EquationOfMotionVirtual}
+\begin{equation}\label{key}
+\int_0^l \bunderline{\mathbf{N}}^\T\delta\vec{\mathbf{q}}^\T\bunderline{\mathfrak{M}}\bunderline{\mathbf{N}}\ddot{\vec{\mathbf{q}}}dx+\int_0^l \bunderline{\mathbf{N}}^\T\delta\vec{\mathbf{q}}^\T\bunderline{\mathfrak{G}}\bunderline{\mathbf{N}}\dot{\vec{\mathbf{q}}}dx+\int_0^l\bunderline{\mathbf{N}}^\T\delta\vec{\mathbf{q}}^\T\bunderline{\mathcal{B}}^\T\bunderline{\mathcal{D}}\bunderline{\mathcal{B}}\bunderline{\mathbf{N}}\vec{\mathbf{q}}dx=0
+\end{equation}
+note that now $ \vec{\mathbf{q}} $ is not dependent on x so it, and it's derivatives, may be pulled out of the integral. Also, a substitution of $ \bunderline{\mathbf{B}}=\bunderline{\mathcal{B}}\bunderline{\mathbf{N}} $ is made leading to the differential equation
+\begin{equation}\label{eq:GoverningDifferentialEquationDiscrete}
+\int_0^l \bunderline{\mathbf{N}}^\T\bunderline{\mathfrak{M}}\bunderline{\mathbf{N}}dx\ddot{\vec{\mathbf{q}}}+\int_0^l \bunderline{\mathbf{N}}^\T\bunderline{\mathfrak{G}}\bunderline{\mathbf{N}}dx\dot{\vec{\mathbf{q}}}+\int_0^l\bunderline{\mathbf{B}}^\T\bunderline{\mathcal{D}}\bunderline{\mathbf{B}}dx\vec{\mathbf{q}}=0
+\end{equation}
+Define 
+\begin{subequations}\label{key}
+\begin{empheq}[left={\empheqlbrace\,}]{align}
+\bunderline{\mathbf{M}}&=\int_0^l \bunderline{\mathbf{N}}^\T\bunderline{\mathfrak{M}}\bunderline{\mathbf{N}}dx\label{eq:ConsistentMassMatrix}\\
+\bunderline{\mathbf{G}}&=\int_0^l \bunderline{\mathbf{N}}^\T\bunderline{\mathfrak{G}}\bunderline{\mathbf{N}}dx\label{eq:ConsistentGyroMatrix}\\
+\bunderline{\mathbf{K}}&=\int_0^l\bunderline{\mathbf{B}}^\T\bunderline{\mathcal{D}}\bunderline{\mathbf{B}}dx\label{eq:ConsistentStiffnessMatrix}
+\end{empheq}
+\end{subequations}
+So that, the general equations of motion for the timoshenko beam element are
+\begin{equation}\label{eq:EquationsOfMotionTimoElementGeneral}
+\bunderline{\mathbf{M}}\ddot{\vec{\mathbf{q}}}+\bunderline{\mathbf{G}}\dot{\vec{\mathbf{q}}}+\bunderline{\mathbf{K}}\vec{\mathbf{q}}=0
+\end{equation}
