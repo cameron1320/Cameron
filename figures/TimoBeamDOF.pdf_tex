@@ -35,8 +35,10 @@
     \renewcommand\transparent[1]{}%
   }%
   \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{115.28258181bp}%
+    \setlength{\unitlength}{116.03257172bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,19 +50,21 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.66589332)%
+  \begin{picture}(1,0.66158924)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{TimoBeamDOF.pdf}}%
-    \put(0.70897431,0.15802167){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$u(x)$}}}%
-    \put(0.32080132,0.28608118){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$x$}}}%
-    \put(0.61094375,0.24351371){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\phi(x)$}}}%
-    \put(0.56779776,0.13920996){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$\theta(x)$}}}%
-    \put(0.54175625,0.36662319){\color[rgb]{0,0,0}\makebox(0,0)[rb]{\smash{$v(x)$}}}%
-    \put(0.39367325,0.1113161){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$w(x)$}}}%
-    \put(0.6000084,0.33532831){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\psi(x)$}}}%
+    \put(0.71085539,0.15215243){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u(x,t)$\end{tabular}}}}%
+    \put(0.32519139,0.28423206){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$x$\end{tabular}}}}%
+    \put(0.66355213,0.23709197){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi(x,t)$\end{tabular}}}}%
+    \put(0.39122257,0.19486755){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$\theta(x,t)$\end{tabular}}}}%
+    \put(0.54956564,0.43373841){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$v(x,t)$\end{tabular}}}}%
+    \put(0.39112832,0.11544445){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$w(x,t)$\end{tabular}}}}%
+    \put(0.60259379,0.33316087){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\psi(x,t)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{TimoBeamDOF.pdf}}%
-    \put(0.96320346,0.004528){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$x$}}}%
-    \put(0.22448374,0.62805586){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$y$}}}%
-    \put(0.03527053,0.31351288){\color[rgb]{0,0,0}\makebox(0,0)[b]{\smash{$z$}}}%
+    \put(0.9634413,0.00449874){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$x$\end{tabular}}}}%
+    \put(0.22949638,0.62399635){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$y$\end{tabular}}}}%
+    \put(0.03504256,0.31471835){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$z$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{TimoBeamDOF.pdf}}%
   \end{picture}%
 \endgroup%

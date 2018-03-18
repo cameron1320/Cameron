@@ -15,7 +15,7 @@
    viewBox="0 0 279.4 215.9"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="TimoBeamDOF.svg">
   <defs
      id="defs2">
@@ -634,7 +634,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="4"
-     inkscape:cx="455.66262"
+     inkscape:cx="454.91262"
      inkscape:cy="528.41022"
      inkscape:document-units="mm"
      inkscape:current-layer="layer3"
@@ -672,7 +672,7 @@
      style="display:inline">
     <path
        style="opacity:0.58200001;fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker230070);marker-end:url(#marker230128)"
-       d="M 116.91343,169.5 V 132"
+       d="m 116.91343,169.5 0,-22.5"
        id="path5091"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -680,13 +680,13 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="use5583"
-       d="m 103.92305,147 41.56923,23.99999"
+       d="m 110.41824,150.75 35.07404,20.24999"
        style="opacity:0.58200001;fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker230188);marker-end:url(#marker230246)" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="use6305"
-       d="M 142.89419,139.5 103.92305,162"
+       d="m 123.40862,150.75 -12.99038,7.5"
        style="opacity:0.58200001;fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker226370);marker-end:url(#marker226424)" />
   </g>
   <g
@@ -696,7 +696,7 @@
      style="display:inline">
     <circle
        transform="matrix(0.96592583,-0.25881905,-0.25881905,0.96592583,0,0)"
-       style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.19218934;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.48426464;stroke-opacity:1"
+       style="display:inline;opacity:0.461;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.19218934;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.48426464;stroke-opacity:1"
        id="path28034"
        cx="168.99014"
        cy="128.57816"
@@ -709,12 +709,12 @@
     <text
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;stroke-width:0.26458332"
        x="136.6154"
-       y="84.343864"
+       y="84.542305"
        font-size="12px"
        id="text11928-6">
       <tspan
          id="tspan11926-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">$u(x)$</tspan>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">$u(x,t)$</tspan>
     </text>
     <text
        xml:space="preserve"
@@ -730,7 +730,7 @@
     <switch
        style="display:inline"
        id="switch11964-8"
-       transform="matrix(0.26458333,0,0,0.26458333,161.59005,37.317706)">
+       transform="matrix(0.26458333,0,0,0.26458333,164.76505,37.648435)">
       <foreignObject
          style="overflow:visible;"
          pointer-events="all"
@@ -751,7 +751,7 @@
          id="text11942-0">
         <tspan
            id="tspan11940-92"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">$\phi(x)$</tspan>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">$\phi(x,t)$</tspan>
       </text>
       <ellipse
          ry="42.931484"
@@ -831,7 +831,7 @@
     <g
        style="display:inline"
        id="g11988-2"
-       transform="matrix(0.26458333,0,0,0.26458333,117.00835,77.643355)">
+       transform="matrix(0.26458333,0,0,0.26458333,110.85676,79.230855)">
       <switch
          id="switch11986-0">
         <foreignObject
@@ -854,7 +854,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#000000">
           <tspan
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end"
-             id="tspan11968-6">$\theta(x)$</tspan>
+             id="tspan11968-6">$\theta(x,t)$</tspan>
         </text>
         <ellipse
            id="ellipse11972-2"
@@ -903,24 +903,24 @@
     <text
        id="text12145-9"
        font-size="12px"
-       y="75.661781"
-       x="129.48405"
+       y="73.015945"
+       x="130.01321"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;display:inline;fill:#000000;stroke-width:0.26458332">
       <tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;stroke-width:0.26458332"
-         id="tspan12143-8">$v(x)$</tspan>
+         id="tspan12143-8">$v(x,t)$</tspan>
     </text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="123.79238"
-       y="85.714172"
+       x="123.52779"
+       y="86.044899"
        id="text55704"><tspan
          sodipodi:role="line"
          id="tspan55702"
-         x="123.79238"
-         y="85.714172"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332">$w(x)$</tspan></text>
+         x="123.52779"
+         y="86.044899"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332">$w(x,t)$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -931,7 +931,7 @@
          id="tspan55728"
          x="132.18385"
          y="77.132957"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">$\psi(x)$</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">$\psi(x,t)$</tspan></text>
     <path
        sodipodi:nodetypes="cc"
        id="use18602"
@@ -1015,23 +1015,23 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="116.91159"
-       y="50.477463"
+       y="65.227982"
        id="text17862-7"><tspan
          sodipodi:role="line"
          id="tspan17860-5"
          x="116.91159"
-         y="50.477463"
+         y="65.227982"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332">$y$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="102.33728"
-       y="81.525902"
+       x="108.95187"
+       y="77.887878"
        id="text17862-35"><tspan
          sodipodi:role="line"
          id="tspan17860-62"
-         x="102.33728"
-         y="81.525902"
+         x="108.95187"
+         y="77.887878"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11666656px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332">$z$</tspan></text>
   </g>
   <g

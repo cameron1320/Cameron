@@ -13,3 +13,20 @@ Now reference an eqn about linear algebra: \eqref{eq:Linear Algebra}.
 \underline{A}\vec{x}=\underline{B}
 \end{equation}
 \lstinputlisting[language=Matlab]{code/Add.m}
+% Matlab Figure%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	
+	\tikzset{every picture/.style={scale=.8}}%
+	\centering
+	\import{figures/}{test1.tex}
+	\caption{Free body diagram of a beam section in planar bending.}
+	\label{fig:test1}
+\end{figure}
+% Inkscape Figure%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\def\svgwidth{400pt}
+	\import{figures/}{BeamElement.pdf_tex}
+	\caption{Beam Element with nodal displacements.}
+	\label{fig:BeamElem}
+\end{figure}
