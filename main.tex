@@ -31,13 +31,18 @@
 \usepackage{import}
 \usepackage{pgfplots}
 \usepackage{euscript}[mathcal]
+\usepackage{siunitx}
 %\usepackage{showframe}
 
 \usetikzlibrary{plotmarks}
+\usetikzlibrary{backgrounds}
+\tikzset{every picture/.style={/utils/exec={\normalfont}}}
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 \newcommand{\volume}{{\ooalign{\hfil$V$\hfil\cr\kern0.08em--\hfil\cr}}}
 \newcommand{\T}{\textbf{{\tiny \textsf{T}}}}
 \newcommand{\bunderline}[2][4]{\underline{#2\mkern-#1mu}\mkern#1mu }
+\newcommand{\vect}[1]{\vec{\mathbf{#1}}}
+\newcommand{\mat}[1]{\bunderline{\mathbf{#1}}}
 \makeindex
 \makeglossaries
 \graphicspath{{./figures/}}

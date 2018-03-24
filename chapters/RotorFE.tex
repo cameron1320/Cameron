@@ -55,7 +55,7 @@ Using linearized moment equation \eqref{eq:moment_curvature_partial}, combined w
 \frac{\partial^2}{\partial x^2} \left(EI\frac{\partial^2 v}{\partial x^2}\right) = -\rho A\frac{\partial^2 v}{\partial t^2}
 \end{equation}
 This is the governing differential equation for transverse motion of a slender beam. This equation is not suitable for an application involving lengths that are not much greater than the width of the beam \cite{genta2007dynamics}.
-\sectionbreak
+
 \subsection{Timoshenko Beam Finite Element} \label{Timoshenko Beam Finite Element}
 The Timoshenko beam element allows for the beam cross section plane at any axis location to differ from normal with the axis of the beam. In other words, the element allows for shear stresses. This element often also includes the effects of rotary inertia and gyroscopic moments, as it will in this derivation. Generalized displacements used are assumed to be variable in both time and space. The element has six degrees of freedom. Three translation and three rotations all defined on the beam axis. So then all displacements are functions of time, $ t $, and the axial spacial coordinate, $ x $.
 \subsubsection{Kinematic Relationships} \label{Kinematic Relationships}
@@ -333,7 +333,7 @@ EI_z\theta''+\kappa GA(v'-\theta)&=\rho I_z\ddot{\theta}-\rho J_x\Omega\dot{\psi
 \end{subequations}
 In matrix form, this system of equations can be represented by this equation
 \begin{equation}\label{key}
-\bunderline{\mathcal{M}}^e\ddot{\vec{\mathbf{u}}}+\Omega\bunderline{\mathcal{G}}^e\dot{\vec{\mathbf{u}}}-\left(\frac{\partial}{\partial x}\bunderline{\mathcal{S}}^e-\bunderline{\mathcal{P}}^e\bunderline{\mathcal{S}}^e\right)\vec{\mathbf{u}}=0
+\bunderline{\mathcal{M}}^e\ddot{\vec{\mathbf{u}}}+\Omega\bunderline{\mathcal{G}}^e\dot{\vec{\mathbf{u}}}-\left(\frac{\partial ()}{\partial x}\bunderline{\mathcal{S}}^e-\bunderline{\mathcal{P}}^e\bunderline{\mathcal{S}}^e\right)\vec{\mathbf{u}}=0
 \end{equation}
 where,
 \begin{equation}\label{key}
@@ -365,22 +365,22 @@ where,
 0&0&0&0&0&0\\
 0&0&0&0&0&0
 \end{array}\right]&\bunderline{\mathcal{S}}^e&=\!\left[\def\arraystretch{.8}\arraycolsep=-1pt\begin{array}{@{}cccccc@{}}
-\makebox[\csn]{$\kappa GA \frac{\partial}{\partial x}$}&\makebox[\csn]{0}&\makebox[\csn]{0}&\makebox[\csn]{$-\kappa G A$}&\makebox[\csn]{0}&\makebox[\csn]{0}\\
-0&\kappa GA\frac{\partial}{\partial x}&\kappa GA&0&0&0\\
-0&0&EI_y\frac{\partial}{\partial x}&0&0&0\\
-0&0&0&EI_z\frac{\partial}{\partial x}&0&0\\
-0&0&0&0&EA\frac{\partial}{\partial x}&0\\
-0&0&0&0&0&\kappa GJ_x\frac{\partial}{\partial x}
+\makebox[\csn]{$\kappa GA \frac{\partial ()}{\partial x}$}&\makebox[\csn]{0}&\makebox[\csn]{0}&\makebox[\csn]{$-\kappa G A$}&\makebox[\csn]{0}&\makebox[\csn]{0}\\
+0&\kappa GA\frac{\partial ()}{\partial x}&\kappa GA&0&0&0\\
+0&0&EI_y\frac{\partial ()}{\partial x}&0&0&0\\
+0&0&0&EI_z\frac{\partial ()}{\partial x}&0&0\\
+0&0&0&0&EA\frac{\partial ()}{\partial x}&0\\
+0&0&0&0&0&\kappa GJ_x\frac{\partial ()}{\partial x}
 \end{array}\right]
 \end{array}\right.
 \end{equation}
 and $ \vec{\mathbf{u}}=[v,w,\psi,\theta,u,\phi]^{\T} $ The principle of virtual displacements is utilized on the equations of motion to obtain the weak for of the equations of motion and integrated over the length of the beam.
 \begin{equation}\label{eq:BeamDiffEquationVirtualStart}
-\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{M}}^e\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\Omega\bunderline{\mathcal{G}}^e\dot{\vec{\mathbf{u}}}-\int_0^l\delta\vec{\mathbf{u}}^\T\frac{\partial}{\partial x}\bunderline{\mathcal{S}}^e\vec{\mathbf{u}}dx+\int_0^l\delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{P}}\bunderline{\mathcal{S}}^e\vec{\mathbf{u}}dx=0
+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{M}}^e\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\Omega\bunderline{\mathcal{G}}^e\dot{\vec{\mathbf{u}}}-\int_0^l\delta\vec{\mathbf{u}}^\T\frac{\partial ()}{\partial x}\bunderline{\mathcal{S}}^e\vec{\mathbf{u}}dx+\int_0^l\delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{P}}\bunderline{\mathcal{S}}^e\vec{\mathbf{u}}dx=0
 \end{equation}
-integration by parts on the third term and replacing $ \underline{\mathcal{S}} $ with $ \bunderline{\mathcal{D}}^e\bunderline{\mathcal{B}} $, and making use of the Identity matrix, $ \bunderline[2]{\mathbf{I}} $
+integration by parts on the third term and replacing $ \underline{\mathcal{S}} $ with $ \bunderline{\mathcal{D}}^e\bunderline{\mathcal{B}} $, and making use of the Identity matrix, $ \bunderline[2]{\mathbf{I}} $ where $ \frac{\partial()}{\partial x}\bunderline{\mathbf{I}} $ is interpreted here as if the partial was a scalar
 \begin{equation}\label{key}
-\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{M}}^e\ddot{\vec{\mathbf{u}}}dx+\Omega\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{G}}^e\dot{\vec{\mathbf{u}}}+\int_0^l\delta\vec{\mathbf{u}}^\T(\frac{\partial}{\partial x}\bunderline[2]{\mathbf{I}}+\bunderline{\mathcal{P}})\bunderline{\mathcal{D}}^e\bunderline{\mathcal{B}}\vec{\mathbf{u}}dx=0
+\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{M}}^e\ddot{\vec{\mathbf{u}}}dx+\Omega\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{G}}^e\dot{\vec{\mathbf{u}}}+\int_0^l\delta\vec{\mathbf{u}}^\T\left(\frac{\partial ()}{\partial x}\bunderline[2]{\mathbf{I}}+\bunderline{\mathcal{P}}\right)\bunderline{\mathcal{D}}^e\bunderline{\mathcal{B}}\vec{\mathbf{u}}dx=0
 \end{equation}
 \begin{equation}\label{key}
 \def\cs{1.5em}
@@ -392,15 +392,15 @@ integration by parts on the third term and replacing $ \underline{\mathcal{S}} $
 0&0&0&0&EA&0\\
 0&0&0&0&0&\kappa GJ_x
 \end{array}\right] \&\quad \bunderline{\mathcal{B}}=\left[\def\arraystretch{.8}\arraycolsep=1.8pt\begin{array}{cccccc}
-\makebox[\cs]{$\frac{\partial}{\partial x}$}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{-1}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
-0&\frac{\partial}{\partial x}&1&0&0&0\\
-0&0&\frac{\partial}{\partial x}&0&0&0\\
-0&0&0&\frac{\partial}{\partial x}&0&0\\
-0&0&0&0&\frac{\partial}{\partial x}&0\\
-0&0&0&0&0&\frac{\partial}{\partial x}
+\makebox[\cs]{$\frac{\partial ()}{\partial x}$}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{-1}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
+0&\frac{\partial ()}{\partial x}&1&0&0&0\\
+0&0&\frac{\partial ()}{\partial x}&0&0&0\\
+0&0&0&\frac{\partial ()}{\partial x}&0&0\\
+0&0&0&0&\frac{\partial ()}{\partial x}&0\\
+0&0&0&0&0&\frac{\partial ()}{\partial x}
 \end{array}\right]
 \end{equation}
-Notice that $ \frac{\partial}{\partial x}\bunderline{I}+\bunderline{\mathcal{P}}=\bunderline{\mathcal{B}}^\T $ so the equation of motion becomes
+Notice that $ \frac{\partial ()}{\partial x}\bunderline{I}+\bunderline{\mathcal{P}}=\bunderline{\mathcal{B}}^\T $ so the equation of motion becomes
 \begin{equation}\label{eq:EquationOfMotionVirtual}
 \int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{M}}^e\ddot{\vec{\mathbf{u}}}dx+\Omega\int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{G}}^e\dot{\vec{\mathbf{u}}}+\int_0^l\delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{B}}^\T\bunderline{\mathcal{D}}^e\bunderline{\mathcal{B}}\vec{\mathbf{u}}dx=0
 \end{equation}
@@ -724,7 +724,7 @@ the superscript $ d $ represents that the matrix or array is for a disk, and the
 \bunderline{\mathbf{M}}^d & =\!\left[\def\arraystretch{.8}\arraycolsep=-.5em\begin{array}{cccccc}
 \makebox[\cs]{$\rho Al$}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
 0&\rho Al&0&0&0&0\\
-0&0&-\rho I_{z}&0&0&0\\
+0&0&\rho I_{z}&0&0&0\\
 0&0&0&\rho I_{y}&0&0\\
 0&0&0&0&\rho Al&0\\
 0&0&0&0&0&\rho J_x
@@ -732,7 +732,7 @@ the superscript $ d $ represents that the matrix or array is for a disk, and the
 \makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}&\makebox[\cs]{0}\\
 0&0&0&0&0&0\\
 0&0&0&\rho J_x&0&0\\
-0&0&\rho J_x&0&0&0\\
+0&0&-\rho J_x&0&0&0\\
 0&0&0&0&0&0\\
 0&0&0&0&0&0
 \end{array}\right]\\
@@ -741,7 +741,7 @@ the superscript $ d $ represents that the matrix or array is for a disk, and the
 \vec{\mathbf{F}}^d=\left\{\def\arraystretch{.8}\begin{array}{c}
 \rho Al\epsilon\cos(\Omega t + \delta_\varepsilon)\\
 \rho Al\epsilon\sin(\Omega t + \delta_\varepsilon)\\
-\rho( I_y-J_x)\chi\sin(\Omega t)\\
+-\rho( I_y-J_x)\chi\sin(\Omega t)\\
 \rho( I_z-J_x)\chi\cos(\Omega t)\\
 0\\
 0
@@ -760,7 +760,7 @@ the superscript $ d $ represents that the matrix or array is for a disk, and the
  \subsection{Disk in complex coordinates} \label{Disk in complex coordinates}
  Disk equations of motion \eqref{eq:DiskNodeEquationofMotion} are converted to the complex plane in the same manner the beam element was derived in \S\ref{Beam Element in Complex Coordinates}
  \begin{equation}\label{eq:DiskNodeEquationofMotionComplex}
- \bunderline{\mathbf{M}}^{dc}\ddot{\vec{\mathbf{q}}}^c_k-i\Omega\bunderline{\mathbf{G}}^{dc}\dot{\vec{\mathbf{q}}}^c_k=\Omega^2\vec{\mathbf{F}}^{dc}e^{i\Omega t}
+ \bunderline{\mathbf{M}}^{dc}\ddot{\vec{\mathbf{q}}}^c_k-i\Omega\bunderline{\mathbf{G}}^{dc}\dot{\vec{\mathbf{q}}}^c_k=\Omega^2\vec{\mathbf{F}}^{dc}
  \end{equation}
  where,
  \begin{equation*}
@@ -773,8 +773,8 @@ the superscript $ d $ represents that the matrix or array is for a disk, and the
  0&\rho J_x
  \end{array}\right],\quad
  \vec{\mathbf{F}}^{dc}=\left\{\begin{array}{c}
- \rho A l \epsilon e^{i\delta_\epsilon}\\
- \rho(I-J_x)\chi
+ \rho A l \epsilon e^{i\delta_\epsilon}e^{i\Omega t}\\
+ \rho(I-J_x)\chi e^{i\Omega t}
  \end{array}\right\}
  \end{equation*}
 %\lstinputlisting[language=Matlab]{code/DiskMass.m}
@@ -819,48 +819,206 @@ $ k $ is the isotropic bearing stiffness. It is possible to define the complex s
 The matrices in the global system of equations are determined using the direct approach of taking the summation of the inertia, damping, stiffness, or force at each degree of freedom.
 \subsection{In the Real Coordinate System}
 \begin{equation}\label{eq:GlobalSystemofEquationsReal}
-\bunderline{\mathbf{M}}\ddot{\vec{\mathbf{q}}}+\bunderline{\mathbf{G}}\dot{\vec{\mathbf{q}}}+\bunderline{\mathbf{K}}\vec{\mathbf{q}}=\Omega^2\bunderline{\mathbf{F}}e^{i\Omega t}
+\bunderline{\mathbf{M}}\ddot{\vec{\mathbf{q}}}+\bunderline{\mathbf{G}}\dot{\vec{\mathbf{q}}}+\bunderline{\mathbf{K}}\vec{\mathbf{q}}=\Omega^2\vec{\mathbf{F}}
 \end{equation}
 Each summation is defined as 
 \begin{equation*}
 \left\{\begin{array}{rlrl}
 \bunderline{\mathbf{M}}&=\bunderline{\mathbf{M}}^e_G+\bunderline{\mathbf{M}}^b_G+\bunderline{\mathbf{M}}^d_G&\bunderline{\mathbf{D}}&=\eta_v\bunderline{\mathbf{K}}^e_G+\Omega\bunderline{\mathbf{G}}^e_G+\Omega\bunderline{\mathbf{G}}^d_G+\bunderline{\mathbf{D}}^b_G\\
-\bunderline{\mathbf{K}}&=\eta_a\bunderline{\mathbf{K}}^e_G+(\Omega\eta_v+\eta_b)\bunderline{\mathbf{C}}^e_G+\bunderline{\mathbf{K}}^b_G&\vec{\mathbf{F}}&=\vec{\mathbf{F}}^d
+\bunderline{\mathbf{K}}&=\eta_a\bunderline{\mathbf{K}}^e_G+(\Omega\eta_v+\eta_b)\bunderline{\mathbf{C}}^e_G+\bunderline{\mathbf{K}}^b_G&\vec{\mathbf{F}}&=\vec{\mathbf{F}}^d_G
 \end{array}\right.
 \end{equation*}
 Subscript $ _G $ indicates the matrix is in the global coordinate system that contains all of the degrees of freedom. Care must be taken here to associate the correct degrees of freedom, and recognize that some of the matrices are elemental and others are nodal. 
 \subsection{In the Complex Coordinate System}
 \begin{equation}\label{eq:GlobalSystemofEquationsComplex}
-\bunderline{\mathbf{M}}^c\ddot{\vec{\mathbf{q}}}^c+\bunderline{\mathbf{G}}^c\dot{\vec{\mathbf{q}}}^c+\bunderline{\mathbf{K}}^c\vec{\mathbf{q}}^c=\Omega^2\bunderline{\mathbf{F}}^ce^{i\Omega t}
+\bunderline{\mathbf{M}}\ddot{\vec{\mathbf{q}}}^c+\bunderline{\mathbf{D}}\dot{\vec{\mathbf{q}}}^c+\bunderline{\mathbf{K}}\vec{\mathbf{q}}^c=\Omega^2\vec{\mathbf{F}}
 \end{equation}
 where,
 \begin{equation*}
 \left\{\begin{array}{rlrl}
-\bunderline{\mathbf{M}}^c&=\bunderline{\mathbf{M}}^{ec}_G+\bunderline{\mathbf{M}}^{dc}_G+\bunderline{\mathbf{M}}^{bc}_G&\bunderline{\mathbf{D}}&=\eta_v\bunderline{\mathbf{K}}^{ec}_G-i\Omega\bunderline{\mathbf{G}}^{ec}_G-i\Omega\bunderline{\mathbf{G}}^{dc}_G+\bunderline{\mathbf{D}}^{bc}_G\\
-\bunderline{\mathbf{K}}^c&=\eta_a\bunderline{\mathbf{K}}^{ec}_G-i(\Omega\eta_v+\eta_b)\bunderline{\mathbf{C}}^{ec}_G+\bunderline{\mathbf{K}}^{bc}_G&\vec{\mathbf{F}}&=\vec{\mathbf{F}}^{dc}
+\bunderline{\mathbf{M}}&=\bunderline{\mathbf{M}}^{ec}_G+\bunderline{\mathbf{M}}^{dc}_G+\bunderline{\mathbf{M}}^{bc}_G&\bunderline{\mathbf{D}}&=\eta_v\bunderline{\mathbf{K}}^{ec}_G-i\Omega(\bunderline{\mathbf{G}}^{ec}_G+\bunderline{\mathbf{G}}^{dc}_G)+\bunderline{\mathbf{D}}^{bc}_G\\
+\bunderline{\mathbf{K}}&=\eta_a\bunderline{\mathbf{K}}^{ec}_G-i(\Omega\eta_v+\eta_b)\bunderline{\mathbf{C}}^{ec}_G+\bunderline{\mathbf{K}}^{bc}_G&\vec{\mathbf{F}}&=\vect{F}^{dc}_G
 \end{array}\right.
 \end{equation*}
 \subsection{Code Implementation}
 \subsection{Model Reduction}
 \subsubsection{Static Condensation}
-\section{Model Analysis}
-For a simple critical speed computation without dependence on spin speed, $ \Omega $, the homogeneous solution, using $ \vec{\mathbf{q}}=e^{i\Omega t} $ while neglecting all damping, will provide the free whirling dynamic equation. In the case that the critical speeds need to be calculated with the inclusion of spin speed, like in the Campbell diagram, a particular integral of $  \vec{\mathbf{q}}_0e^{i\omega t}$ is used so that the spin speed and whirl speed can vary freely. Unbalance response is calculated using the particular integral as well. Root Locus, Stability. Time domain solution.
-\subsection{State Space Representation}
+\section{Model Analysis}\label{ModelAnalysis}
+The benefit of the finite element model is the general linear ordinary differential equation that is left to solve in equations \eqref{eq:GlobalSystemofEquationsReal}, \& \eqref{eq:GlobalSystemofEquationsComplex}. Many techniques exist to provide frequency and time domain information on the solution to this system of equations. In rotordynamic analysis many of the analyses are interested in the dependence of the system on the spin speed $ \Omega $. The inclusion of this parameter as a time dependent variable would make the solutions to the system much more difficult. In this work, the spin speed is considered to be constant in each operation taken in a series of operation as the value is changed. In this way, the effect of spin acceleration is not taken into account, but the dependence on spin speed is approximated. For the vast majority of rotordynamic systems this approximation is sufficiently accurate.
+For a simple critical speed computation without dependence on spin speed, $ \Omega $, the homogeneous solution, using $ \vec{\mathbf{q}}=e^{i\Omega t} $ while neglecting all damping and forcing, will provide the free whirling dynamic equation. In the case that the critical speeds need to be calculated with the inclusion of spin speed, like in the Campbell diagram, a solution of the form $  \vec{\mathbf{q}}_0e^{i\omega t}$ is used so that the spin speed and whirl speed can vary freely. Unbalance response is calculated using the particular integral as well.\par 
+Details of the different analyses to follow will be accompanied by an example problem to demonstrate the results. The problem of interest is a simple two disk rotor system depicted in Figure \ref{fig:ExampleRotorSystem}. The geometry and material properties are listed in Table \ref{tab:ExampleRotorTable}. The Beam is discretized as in figure \ref{fig:ExampleRotorSystem} with 6 elements. With geometry of $ L=1.8[m] $, $ a=\frac{1}{3}L $, \& $ b=\frac{2}{3}L $ and bearing located at the ends of the shaft.\par 
+\begin{figure}
+	\pgfplotsset{every picture/.style={scale=1},every axis/.style={title style={yshift=-.8em}}}%, every axis/.style={hide axis}}%
+	\centering
+	\import{figures/}{PaperShape.tex}
+	\caption{Two disk rotor system used as an example.}
+	\label{fig:ExampleRotorSystem}
+\end{figure}
+\begin{table}
+\caption{Properties of disks, shaft elements, and bearings of the example problem.} \label{tab:ExampleRotorTable}
+\centering
+\begin{tabular}{rcccccc}
+						&$\rho[\frac{kg}{m^3}]$	&$r[m]$					&$\nu$				&$E[Pa]$			&$ \eta_v[s] $	&$ \eta_h $	\\\hline
+	\textbf{Shaft}		&$7850$					&$0.5$					&$0.3$				&$\num{210E9}$		&$ 0.0002 $		&$ 0 $		\\[1em]
+						&$\rho[\frac{kg}{m^3}]$	&$r[m]$					&$l[m]$				&					&				&			\\\hline
+	\textbf{Disks}		&$7850$					&$0.3$					&$0.1$				&					&				&			\\[1em]
+						&$k_x[\frac{N}{m}]$		&$k_y[\frac{N}{m}]$		&$c_x[\frac{Ns}{m}]$&$c_y[\frac{Ns}{m}]$&				&			\\\hline
+	\textbf{Bearings}	&$\num{1e7}$			&$\num{1e7}$			&$100$				&$100$				&				&			
+\end{tabular}
+\centering
+\end{table}
+\subsection{State Space Representation and the Eigenvalue Problem}
 The system can be represented in state space where,
 \begin{equation}\label{eq:StateSpaceDef}
 \dot{\vec{\mathbf{z}}}=\bunderline{\mathbf{A}}\vec{\mathbf{z}}+\bunderline{\mathbf{B}}\vec{\mathbf{w}},\quad\vec{\mathbf{z}}=\left\{\begin{array}{c}\dot{\vec{\mathbf{q}}}\\\vec{\mathbf{q}}\end{array}\right\}
 \end{equation}
-$ \bunderline{\mathbf{B}}\vec{\mathbf{w}} $ is an input into the system, which here will represent the forces due to unbalance. Solving for $ \bunderline{\mathbf{A}} $
+$ \bunderline{\mathbf{B}}\vec{\mathbf{w}} $ is an input into the system, which here will represent the forces due to unbalance. Solving for $ \bunderline{\mathbf{A}}\  \&\   \bunderline{\mathbf{B}}\vec{\mathbf{w}}$
 \begin{equation}\label{key}
 \bunderline{\mathbf{A}}=\left[\begin{array}{cc}
--\bunderline{\mathbf{M}}^{-1}(\bunderline{\mathbf{D}})&-\bunderline{\mathbf{M}}^{-1}(\bunderline{\mathbf{K}})\\
+-\bunderline{\mathbf{M}}^{-1}\bunderline{\mathbf{D}}&-\bunderline{\mathbf{M}}^{-1}\bunderline{\mathbf{K}}\\
 \bunderline{\mathbf{I}}&\bunderline{\mathbf{0}}
-\end{array}\right]
+\end{array}\right]\quad\&\quad\bunderline{\mathbf{B}}\vec{\mathbf{w}}=\Omega^2\left\{\begin{array}{c}
+\mat{M}^{-1}\vec{\mathbf{F}}\\0\end{array}\right\}
 \end{equation}
-In this representation, the eigenvalue problem can be assessed with the inclusion of damping. When the particular integral 
+This equation is valid in both the complex and real coordinate plane. With the use of complex coordinates, the state vector is represented by $ \vect{z}=[\dot{\vect{q}}^c,\vect{q}^c]^\T $. $ \bunderline{\mathbf{I}}\ \&\ \bunderline{\mathbf{0}} $ are appropriately sized to match the matrices in the system of choice. $ \mat{A} $ is the dynamic matrix of the system, which represents the dynamics in a single expression. Now in the form of a first order linear differential equation, numerical integration and many other numerical analysis techniques may be applied.\par
+Using equation \eqref{eq:StateSpaceDef} and assuming a solution of $ \vect{z}=\vect{\Theta}e^{st} $ leads to the eigenvalue problem
+\begin{equation}\label{eq:StateSpaceEigenValueProblem}
+(\mat{A}-s)\vect{\Theta}=\mat{0}
+\end{equation} 
+$ \vect{\Theta} $ is the vector containing the eigenvectors. Since the state in which these equations are defined is the combination of displacement and velocity, the eigenvectors are defined as a set corresponding to both displacement and velocity. This effectively duplicates the set as
+\begin{equation*}
+\vect{\Theta}=\left\{\begin{array}{c}\vect{\theta}_{\dot{\vect{q}}}\\\vect{\theta}_{\vect{q}}\end{array}\right\}=\left\{\begin{array}{c}s\vect{\theta}_{\vect{q}}\\\vect{\theta}_{\vect{q}}\end{array}\right\}
+\end{equation*}
+
 \subsection{Unbalance Response}
-The unbalance response of the dynamic system can be achieved by 
-\subsection{Stability Analysis}
+The unbalance response of the dynamic system can be achieved by substituting the particular integral $ \vect{q}=\vect{q}_0e^{i\Omega t} $ into the equation of motion \eqref{eq:GlobalSystemofEquationsReal},\eqref{eq:GlobalSystemofEquationsComplex}. 
+\begin{equation}
+\vect{q}_0=(-\Omega^2\mat{M}+i\Omega\mat{D}+\mat{K})^{-1}\Omega^2\vect{F}
+\end{equation}
+where the matrix in the parenthesis is called the dynamic response of the system. The dynamic response acts as a transfer matrix that converts inputs, $ \vect{F} $ into outputs $ \vect{q}_0 $. The result is complex with the absolute part of the result representing the magnitude of the response, and the angle of the result as representing the phase delay of the response from the input. If the input phase is known in terms of shaft angle, then the phase delay of the response angle can be interpreted as a shaft angle.\par 
+The Unbalance response can also be calculated using the particular integral $ \vect{q}=\vect{q}_0e^{i\omega t} $ where $ \omega $ is the independent whirl frequency. Then the response is found as the transfer response of the oscillation $ e^{i(\Omega-\omega)t} $.\par
+For the example problem defined in \S\ref{ModelAnalysis} the unbalance response to a disk b unbalance of $ \num{2e-5}[m] $ is depicted in Figure \ref{fig:ig:ExampleFreqResponse}. We may enhance the frequency response figure by associating a plot of the phase angle with the response. This is called the Bode diagram and is presented in figure \ref{fig:ExampleBode}
+\begin{figure}
+	\def\width{\linewidth/1.5}
+	\def\height{\linewidth/3}
+	\pgfplotsset{every picture/.style={scale=1},every axis/.style={title style={yshift=-.8em},width=\width,
+			height=\height/2,}}%, every axis/.style={hide axis}}%
+	\centering
+	\import{figures/}{ThesisExampleFreqResponse.tex}
+	\caption{Frequency response of the second disk subject to an unbalance at the second disk.}
+	\label{fig:ExampleFreqResponse}
+\end{figure}
+\begin{figure}
+	\def\width{\linewidth/1.5}
+	\def\height{\linewidth/3}
+	\def\sep{3em}
+	\pgfplotsset{every picture/.style={scale=1},every axis/.style={title style={yshift=-.8em}}}%, every axis/.style={hide axis}}%
+	\centering
+	\import{figures/}{ThesisExampleBode.tex}
+	\caption{Bode diagram of the second disk subject to an unbalance at the second disk.}
+	\label{fig:ExampleBode}
+\end{figure}
+\subsection{Roots Locus and Stability Analysis}
+One of the most valuable facets of a rotordynamic model is its ability to predict instability. unstable operation can lead to rotor failures and unsafe operating conditions. Before the advent of modern mathematical models for rotating machinery, it was not common to operate a machine above the first critical speed. Internal damping and other rotating damping can cause a subsynchronous whirl when operating above the first critical speed. This effect is worse for machines with stiff bending modes, and is often instigated by loose fittings, shrink fits, and couplings. As mentioned in \S\ref{Rotating Internal Damping}, the effect of external damping sources will not be investigated here. Rather, the stability will be tested by modeling the internal damping of the rotor due to viscous heat production during loading and unloading of the beam in bending. See \S\ref{Rotating Internal Damping} for a more detailed explanation and derivation.\par 
+Roots Locus is the plot of the eigenvalues on the $ \Re-\Im $ plane as some value they are dependent on changes. In rotordynamic analysis the dependent variable is often the spin speed $ \Omega $. In this plane, the eigenvalues $ s $ represent the complex set of which the real part is the damping ans the imaginary is the damped natural frequency. The roots locus is useful in determining stability of the system, and which mode is responsible for the instability. Using the eigenvalues $ s $ of the eigenvalue problem defined in equation \eqref{eq:StateSpaceEigenValueProblem} on the example problem defined in \S\ref{ModelAnalysis} a plot of the roots locus can be found as in figure \ref{fig:ExampleRootsLocus}. Internal damping coefficient, $ \eta_v $, is added to the system at the value of $ 0.0002[s] $. The first three modes are presented with the negative complex couple joining each positive mode of vibration. In completely symmetric systems, the eigenvalue problem  It is evident by looking at figure \ref{fig:ExampleRootsLocus} that the system becomes unstable at some point, as many of the eigenvalues are in the positive real region of the plane. Since this example system is symmetric about the axis, the positive and negative pairs for each mode start at the same point when the spin speed is zero. The positive modes then move in the positive real direction--becoming more unstable. On the other hand, the negative frequencies move in the negative real direction--becoming more stable. This phenomena of the positive modes becoming more unstable and the negative becoming more stable is a general trend, but not a rule, and the rotating damping assists defined in \S\ref{Rotating Internal Damping} assists in this trend. Also, Gyroscopic effects tend to increase the whirl frequency (Imaginary part of eigenvalue) of the positive mode, while the opposite effect is seen in the negative mode.\par 
+\begin{figure}
+	\def\width{.6*\linewidth}
+	\def\height{.3*\linewidth}
+	\def\sep{3em}
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={title style={yshift=-.8em}}}
+	\centering
+	\import{figures/}{RootsLocus.tex}
+	\caption{Roots Locus of the example problem with an internal damping coefficient of 0.0002. Red circles represent positive frequencies, while blue dots represent negative ones.}
+	\label{fig:ExampleRootsLocus}
+\end{figure}
+The Roots Locus for the example problem is also presented in three dimensions to lend in the understanding of the relationship with spin speed. This can be seen in Figure \ref{fig:ExampleRootsLocus3D}.
+\begin{figure}
+	\def\width{.6*\linewidth}
+	\def\height{.3*\linewidth}
+	\def\sep{3em}
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={title style={yshift=-.8em}}}
+	\centering
+	\import{figures/}{ExampleRootsLocus3D.tex}
+	\caption{Roots Locus of the example problem in 3-D with an internal damping coefficient of 0.0002. Red circles represent positive frequencies, while blue dots represent negative ones.}
+	\label{fig:ExampleRootsLocus3D}
+\end{figure}
+A direct method of measuring the stability of the system is to observe the real part of the eigenvalues of the dynamic matrix. Since the solution was assumed the be of the form $ \vect{z}=\vect{\Theta}e^{st} $, then the eigenvalues represent the values of the complex exponent $ s $. Splitting $ s $ into its real and complex components as $ s=\sigma+i\omega_{d} $, and plugging into $ \vect{z} $ gives: $ \vect{z}=\vect{\Theta}e^{\sigma+i\omega_{d}} $. By inspection, it is evident that when the real part is positive, the response will grow without bound--an unstable system.\par
+Damping is Commonly represented as a the ratio of the real part of the eigenvalue to the natural frequency as
+\begin{equation}
+\zeta=\frac{-\sigma}{\omega_n}\ ,\ \omega_n=\sqrt{\sigma^2+\omega_{d}^2}
+\end{equation}
+where $ \zeta $ is the damping ratio, and  $ \omega_n $ is the natural frequency. The stability margin, or the range of speeds through which the system remains stable can be determined by plotting the maximum real part, $ \Re(s) $, of the set against spin speed. The point at which $ \Re(s) $, or $ \sigma $, crosses the real axis is the threshold of stability. The plot which represents this is termed the Stability Margin plot, and is shown in \ref{fig:ExampleStabilityMargin} for the example problem defined in \S\ref{ModelAnalysis}.\par
+\begin{figure}
+	\def\width{.6*\linewidth}
+	\def\height{.4*\linewidth}
+	\def\sep{3em}
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={xlabel style={yshift=2.5em}}}%, every axis/.style={hide axis}}%
+	\centering
+	\import{figures/}{StabilityMargin.tex}
+	\caption{length to radius ratio of 1.}
+	\label{fig:ExampleStabilityMargin}
+\end{figure}
+Finally, the stability can be analyzed using the damping coefficients($ \zeta $) plotted against speed. This figure, shown in \ref{fig:ExampleDamping}, indicates instability as when $ \zeta $ drops below zero.
+\begin{figure}[!htb]
+	\def\width{.7*\linewidth}
+	\def\height{.4*\linewidth}
+	\def\sep{3em}
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={xshift=2em},xlabel style={yshift=3em}}}%, every axis/.style={hide axis}}%
+	\centering
+	\import{figures/}{ExampleDamping.tex}
+	\caption{Damping ratio vs. spin speed with indication of threshold of stability.}
+	\label{fig:ExampleDamping}
+\end{figure}
 \subsection{Shapes}
+Deformed shape can be predicted using the eigenvectors of the eigenvalue problem \ref{eq:StateSpaceEigenValueProblem}. Eigenvectors contain displacement arrangement that corresponds to a natural frequency; this includes phase and relative amplitude of the generalized displacements from one another. For a simple model to conceptualize this idea, consider a rigid rod that can only translate in one plane at each end. The eigenvectors will contain all linearly independent combinations of the movement of the left side relative to the right. This would be in general; opposite left to right (one up, one down), and same left and right(both up, or both down). The bending modes of the beam operate in a similar manner but scaled up, and just like in the simple case, including the same number of modes as there are degrees of freedom in the system. Since the state space representation used for eigenanalysis contains $ \dot{\vect{q}},\; \& \;\vect{q} $ the eigenvector will contain $ 2N $ modes. For a general $ i $th mode of vibration, the eigenvector $ \vect{\Theta}_i $ contains the displacement information. But, since the portion of $ \vect{\Theta}_i $ pertaining to velocities, $ \vect{\theta}_{\dot{\vect{q}}i} $, is a linear combination of $ \vect{\theta}_{\vect{q}i} $, all of the information is contained in one of these arrays. Therefore, the interpolation of displacements for the $ i $th mode is given by
+	\begin{equation}
+	\vect{u}_i=\mat{N}\vect{\theta}_{\vect{q}i}
+	\end{equation}
+where, the value of $ \vect{u}_i $ is now a function of $ x $. So, through the choice of an array of positions that span the length of the beam element the displacement, and phase angle distribution of the $ i $th mode of vibration is determined. Phase angle and amplitude of an transverse pair may be used to for an orbit of a beam axis location $ x $.\par
+Shape figures for the first 3 modes of the example problem are presented in Figures \ref{fig:ExampleShape1},\ref{fig:ExampleShape2}, and \ref{fig:ExampleShape3}. Note that the real and imaginary parts of the eigenvalues are listed along with the shapes. Also, note that the speed is chosen to coincide with the damped natural frequency so that this is the critical speed bending shape.
+\begin{figure}
+	\def\cs{.3}
+\begin{subfigure}{\cs\textwidth}
+	\centering
+	\def\width{\linewidth+.8em}
+	\def\height{\linewidth}
+	\def\sep{3em}
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={yticklabel style={xshift=.4em,yshift=.4em},minor tick num=2}, grid style={line width=.1pt, draw=gray!10},major grid style={line width=.2pt,draw=gray!50},}%, every axis/.style={hide axis}}%
+	\import{figures/}{ExampleShape1.tex}
+	\caption{Mode Shape 1.}
+	\label{fig:ExampleShape1}
+\end{subfigure}
+\begin{subfigure}{\cs\textwidth}
+	\centering
+	\def\width{\linewidth+1em}
+\def\height{\linewidth}
+	\def\sep{3em}
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={yticklabel style={xshift=.4em,yshift=.4em},minor tick num=2}, grid style={line width=.1pt, draw=gray!10},major grid style={line width=.2pt,draw=gray!50},}%, every axis/.style={hide axis}}%
+	\import{figures/}{ExampleShape2.tex}
+	\caption{Mode Shape 2.}
+	\label{fig:ExampleShape2}
+\end{subfigure}
+\begin{subfigure}{\cs\textwidth}
+	\centering
+	\def\width{\linewidth+1em}
+	\def\height{\linewidth}
+	\def\sep{3em}
+\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={yticklabel style={xshift=.4em,yshift=.4em},minor tick num=2}, grid style={line width=.1pt, draw=gray!10},major grid style={line width=.2pt,draw=gray!50},}%, every axis/.style={hide axis}}%
+	\import{figures/}{ExampleShape3.tex}
+	\caption{Mode Shape 3.}
+	\label{fig:ExampleShape3}
+\end{subfigure}
+\caption{Modal shapes of the example problem.}\label{fig:ExampleShape}
+\end{figure}
 \subsection{Campbell}
-\subsection{RootLocus}
+The Campbell diagram correlates the spin speed and the whirl speed. The whirl speed is calculated as the imaginary part of the complex eigenvalue of the dynamic matrix \eqref{eq:StateSpaceDef}. Spin speed is varied while calculating all of the critical speeds at each step of spin speed. The campbell diagram for the example problem is given in figure \ref{fig:ExampleCampbell}. This diagram can be used to discerne the critical speeds of the system. As can be seen in figure \ref{fig:ExampleCampbell} the $ \omega=\Omega $ synchronous line passes through 3 different complex modes in this speed range. Note: with the large influence of the gyroscopic effect in the example problem presented here, the positive and negative frequencies for the second and third modes diverge from one another rath quickly. A physical interpretation of th selective effect of the gyroscopic moments can be presented by taking the mode shapes into account. Recall that the disks in the example are mounted at nodal locations 2 \& 3. In figure \ref{fig:ExampleShape} it is evident that in the first mode, Figure \ref{fig:ExampleShape1}, both disks are translating together. As a matter of fact, most of all the points of the system are translating in sync. This type of mode is called a cylindrical mode for the fact that as the whirl is traced, as it is in \ref{fig:ExampleShape1}, it forms a cylinder. The consequence of this type of motion is limiting on the transverse rotation angle of the mass elements. Since the gyroscopic moments are proportional to these angles, their magnitude is very low compared to transverse effects. On the contrary, in mode 2 \& 3 of figures \ref{fig:ExampleShape2} \& \ref{fig:ExampleShape3} respectively, the angle of the disks and other mass elements is changing significantly through rotation. Because of this, large gyroscopic moments induce an out of phase force that stiffens positive whirl and softens negative whirl tendencies. Gyroscopic moments are larger in these types of modes where there is a point of inflection on the beam, commonly called an antinode of vibration. This mode is called a conical mode, as analogous with the cylindrical mode, the shape of the path forms one or many cones.\par 
+\begin{figure}[!htb]
+	\def\width{.7*\linewidth}
+	\def\height{.4*\linewidth}
+	\def\sep{3em}
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={xshift=2em},xlabel style={yshift=3em}}}%, every axis/.style={hide axis}}%
+	\centering
+	\import{figures/}{ExampleCampbell.tex}
+	\caption{Campbell Diagram of the example problem.}
+	\label{fig:ExampleCampbell}
+\end{figure}

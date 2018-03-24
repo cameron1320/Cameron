@@ -427,6 +427,7 @@ DATE SUBMITTED: &\@degreemonth~\@degreeyear  \par\\
 COMMITTEE CHAIR:  &\begin{minipage}[t]{\columnwidth}\begin{flushleft}\@chair\end{flushleft}\end{minipage}  \par\\\\
 COMMITTEE MEMBER: &\begin{minipage}[t]{\columnwidth}\begin{flushleft}\@othermemberA\end{flushleft}\end{minipage}     \par\\\\
 COMMITTEE MEMBER: &\begin{minipage}[t]{\columnwidth}\begin{flushleft}\@othermemberB\end{flushleft}\end{minipage}     \par\\\\
+COMMITTEE MEMBER: &\begin{minipage}[t]{\columnwidth}\begin{flushleft}\@othermemberC\end{flushleft}\end{minipage}\par\\\\
 \end{tabular}
 
 \end{alwayssingle}
