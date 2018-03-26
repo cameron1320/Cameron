@@ -37,8 +37,8 @@ N = [Nb;Ns];
 DG = kron(diag([0,1]),[0, Ip;-Ip,0]);
 N3 = Ns - 1/l*diff(Nb,zeta);
 NK = [Nsd;N3];
-% DK = diag([E*I/l,E*I/l,12*E*I/l/Phi,12*E*I/l/Phi]);
-DK = diag([12*E*I/l/Phi,12*E*I/l/Phi,E*I/l,E*I/l]);
+DK = diag([E*I/l,E*I/l,12*E*I/l/Phi,12*E*I/l/Phi]);
+% DK = diag([12*E*I/l/Phi,12*E*I/l/Phi,E*I/l,E*I/l]);
 
 % Mr = rho*I*l.*int(Ns'*[0 1;-1 0]*Ns,zeta,0,1);
 G = int(N'*DG*N,zeta,0,1);

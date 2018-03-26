@@ -20,9 +20,10 @@ for ii = 1:1:length(Omega)
     Knew = real(Model_obj.K) + w.*imag(Model_obj.K);
     
     Zer = zeros(size(Mnew));
-    AA=[Cnew Mnew;Mnew Zer];
-    B=[Knew Zer;Zer -Mnew];
-    v1=eig(B,-AA);
+    ey = eye(size(Mnew));
+    A = [-Mnew^-1*Cnew, -Mnew^-1*Knew;
+        ey,Zer];
+    v1=eig(A);
     eiv(:,ii) = sort(v1);
 end
 while min(abs(imag(eiv(1,:)))) == 0
@@ -39,7 +40,7 @@ if ~isempty(ZeroCross)
 end
 ax.XAxisLocation = 'origin';
 xlabel('Speed (RPM)')
-ylabel('Maximum real part of eigenvalue')
+ylabel('Maximum \Re(s)')
 title('Stability region')
 end
 

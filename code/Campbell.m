@@ -17,13 +17,14 @@ for ii = 1:1:length(Omega)
     Mnew = Model_obj.M;
     Cnew = real(Model_obj.C) + w.*imag(Model_obj.C);
     Knew = real(Model_obj.K) + w.*imag(Model_obj.K);
-    
     Zer = zeros(size(Mnew));
-    AA=[Cnew Mnew;Mnew Zer];
-    B=[Knew Zer;Zer -Mnew];
-    v1=eig(B,-AA);
-    [~, I] = (sort(abs(v1)));
+    ey = eye(size(Mnew));
+    A = [-Mnew^-1*Cnew, -Mnew^-1*Knew;
+        ey,Zer];
+    v1=eig(A);
+    [~, I] = sort(abs((v1)));
     eiv(:,ii) = v1(I);
+% eiv(:,ii)=v1;
 end
 if isempty(ax)
     figure
@@ -36,15 +37,16 @@ end
 
 hold on
 for jj = 1:1:length(plotmodes)
-    plot(ax,Omega,abs(imag(eiv(plotmodes(jj)*4-3,:)))/2/pi*60,linetp,'Color',[0,0.4470,0.7410],'LineWidth',1)
-    plot(ax,Omega,abs(imag(eiv(plotmodes(jj)*4-1,:)))/2/pi*60,linetp, 'Color',[0.8500,0.3250,0.0980],'LineWidth',1)
-%         plot(ax,Omega,imag(eiv(plotmodes(jj)*4-2,:))/2/pi*60,linetp,'Color',[0,0.4470,0.7410],'LineWidth',1)
-%     plot(ax,Omega,imag(eiv(plotmodes(jj)*4,:))/2/pi*60,linetp, 'Color',[0.8500,0.3250,0.0980],'LineWidth',1)
-
-%     plot(ax,Omega,abs(eiv(plotmodes(jj),:))*60/2/pi,'Color',[0,0.4470,0.7410],'LineWidth',1,'LineStyle',linetp)
+    plot(ax,Omega,abs(imag(eiv(plotmodes(jj)*4-2,:)))/2/pi*60,'.','Color',[0,0.4470,0.7410],'LineWidth',1)
+    plot(ax,Omega,abs(imag(eiv(plotmodes(jj)*4,:)))/2/pi*60,'o', 'Color',[0.8500,0.3250,0.0980],'LineWidth',1,'MarkerSize',4)
+%         plot(ax,Omega,(imag(eiv(plotmodes(jj)*4-3,:)))/2/pi*60,linetp,'Color',[0,0.4470,0.7410],'LineWidth',1)
+%     plot(ax,Omega,(imag(eiv(plotmodes(jj)*4,:)))/2/pi*60,linetp, 'Color',[0.8500,0.3250,0.0980],'LineWidth',1)
+% 
+%     plot(ax,Omega,imag(eiv(plotmodes(jj),:))/2/pi*60,linetp,'Color',[0,0.4470,0.7410],'LineWidth',1)
     
 end
 plot(Omega,Omega,'--k','LineWidth',2)
+% plot(Omega,-Omega,'--k','LineWidth',2)
 hold off
 xlabel('Spin speed (RPM)')
 ylabel('Whirl speed (RPM)')

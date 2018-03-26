@@ -23,9 +23,9 @@ for ii = 1:1:size(elems,1)
     Id = obj.DiaInert(d,l,rho);
     Ip = obj.PolInert(d,l,rho);
     
-    kbe = obj.TBeamStiff2(E,I,l,d/2,nuv,poi);
-    cbe = obj.TBeamDamp2(E,I,l,rho,d/2,Ip,nuv,poi);
-    mbe = obj.TBeamMass2(rho,l,d/2,I,Id,Ip,poi);
+    kbe = obj.TBeamStiff2(E,I,l,d/2,nuv,poi,DOF);
+    cbe = obj.TBeamDamp2(E,I,l,rho,d/2,Ip,nuv,poi,DOF);
+    mbe = obj.TBeamMass2(rho,l,d/2,I,Id,Ip,poi,E,DOF);
     
     K = obj.Add(K,kbe,(ii-1)*DOF+1:(ii+1)*DOF);
     C = obj.Add(C,cbe,(ii-1)*DOF+1:(ii+1)*DOF);
@@ -44,9 +44,9 @@ for ii = 1:1:size(disks,1)
     Ip = obj.PolInert(d,l,rho,0);
     Id = obj.DiaInert(d,l,rho,0);
     
-    mi = obj.DiskMass(md,Id);
-    gi = obj.DiskGyro(Ip);
-    fi = obj.Force(md, Id, Ip, a, Ki);
+    mi = obj.DiskMass(md,Id,Ip,DOF);
+    gi = obj.DiskGyro(Ip,DOF);
+    fi = obj.Force(md, Id, Ip, a, Ki,DOF);
     
     M = obj.Add(M,mi,(disks(ii,6)*DOF-DOF+1:disks(ii,6)*DOF));
     C = obj.Add(C,gi,(disks(ii,6)*DOF-DOF+1:disks(ii,6)*DOF));
@@ -60,8 +60,8 @@ for ii = 1:1:size(bears,1)
     cx = beartypes(bears(ii,1),4);
     cy = beartypes(bears(ii,1),5);
     
-    ki = obj.BearingStiff(kx,ky);
-    ci = obj.BearingDamp(cx,cy);
+    ki = obj.BearingStiff(kx,ky,DOF);
+    ci = obj.BearingDamp(cx,cy,DOF);
     
     K = obj.Add(K,ki,(bears(ii,2)*DOF-DOF+1:bears(ii,2)*DOF));
     C = obj.Add(C,ci,(bears(ii,2)*DOF-DOF+1:bears(ii,2)*DOF));
@@ -79,7 +79,6 @@ for ii = 1:1:size(mags,1)
     
 end
 end
-
 obj.M = M;
 obj.C = C;
 obj.K = K;

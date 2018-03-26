@@ -26,10 +26,12 @@ for ii = 1:1:length(Omega)
     Knew = real(Model_obj.K) + w.*imag(Model_obj.K);
     
     Zer = zeros(size(Mnew));
-    AA=[Cnew Mnew;Mnew Zer];
-    B=[Knew Zer;Zer -Mnew];
-    v1=eig(B,-AA);
-    eiv(:,ii) = sort(v1);
+    ey = eye(size(Mnew));
+    A = [-Mnew^-1*Cnew, -Mnew^-1*Knew;
+        ey,Zer];
+    v1=eig(A);
+        [~, I] = (sort(abs((v1))));
+    eiv(:,ii) = v1((I));
 end
 
 while min(abs(imag(eiv(1,:)))) == 0
@@ -44,8 +46,8 @@ for jj = 1:1:length(plotmodes)
     zeta = -real(eiv([idb,idf],:))./abs(eiv([idb,idf],:));
 %     delta = 2*pi.*zeta./sqrt(1-zeta.^2); %Logarithmic Decriment
 %     delta = -2*pi*real(eiv([idb,idf],:))./imag(eiv([idb,idf],:));
-    plot(Omega,zeta(1,:),'Color',[0,0.4470,0.7410],'LineWidth',1,'LineStyle',linetp);
-    plot(Omega,zeta(2,:),'Color',[0.8500,0.3250,0.0980],'LineWidth',1,'LineStyle',linetp);
+    plot(Omega,zeta(1,:),linetp,'Color',[0,0.4470,0.7410],'LineWidth',1);
+    plot(Omega,zeta(2,:),linetp,'Color',[0.8500,0.3250,0.0980],'LineWidth',1);
     ZeroCross1 = Omega(zci(zeta(1,:)));
     ZeroCross2 = Omega(zci(zeta(2,:)));
     if isempty(ZeroCross1)
@@ -65,7 +67,7 @@ end
 hold off
 ax.XAxisLocation = 'origin';
 xlabel('Speed (RPM)')
-ylabel('Log Decriment')
+ylabel('\zeta')
 title('Damping Characteristics')
 
 end

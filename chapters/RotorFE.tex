@@ -1,61 +1,6 @@
 \chapter{Finite Element Method For Rotordynamic systems}
+\lipsum
 \section{Beam Element FE Equation} \label{Beam Element FE Equation}
-\subsection{Bernoulli-Euler Beam equation} \label{Bernoulli-Euler Beam equation}
-
-Assumptions used to derive the Bernoulli-Euler beam equation are (Complete derivation in \cite{craig2006fundamentals}):
-\begin{enumerate}
-	\item Beam is bending in a plane, in this case in the y-direction, where the x-direction is along the length of the beam.
-	\item The  neutral axis undergoes no deformation in the longitudinal direction.
-	\item Cross sections remain plane and perpendicular to the nuetral axis.
-	\item The material is linear-elastic.
-	\item Stresses in the y and z direction are negligible compared to those in the x direction.
-	\item Rotary inertial effects are not considered.
-	\item Mass density is constant at each cross section, so that each mass center is coincident with the centroid of that section.
-\end{enumerate}
-Using kinematics and assumptions 2 \& 3, the strain in the x direction may be related to the curvature of the beam, $\mu(x,t)$, and the distance from the neutral axis by
-\begin{equation} \label{eq:curvature}
-\epsilon=-\dfrac{y}{\mu}
-\end{equation}
-then, with assumption 4 \& 7 the relation from curvature to moment is
-\begin{equation} \label{eq:curv_moment}
-M(x,t)=\dfrac{EI}{\mu}
-\end{equation}
-\begin{figure}
-	\centering
-	\def\svgwidth{300pt}
-	\import{figures/}{BeamFBD.pdf_tex}
-	\caption{Free body diagram of a beam section in planar bending.}
-	\label{fig:BeamFBD}
-\end{figure}
-where $ E $, Young's modulus, and $ I $, area moment of inertia are constant in cross sections. By using Newton's laws and the free body diagram of a single beam element, see Figure \ref{fig:BeamFBD}, the equations of motion are summarized as:
-\begin{equation} \label{eq:Newton}
-\sum{F_y}=\Delta m \ddot{v} \quad \textrm{\&} \quad \sum{M_G}=0
-\end{equation}
-Moment equation is represented as moments summarized at the center of mass, $ G $. The right hand side of moment equation of EOM \eqref{eq:Newton} is know to be null due to assumption 6. Applying Newton's equations \eqref{eq:Newton} to the FBD of Figure \ref{fig:BeamFBD} results in the force equation
-\begin{equation} \label{eq:force_EOM}
-F(x,t)-F(x+\Delta x,t)=\rho A\Delta x \frac{\partial^2 v}{\partial t^2}
-\end{equation}
-and moment equation
-\begin{equation} \label{eq:moment_EOM}
--M(x,t) + M(x+\Delta x,t) + F(x,t)\left( \frac{-\Delta x}{2}\right)  + \left[-F(x+\Delta x,t)\right] \left(\frac{\Delta x}{2}\right) = 0
-\end{equation}
-Taking the limit of equations \eqref{eq:force_EOM} \& \eqref{eq:moment_EOM} as $ \Delta x \rightarrow 0 $ results in equations \eqref{eq:force_EOM_partial} \& \eqref{eq:moment_EOM_partial} respectively.
-\begin{equation} \label{eq:force_EOM_partial}
-\frac{\partial F}{\partial x}=-\rho A \frac{\partial^2 v}{\partial t^2}
-\end{equation} 
-\begin{equation} \label{eq:moment_EOM_partial}
-\frac{\partial M}{\partial x} - F=0
-\end{equation}
-Assuming the beam slope, $ \frac{\partial v}{\partial x} $, remains relatively small, then linearized curvature of the beam is inversely related to $ \frac{\partial^2 v}{\partial x^2} $. Substituting this linearized curvature in \eqref{eq:curv_moment} produces
-\begin{equation} \label{eq:moment_curvature_partial}
-M(x,t)=EI\frac{\partial^2 v}{\partial x^2}
-\end{equation}
-Using linearized moment equation \eqref{eq:moment_curvature_partial}, combined with \eqref{eq:force_EOM_partial} \&  \eqref{eq:moment_EOM_partial} lends the Euler beam equation
-\begin{equation} \label{eq:euler_beam_equation}
-\frac{\partial^2}{\partial x^2} \left(EI\frac{\partial^2 v}{\partial x^2}\right) = -\rho A\frac{\partial^2 v}{\partial t^2}
-\end{equation}
-This is the governing differential equation for transverse motion of a slender beam. This equation is not suitable for an application involving lengths that are not much greater than the width of the beam \cite{genta2007dynamics}.
-
 \subsection{Timoshenko Beam Finite Element} \label{Timoshenko Beam Finite Element}
 The Timoshenko beam element allows for the beam cross section plane at any axis location to differ from normal with the axis of the beam. In other words, the element allows for shear stresses. This element often also includes the effects of rotary inertia and gyroscopic moments, as it will in this derivation. Generalized displacements used are assumed to be variable in both time and space. The element has six degrees of freedom. Three translation and three rotations all defined on the beam axis. So then all displacements are functions of time, $ t $, and the axial spacial coordinate, $ x $.
 \subsubsection{Kinematic Relationships} \label{Kinematic Relationships}
@@ -707,9 +652,6 @@ which by inspection of both of these equations it is evident that the form is th
 \begin{equation}\label{eq:TotalBeamFiniteElementEquationofMotionComplex]}
 \bunderline{\mathbf{M}}^{ec}\ddot{\vec{\mathbf{q}}}^c+(\eta_v\bunderline{\mathbf{K}}^{ec}-i\Omega\bunderline{\mathbf{G}}^{ec})\dot{\vec{\mathbf{q}}}^c+[\eta_a\bunderline{\mathbf{K}}^{ec}-i(\Omega\eta_v+\eta_b)\bunderline{\mathbf{C}}^{ec}]\vec{\mathbf{q}}^c=0
 \end{equation}
-%\lstinputlisting[language=Matlab]{code/TBeamStiff.m}
-%\lstinputlisting[language=Matlab]{code/TBeamDamp.m}
-%\lstinputlisting[language=Matlab]{code/TBeamMass.m}
 \section{Disk Nodal Equations} \label{Disk Nodal Equations}
 Since the beam element has been discretized into nodal degrees of freedom, so long as the locations of disks in the model are chosen to coincide with one of these nodal locations, the expressions for stiffness and inertia can be directly combined with the global matrices at that node. The mass element is considered as a body at a point with inertia, gyroscopic moments, and unbalance considered as external forces.
 \begin{equation}\label{eq:DiskNodeEquationofMotion}

@@ -13,10 +13,18 @@ if nargin < 5
 end
 
 syms x;
-l = 10;
-psi = [1 - 3*(x/l)^2 + 2*(x/l)^3, x - 2*l*(x/l)^2 + l*(x/l)^3, 3*(x/l)^2 - 2*(x/l)^3, -l*(x/l)^2 + l*(x/l)^3];
-cpsi = [psi(1),      0,       0, psi(2), psi(3),      0,       0, psi(4);
-    0, psi(1), -psi(2),      0,      0, psi(3), -psi(4),      0];
+l=1;
+z=x/l;
+alph=.25;
+Tt1 = (1/(1+alph))*(2*z^3 - 3*z^2 - alph*z + 1 + alph);
+Tt2 = (1/(1+alph))*(-2*z^3+3*z^2+alph*z);
+Tr1 = (l/(1+alph))*(z^3 - (2+1/2*alph)*z^2 + (1+1/2*alph)*z);
+Tr2 = (l/(1+alph))*(z^3 - (1-1/2*alph)*z^2 - 1/2*alph*z);
+cpsi = [Tt1  0    0  Tr1  Tt2  0    0  Tr2;
+       0  Tt1  -Tr1  0    0  Tt2  -Tr2  0];
+% psi = [1 - 3*(x/l)^2 + 2*(x/l)^3, x - 2*l*(x/l)^2 + l*(x/l)^3, 3*(x/l)^2 - 2*(x/l)^3, -l*(x/l)^2 + l*(x/l)^3];
+% cpsi = [psi(1),      0,       0, psi(2), psi(3),      0,       0, psi(4);
+%     0, psi(1), -psi(2),      0,      0, psi(3), -psi(4),      0];
 ipts = 4;
 d = (0:ipts-1)/ipts;
 for ii = 1:1:length(d)
@@ -31,18 +39,24 @@ Cnew = real(Model_obj.C) + w.*imag(Model_obj.C);
 Knew = real(Model_obj.K) + w.*imag(Model_obj.K);
 nM = length(Mnew);
 
-Zer = zeros(nM);
-AA=[Cnew Mnew;Mnew Zer];
-B=[Knew Zer;Zer -Mnew];
-[V,D] = eig(B,-AA,'vector');
-ind=find( (imag(D) > 0) & (abs(D)>1e-3) );	% take positive frequencies only
-l1=D(ind);
-v1=V(nM+1:end,ind);  	
-% l1=D;
-% v1=V(nM+1:end,:);  	
+% Zer = zeros(nM);
+% AA=[Cnew Mnew;Mnew Zer];
+% B=[Knew Zer;Zer -Mnew];
+    Zer = zeros(size(Mnew));
+    ey = eye(size(Mnew));
+    A = [-Mnew^-1*Cnew, -Mnew^-1*Knew;
+        ey,Zer];
+
+[V,D] = eig(A,'vector');
+% ind=find( (imag(D) > 0) & (abs(D)>1e-3) );	% take positive frequencies only
+% l1=D(ind);
+% v1=V(nM+1:end,ind);  	
+l1=D;
+v1=V(nM+1:end,:);
+% v1=V(1:nM,:);
 [~, I] = sort(abs((l1)));
-l2 = l1(I);
-v2 = v1(:,I);
+l2 = D(I);
+v2 = V(:,I);
 v = v2(:,plotmodes);
 v=v/norm(v);
 for ii = 1:1:length(Model_obj.M)/4-1
@@ -86,6 +100,7 @@ axis([-mx, mx, -inf, inf,-mx, mx ]);
 disp(['Damping: ' num2str(real(l2(plotmodes))) '. Frequency: ' num2str(imag(l2(plotmodes))/2/pi*60) '(RPM).'])
 ax=gca;
 ax.XDir='reverse';
+ax.Title.String={(['\Re(s): ' num2str(real(l2(plotmodes))) '. \Im(s): ' num2str(imag(l2(plotmodes))/2/pi*60) '[RPM].']);(['\Omega: ' num2str(Omega) '[RPM]'])};
 % 
 % [V, D] = eig(Knew, Mnew,'vector');
 % D = sqrt(D)*60/2/pi;

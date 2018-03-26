@@ -23,9 +23,13 @@ for ii = 1:1:length(Omega)
     Cnew = real(Model_obj.C) + w.*imag(Model_obj.C);
     Knew = real(Model_obj.K) + w.*imag(Model_obj.K);
     Zer = zeros(size(Mnew));
-    AA=[Cnew Mnew;Mnew Zer];
-    B=[Knew Zer;Zer -Mnew];
-    v1=eig(B,-AA);
+    ey = eye(size(Mnew));
+    A = [-Mnew^-1*Cnew, -Mnew^-1*Knew;
+        ey,Zer];
+    v1=eig(A);
+%     AA=[Cnew Mnew;Mnew Zer];
+%     B=[Knew Zer;Zer -Mnew];
+%     v1=eig(B,-1i*AA);
     [~, I] = (sort(abs((v1))));
     eiv(:,ii) = v1((I));
 end
@@ -39,10 +43,10 @@ for jj = 1:1:length(plotmodes)
    
 %     plot(ax,real(eiv(plotmodes(jj)*4-1,:)),(imag(eiv(plotmodes(jj)*4-1,:))),linetp,'Color',[0.8500,0.3250,0.0980])
 %     plot(ax,real(eiv(plotmodes(jj)*4-3,:)),(imag(eiv(plotmodes(jj)*4-3,:))),linetp,'Color',[0,0.4470,0.7410])
-    plot3(real(eiv(plotmodes(jj)*4-1,:)),imag(eiv(plotmodes(jj)*4-1,:)),Omega,'.')
-    plot3(real(eiv(plotmodes(jj)*4-3,:)),imag(eiv(plotmodes(jj)*4-3,:)),Omega,'.')
-    plot3(real(eiv(plotmodes(jj)*4-0,:)),imag(eiv(plotmodes(jj)*4-0,:)),Omega,'.')
-    plot3(real(eiv(plotmodes(jj)*4-2,:)),imag(eiv(plotmodes(jj)*4-2,:)),Omega,'.')
+    plot3(real(eiv(plotmodes(jj)*4-1,:)),abs(imag(eiv(plotmodes(jj)*4,:))),Omega,'o','Color',[0.8500,0.3250,0.0980],'MarkerSize',3)
+    plot3(real(eiv(plotmodes(jj)*4-3,:)),abs(imag(eiv(plotmodes(jj)*4-2,:))),Omega,'.','Color',[0,0.4470,0.7410],'MarkerSize',4)
+%     plot3(real(eiv(plotmodes(jj)*4-0,:)),imag(eiv(plotmodes(jj)*4-0,:)),Omega,'.','Color',[0,0.4470,0.7410])
+%     plot3(real(eiv(plotmodes(jj)*4-2,:)),imag(eiv(plotmodes(jj)*4-2,:)),Omega,'.','Color',[0,0.4470,0.7410])
 %     r(1,:) = real(eiv(plotmodes(jj)*4-1,:));
 %     r(2,:) = real(eiv(plotmodes(jj)*4-3,:));
 %     ZeroCross1 = zci(r(1,:));
