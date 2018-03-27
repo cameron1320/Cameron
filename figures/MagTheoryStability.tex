@@ -4,7 +4,7 @@
 %  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
 %where you can also make suggestions and rate matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor1}{rgb}{0,0,0}%
 %
 \begin{tikzpicture}
 
@@ -16,18 +16,15 @@ scale only axis,
 xmin=0,
 xmax=20000,
 xlabel style={font=\color{white!15!black}},
-xlabel={Speed (RPM)},
-xtick={5000,10000,15000,20000},
-xticklabels={5000,10000,15000,20000},
+xlabel={Speed [RPM]},
+%xtick={5000,10000,15000,20000},
+%xticklabels={5000,10000,15000,20000},
 ymin=-4,
 ymax=8,
 ylabel style={font=\color{white!15!black}},
 ylabel={$\text{Maximum }\Re\text{(s)}$},
-title style={font=\bfseries},
-title={Stability region},
-axis x line=center,
+axis x line*=center,
 axis y line*=left,
-scaled x ticks = false
 ]
 \addplot [color=mycolor1, line width=1.0pt, forget plot]
   table[row sep=crcr]{%
@@ -133,7 +130,7 @@ scaled x ticks = false
 20000	7.88491473011562\\
 };
 \node[right, align=left, rotate=90, font=\normalfont]
-at (axis cs:4646.465,0) {  Threshold:4646[RPM]};
+at (axis cs:4646.465,0) {4646[RPM]};
 \addplot [color=black, draw=none, mark=asterisk, mark options={solid, black}, forget plot]
   table[row sep=crcr]{%
 4646.46464646465	0\\

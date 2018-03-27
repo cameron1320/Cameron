@@ -100,7 +100,7 @@ axis([-mx, mx, -inf, inf,-mx, mx ]);
 disp(['Damping: ' num2str(real(l2(plotmodes))) '. Frequency: ' num2str(imag(l2(plotmodes))/2/pi*60) '(RPM).'])
 ax=gca;
 ax.XDir='reverse';
-ax.Title.String={(['\Re(s): ' num2str(real(l2(plotmodes))) '. \Im(s): ' num2str(imag(l2(plotmodes))/2/pi*60) '[RPM].']);(['\Omega: ' num2str(Omega) '[RPM]'])};
+ax.Title.String={(['\Re(s): ' num2str(real(l2(plotmodes)),2) ', \Im(s): ' num2str(imag(l2(plotmodes))/2/pi*60,4) '[RPM]']);(['\Omega: ' num2str(Omega,4) '[RPM]'])};
 % 
 % [V, D] = eig(Knew, Mnew,'vector');
 % D = sqrt(D)*60/2/pi;

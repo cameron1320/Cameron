@@ -1,4 +1,4 @@
-function FreqResponse(Model_obj, Omega, node, plottype, ax, linetp )
+function FreqResponse(Model_obj, Omega, node, plottype, fi, linetp )
 if nargin < 6
     if nargin == 2
         node = 1;
@@ -7,12 +7,17 @@ if nargin < 6
     end
     linetp = '-';
     if nargin < 5
-        figure
-        ax = axes;
+        fi = figure;
+        ax = axes(fi);
+        if nargin < 4
+            plottype = 'Bode';
+        end
+        if strcmp(plottype,'Bode') == 1
+            ax(1)=subplot(2,1,1,ax);
+            ax(2)=subplot(2,1,2);
+        end
     end
-    if nargin < 4
-        plottype = 'Bode';
-    end
+
 end
 
 for ii = 1:1:length(Omega)
@@ -26,14 +31,13 @@ for ii = 1:1:length(Omega)
     Z = I*(Knew + 1i*w.*Cnew - w^2.*Mnew);
     X(ii,:) = Z^-1*Fnew;
 end
-% Hresp(:,1,:) = X';
-%     sys = frd(Hresp,Omega/60*2*pi);
 switch plottype
     case 'FreqResponse'
         hold on
         for jj = 1:1:length(node)
+            ax=fi.Children;
+            plot(ax, Omega,(abs(X(:,node(jj)*4-3))),linetp)
             plot(ax, Omega,(abs(X(:,node(jj)*4-2))),linetp)
-            ax = gca;
             ax.YScale = 'log';
         end
         hold off
@@ -42,24 +46,29 @@ switch plottype
     case 'Bode'
         hold on
         for jj = 1:1:length(node)
-            %     index = node(jj)*4-3:node(jj)*4-2;
-            %     bode(sys(index))
             subplot(211); hold on
-            plot(Omega,abs(X(:,node(jj)*4-3)),linetp)
-            %             plot(Omega,abs(X(:,node(jj)*4-2)),linetp)
-            ax = gca;
-            ax.YScale = 'log';
-            ax.XLabel.String='Spin Speed \Omega[RPM]';
-            ax.YLabel.String='Amplitude[m]';
+            ax(1)=fi.Children(1);
+%             plot(Omega,abs(X(:,node(jj)*4-3)),linetp)
+%             plot(Omega,abs(X(:,node(jj)*4-2)),linetp)
+            plot(ax(1),Omega,abs(39370.1*X(:,node(jj)*4-3)),linetp)
+            plot(ax(1),Omega,abs(39370.1*X(:,node(jj)*4-2)),linetp)
+            ax(1).YScale = 'log';
+            ax(1).XLabel.String='Spin Speed \Omega[RPM]';
+%             ax(1).YLabel.String='Amplitude[m]';
+            ax(1).YLabel.String='Amplitude[mils]';
             subplot(212); hold on
-            plot(Omega,unwrap(mod(angle(X(:,node(jj)*4-3)),2*pi)),linetp)
-            %             plot(Omega,unwrap(angle(X(:,node(jj)*4-2))),linetp)
-            ax=gca;
-            ax.XLabel.String='Spin Speed \Omega[RPM]';
-            ax.YLabel.String='Phase Angle[Rad]';
-            ax.YTick=[-3*pi/2:pi/2:0];
-            ax.YTickLabel={'-3\pi/2','-\pi','-\pi/2','0'};
-
+            ax(2)=fi.Children(2);
+%             plot(Omega,unwrap(mod(angle(X(:,node(jj)*4-3)),2*pi)),linetp)
+%             plot(Omega,unwrap(mod(angle(X(:,node(jj)*4-2)),2*pi)),linetp)
+            plot(ax(2),Omega,180/pi*unwrap(mod(angle(X(:,node(jj)*4-3)),2*pi)),linetp)
+            plot(ax(2),Omega,180/pi*unwrap(mod(angle(X(:,node(jj)*4-2)),2*pi)),linetp)
+            ax(2).XLabel.String='Spin Speed \Omega[RPM]';
+%             ax.YLabel.String='Phase Angle[Rad]';
+            ax(2).YLabel.String='Phase Angle[deg.]';
+%             ax.YTick=[-3*pi/2:pi/2:0];
+%             ax.YTickLabel={'-3\pi/2','-\pi','-\pi/2','0'};
+            ax(2).YTick=[-360:90:0];
+            ax(2).YTickLabel={'0','-270','-180','-90','0'};
         end
         hold off
         

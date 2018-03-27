@@ -20,10 +20,11 @@ xlabel style={font=\color{white!15!black}},
 xlabel={Running Speed[RPM]},
 ymin=0,
 ymax=15,
+legend style={at={(axis description cs:.2,.5)},anchor=south},
 ylabel style={font=\color{white!15!black}},
 ylabel={Amplitude[mils]}
 ]
-\addplot [color=mycolor1, mark size=2.0pt, mark=o, mark options={solid, mycolor1}, forget plot]
+\addplot [color=mycolor1, mark size=2.0pt, mark=o, mark options={solid, mycolor1}]
   table[row sep=crcr]{%
 1003.49181703053	2.57379130972632\\
 1008.67961660067	2.22116851117812\\
@@ -207,7 +208,8 @@ ylabel={Amplitude[mils]}
 1988.27775669382	2.58827534192295\\
 1993.69408017772	2.58818351444257\\
 };
-\addplot [color=mycolor2, mark size=0.8pt, mark=*, mark options={solid, mycolor2}, forget plot]
+\addlegendentry{Horizontal}
+\addplot [color=mycolor2, mark size=0.8pt, mark=*, mark options={solid, mycolor2}]
   table[row sep=crcr]{%
 1003.49181703053	2.30126775257883\\
 1008.67961660067	2.0726194322978\\
@@ -391,6 +393,7 @@ ylabel={Amplitude[mils]}
 1988.27775669382	2.07023421160532\\
 1993.69408017772	2.040180309599\\
 };
+\addlegendentry{Vertical}
 \end{axis}
 
 \begin{axis}[%

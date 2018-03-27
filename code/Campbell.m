@@ -37,8 +37,8 @@ end
 
 hold on
 for jj = 1:1:length(plotmodes)
-    plot(ax,Omega,abs(imag(eiv(plotmodes(jj)*4-2,:)))/2/pi*60,'.','Color',[0,0.4470,0.7410],'LineWidth',1)
-    plot(ax,Omega,abs(imag(eiv(plotmodes(jj)*4,:)))/2/pi*60,'o', 'Color',[0.8500,0.3250,0.0980],'LineWidth',1,'MarkerSize',4)
+    plot(ax,Omega,abs(imag(eiv(plotmodes(jj)*4-2,:)))/2/pi*60,'.k');%,'Color',[0,0.4470,0.7410],'LineWidth',1)
+    plot(ax,Omega,abs(imag(eiv(plotmodes(jj)*4,:)))/2/pi*60,'.k');%, 'Color',[0.8500,0.3250,0.0980],'LineWidth',1,'MarkerSize',4)
 %         plot(ax,Omega,(imag(eiv(plotmodes(jj)*4-3,:)))/2/pi*60,linetp,'Color',[0,0.4470,0.7410],'LineWidth',1)
 %     plot(ax,Omega,(imag(eiv(plotmodes(jj)*4,:)))/2/pi*60,linetp, 'Color',[0.8500,0.3250,0.0980],'LineWidth',1)
 % 
@@ -48,8 +48,8 @@ end
 plot(Omega,Omega,'--k','LineWidth',2)
 % plot(Omega,-Omega,'--k','LineWidth',2)
 hold off
-xlabel('Spin speed (RPM)')
-ylabel('Whirl speed (RPM)')
+xlabel('Spin speed[RPM]')
+ylabel('Whirl speed[RPM]')
 title('Campbell Diagram')
 
 

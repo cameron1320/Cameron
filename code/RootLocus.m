@@ -1,9 +1,12 @@
-function RootLocus(Model_obj,Omega,plotmodes, ax, linetp)
+function RootLocus(Model_obj,Omega,plotmodes, ax, linetp,color)
 %CAMPBELL Summary of this function goes here
 %   Detailed explanation goes here
 zci = @(v) find(v(:).*circshift(v(:), [-1 0]) <= 0);
-if nargin < 5
+if nargin < 6
+    color = [0,0,0];
+    if nargin <5
     linetp = '.';
+    end
     if nargin < 4
         figure
         ax = axes;
@@ -43,8 +46,8 @@ for jj = 1:1:length(plotmodes)
    
 %     plot(ax,real(eiv(plotmodes(jj)*4-1,:)),(imag(eiv(plotmodes(jj)*4-1,:))),linetp,'Color',[0.8500,0.3250,0.0980])
 %     plot(ax,real(eiv(plotmodes(jj)*4-3,:)),(imag(eiv(plotmodes(jj)*4-3,:))),linetp,'Color',[0,0.4470,0.7410])
-    plot3(real(eiv(plotmodes(jj)*4-1,:)),abs(imag(eiv(plotmodes(jj)*4,:))),Omega,'o','Color',[0.8500,0.3250,0.0980],'MarkerSize',3)
-    plot3(real(eiv(plotmodes(jj)*4-3,:)),abs(imag(eiv(plotmodes(jj)*4-2,:))),Omega,'.','Color',[0,0.4470,0.7410],'MarkerSize',4)
+    plot3(real(eiv(plotmodes(jj)*4-1,:)),abs(imag(eiv(plotmodes(jj)*4,:))),Omega,linetp,'Color',color,'MarkerSize',1);%,'o','Color',[0.8500,0.3250,0.0980],'MarkerSize',3)
+    plot3(real(eiv(plotmodes(jj)*4-3,:)),abs(imag(eiv(plotmodes(jj)*4-2,:))),Omega,linetp,'Color',color,'MarkerSize',1);%,'.','Color',[0,0.4470,0.7410],'MarkerSize',4)
 %     plot3(real(eiv(plotmodes(jj)*4-0,:)),imag(eiv(plotmodes(jj)*4-0,:)),Omega,'.','Color',[0,0.4470,0.7410])
 %     plot3(real(eiv(plotmodes(jj)*4-2,:)),imag(eiv(plotmodes(jj)*4-2,:)),Omega,'.','Color',[0,0.4470,0.7410])
 %     r(1,:) = real(eiv(plotmodes(jj)*4-1,:));
@@ -65,8 +68,8 @@ for jj = 1:1:length(plotmodes)
 %     end
 end
 hold off
-% ax.YAxisLocation = 'origin';
-% axis([-inf,0,0,inf])
-xlabel('Real(\lambda)')
-ylabel('Imag(\lambda)')
+ax.YAxisLocation = 'origin';
+axis([-inf,inf,0,inf])
+xlabel('Real(s)')
+ylabel('Imag(s)')
 end

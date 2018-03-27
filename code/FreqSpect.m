@@ -48,4 +48,4 @@ end
 hold off
 % plot(Omega,max(abs(X)'))
 ax = gca;
-ax.ZScale = 'log';
+% ax.ZScale = 'log';
