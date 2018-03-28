@@ -1,0 +1,77 @@
+\documentclass[20pt]{article}
+\usepackage[,total={6in,8in}]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{import}
+\usepackage{pgfplots}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{backgrounds}
+\usepackage{amsmath}
+\pagestyle{empty}
+\begin{document}
+		\begin{center}
+%			\vspace*{1cm}
+			{\LARGE \textbf{ Experimental and Theoretical Evaluation of Rotordynamic Systems}}\\
+			\vspace{0.5cm}
+			Time and frequecncy domain analysis of experimental data from rotordyncamic systems. Development of the finite element method for use in rotordynamics with a rotating Timoshenko beam element including viscous and hysteretic internal damping. Analysis techniques for the multiple degree of freedom system specific for rotordynamics. Evaluation of the application of an Active Magnetic Bearing on an overhung rotor system.\\
+			\vspace{-.5cm}
+\begin{figure}[h!]
+	\def\cs{.3}	
+	\def\over{3em}
+	\def\hl{3em}
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right},every title/.style={none}, every axis/.style={yticklabel style={xshift=.4em,yshift=.4em},minor tick num=2,title=\empty}, grid style={line width=.1pt, draw=gray!10},major grid style={line width=.2pt,draw=gray!50},ticks=none,minor tick style={draw=none}}%, every axis/.style={hide axis}}%
+	\begin{subfigure}{\cs\textwidth}
+		\centering
+		\def\width{\linewidth+\over}
+		\def\height{\linewidth-\hl}
+		\import{figures/}{ExampleShape1Flyer.tex}
+	\end{subfigure}
+	\begin{subfigure}{\cs\textwidth}
+		\centering
+		\def\width{\linewidth+\over}
+		\def\height{\linewidth-\hl}
+		\import{figures/}{ExampleShape2Flyer.tex}
+	\end{subfigure}
+	\begin{subfigure}{\cs\textwidth}
+		\centering
+		\def\width{\linewidth+\over}
+		\def\height{\linewidth-\hl}
+		\import{figures/}{ExampleShape3Flyer.tex}
+	\end{subfigure}
+\end{figure}
+\vspace{-.8cm}
+\begin{figure}[h!]
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={xshift=0,yshift=-.9em},xlabel style={yshift=25,at={(axis description cs:0.5,-.35)},anchor=north}}}%, every axis/.style={hide axis}}%
+	\centering
+	\def\sep{3em}
+	\def\width{.55\linewidth}
+	\def\height{.25\linewidth}
+	\import{figures/}{MagExampleBodeFlyer.tex}
+\end{figure}
+%						\end{subfigure}
+%			\end{figure}	
+%		\end{changemargin} 
+%\end{adjustwidth}
+			\textbf{Cameron Naugle}\\
+			Committee: Dr. Mohammad Noori, Dr. Hemanth Porumamilla, Dr. Peter Schuster, and Dr. Xi Wu(Advisor)
+			\vfill
+			
+			A thesis presented for the degree of\\
+			Master of Science\\[2pt]
+			
+%			\vspace{0.8cm}
+			
+			\includegraphics[width=0.1\textwidth]{./figures/cal-poly-university-seal.jpg}
+			
+			Mechanical Engineering\\
+			California Polytechnic State University, San Luis Obispo\\[6pt]
+			\textbf{Wedenesday, April 4th, at 8:30 A.M. Kennedy Library, Room 216K}
+			
+
+
+
+	\end{center}
+\end{document}
