@@ -81,54 +81,53 @@ For the example problem defined in \S\ref{FrequencyDomainAnalysis} the unbalance
 	\label{fig:ExampleBode}
 \end{figure}
 \begin{figure}
-	\begin{subfigure}{.5\linewidth}
+	\begin{subfigure}{\textwidth}
 	\def\width{\linewidth/1.5}
 	\def\height{.25\linewidth}
 	\def\sep{2.5cm}
 	\pgfplotsset{
 		every picture/.style={trim axis left,trim axis right},
-		every axis/.style={
-			width=\width,
-			xlabel={$ \Re(H) $},
-			xlabel style={yshift=0},
-			ylabel={$ \Im(H) $},
-			ylabel style={xshift=0},
-			axis equal,
-		},
-		ticklabel style={
-			/pgf/number format/fixed,
-			/pgf/number format/precision=3
+					every axis/.style={
+			zlabel style={yshift=-.5cm},
+			 zticklabel style={rotate=90},
 		},
 	}
 	\centering
 	\import{}{./figures/ExampleNyquist1.tex}
-	\caption{Nyquist Diagram for the second mode in the speed range $ 1180 < \Omega < 1195[RPM] $. Both paths are in the clockwise direction.}
+	\caption{Nyquist Diagram for the second mode in the speed range $ 1180 < \Omega < 1195[RPM] $.}
 	\end{subfigure}
-	\begin{subfigure}{.5\linewidth}
+	\begin{subfigure}{\textwidth}
 			\def\width{\linewidth/1.5}
 		\def\height{.25\linewidth}
 		\def\sep{2.5cm}
 		\pgfplotsset{
 			every picture/.style={trim axis left,trim axis right},
 			every axis/.style={
-				width=\width,
-				xlabel={$ \Re(H) $},
-				xlabel style={yshift=0},
-				ylabel={$ \Im(H) $},
-				ylabel style={xshift=0},
-							axis equal,
-			},
-			ticklabel style={
-				/pgf/number format/fixed,
-				/pgf/number format/precision=3
+				zlabel style={yshift=-.5cm},
+				zticklabel style={rotate=90},
 			},
 		}
 		\centering
 		\import{}{./figures/ExampleNyquist2.tex}
-		\caption{Nyquist Diagram for the second mode in the speed range $ 5100 < \Omega < 5300[RPM] $. Both paths are in the clockwise direction.}
+		\caption{Nyquist Diagram for the second mode in the speed range $ 5100 < \Omega < 5300[RPM] $.}
 	\end{subfigure}
-	\caption{Nyquist plots for the first two modes of the example two disk problem.}
+	\caption{Nyquist plots for the first two modes at node 6 for the example two disk problem.}
 	\label{fig:ExampleNyquist}
+\end{figure}
+Using the particular integral of $ \vect{q}=\vect{q}_0e^{i\omega t} $ instead of the synchronous solution, provides whirl frequencies independent of spin speed. This allows for the investigation of all modes of vibration at a specific spin speed. For instance, if the spin speed is set to $ 4000[RPM] $ and the Nyquist plot for the first mode is revisited (Figure \ref{fig:ExampleNyquistIndependent1}) it is evident that the path the plot traces is in the counter-clockwise direction indicating instability of mode 1 at the spin speed of $ 4000[RPM] $.
+\begin{figure}
+	\def\width{\linewidth/1.5}
+	\def\sep{2.5cm}
+	\pgfplotsset{
+		every picture/.style={trim axis left,trim axis right},
+		every axis/.style={
+			zlabel style={yshift=-.5cm},
+			zticklabel style={rotate=90},
+		},
+	}
+	\centering
+	\import{}{./figures/ExampleNyquistIndependent1.tex}
+	\caption{Nyquist Diagram for the first mode at node 6 in the whirl speed range $ 1100 < \omega < 1300[RPM] $ at a spin speed, $ \Omega=4000[RPM] $}
 \end{figure}
 \section{Roots Locus and Stability Analysis}
 One of the most valuable facets of a rotordynamic model is its ability to predict instability. unstable operation can lead to rotor failures and unsafe operating conditions. Before the advent of modern mathematical models for rotating machinery, it was not common to operate a machine above the first critical speed. Internal damping and other rotating damping can cause a subsynchronous whirl when operating above the first critical speed. This effect is worse for machines with stiff bending modes, and is often instigated by loose fittings, shrink fits, and couplings. As mentioned in \S\ref{Rotating Internal Damping}, the effect of external damping sources will not be investigated here. Rather, the stability will be tested by modeling the internal damping of the rotor due to viscous heat production during loading and unloading of the beam in bending. See \S\ref{Rotating Internal Damping} for a more detailed explanation and derivation.\par 
