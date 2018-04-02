@@ -18,9 +18,10 @@ xmin=-0.001,
 xmax=0.001,
 ymin=-0.001,
 ymax=0.001,
-axis equal
+axis equal,
+legend style={at={(0.95,0.95)},anchor=north east}
 ]
-\addplot [color=mycolor1, forget plot]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 4.58075329665042e-05	-2.3977017148518e-06\\
 4.63073402234866e-05	-2.4503833563479e-06\\
@@ -223,7 +224,8 @@ axis equal
 -4.12098302830777e-05	-1.92834020369124e-06\\
 -4.08266631319817e-05	-1.89251758077306e-06\\
 };
-\addplot [color=mycolor2, forget plot]
+\addlegendentry{$ v $}
+\addplot [color=mycolor2,dashed]
   table[row sep=crcr]{%
 -2.39770171486054e-06	-4.58075329664972e-05\\
 -2.450383356324e-06	-4.63073402235093e-05\\
@@ -426,31 +428,32 @@ axis equal
 -1.92834020368264e-06	4.12098302830681e-05\\
 -1.89251758078663e-06	4.08266631320024e-05\\
 };
+\addlegendentry{$ w $}
 \end{axis}
 
 \begin{axis}[%
-width=\width/2,
-at={(\width/2+\sep,0)},
+width=\width/1.25,
+at={(\width/2+\sep,-\width/5)},
 scale only axis,
-tick align=outside,
 xmin=-0.001,
 xmax=0.001,
 ymin=-0.001,
 ymax=0.001,
-zmin=1180,
+zmin=1178,
 zmax=1195,
 ztick={1180,1195},
+zticklabels={1180,1195},
 xticklabels={\empty},
 yticklabels={\empty},
-zlabel={$ \Omega[RPM] $},
-view={-35.2}{9.99999999999998},
+view={50}{20},
 scaled x ticks = false,
 scaled y ticks = false,
-axis z line*=left,
-zmajorgrids,
-zminorgrids,
-xmajorgrids,
-ymajorgrids,
+axis z line*=middle,
+axis x line*=center,
+axis y line*=center,
+zlabel={$ \omega[RPM] $},
+x tick style={draw=none},
+y tick style={draw=none},
 ]
 \addplot3 [color=mycolor1]
  table[row sep=crcr] {%
@@ -655,7 +658,7 @@ ymajorgrids,
 -4.12098302830777e-05	-1.92834020369124e-06	1194.92462311558\\
 -4.08266631319817e-05	-1.89251758077306e-06	1195\\
 };
- \addplot3 [color=mycolor2]
+ \addplot3 [color=mycolor2,dashed]
  table[row sep=crcr] {%
 -2.39770171486054e-06	-4.58075329664972e-05	1180\\
 -2.450383356324e-06	-4.63073402235093e-05	1180.07537688442\\

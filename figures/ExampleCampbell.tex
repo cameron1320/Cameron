@@ -4,8 +4,8 @@
 %  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
 %where you can also make suggestions and rate matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
-\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor1}{rgb}{.5,.5,.5}%
+\definecolor{mycolor2}{rgb}{0,0,0}%
 %
 \begin{tikzpicture}
 
@@ -24,9 +24,10 @@ ylabel style={font=\color{white!15!black}},
 ylabel={$\text{Whirl speed, } \omega_{d}\ [RPM]$},
 title style={font=\bfseries},
 axis x line*=bottom,
-axis y line*=left
+axis y line*=left,
+legend style={at={(0.95,0.25)},anchor=south east},
 ]
-\addplot [color=mycolor1, line width=.7pt, draw=none, mark size=0.7pt, mark=*, mark options={solid, mycolor1}, forget plot]
+\addplot [color=mycolor1,dashed, line width=.5pt]
   table[row sep=crcr]{%
 0	1176.9352450294\\
 75.7575757575758	1176.26538621406\\
@@ -129,7 +130,8 @@ axis y line*=left
 7424.24242424242	1084.19738110886\\
 7500	1082.86776098364\\
 };
-\addplot [color=mycolor2, line width=1.0pt, draw=none, mark size=1.5pt, mark=o, mark options={solid, mycolor2}, forget plot]
+\addlegendentry{Negative Whirl Speed}
+\addplot [color=mycolor2, line width=.5pt]
   table[row sep=crcr]{%
 0	1176.93524502958\\
 75.7575757575758	1177.60103573573\\
@@ -232,7 +234,8 @@ axis y line*=left
 7424.24242424242	1227.64900669789\\
 7500	1228.05408928786\\
 };
-\addplot [color=mycolor1, line width=1.0pt, draw=none, mark size=0.7pt,  mark=*, mark options={solid, mycolor1}, forget plot]
+\addlegendentry{Positive Whirl Speed}
+\addplot [color=mycolor1,dashed, line width=.5pt, forget plot]
   table[row sep=crcr]{%
 0	3729.80120674188\\
 75.7575757575758	3708.33839224273\\
@@ -335,7 +338,7 @@ axis y line*=left
 7424.24242424242	2161.53519779029\\
 7500	2151.61146482166\\
 };
-\addplot [color=mycolor2, line width=1.0pt, draw=none, mark size=1.5pt, mark=o, mark options={solid, mycolor2}, forget plot]
+\addplot [color=mycolor2, line width=.5pt, forget plot]
   table[row sep=crcr]{%
 0	3729.80120674418\\
 75.7575757575758	3751.32749384226\\
@@ -438,7 +441,7 @@ axis y line*=left
 7424.24242424242	5626.0932359856\\
 7500	5639.30193664478\\
 };
-\addplot [color=mycolor1, line width=1.0pt, draw=none, mark size=0.7pt,  mark=*, mark options={solid, mycolor1}, forget plot]
+\addplot [color=mycolor1,dashed, line width=.5pt, forget plot]
   table[row sep=crcr]{%
 0	7398.1526528987\\
 75.7575757575758	7385.22209019074\\
@@ -541,7 +544,7 @@ axis y line*=left
 7424.24242424242	5954.15851620797\\
 7500	5935.78354217701\\
 };
-\addplot [color=mycolor2, line width=1.0pt, draw=none, mark size=1.5pt, mark=o, mark options={solid, mycolor2}, forget plot]
+\addplot [color=mycolor2, line width=.5pt, forget plot]
   table[row sep=crcr]{%
 0	7398.15265290066\\
 75.7575757575758	7411.10711454558\\
@@ -634,7 +637,7 @@ axis y line*=left
 6666.66666666667	8824.80032728654\\
 6742.42424242424	8845.2149822782\\
 };
-\addplot [color=black, dashed, line width=1.5pt, forget plot]
+\addplot [color=black, dashed, line width=1.5pt]
   table[row sep=crcr]{%
 0	0\\
 75.7575757575758	75.7575757575758\\
@@ -737,5 +740,6 @@ axis y line*=left
 7424.24242424242	7424.24242424242\\
 7500	7500\\
 };
+\addlegendentry{Synchronous $ \omega=\Omega $}
 \end{axis}
 \end{tikzpicture}%
