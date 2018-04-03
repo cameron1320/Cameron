@@ -4,8 +4,8 @@
 %  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
 %where you can also make suggestions and rate matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
-\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor1}{rgb}{0,0,0}%
+\definecolor{mycolor2}{rgb}{.5,.5,.5}%
 %
 \begin{tikzpicture}
 
@@ -23,9 +23,9 @@ ymin=0,
 ymax=15,
 legend style={at={(axis description cs:.2,.6)},anchor=south},
 ylabel style={font=\color{white!15!black}},
-ylabel={Amplitude[mils]},
+ylabel={Amplitude, A[mils]},
 ]
-\addplot [color=mycolor1, mark=o, mark size=1.5pt, mark options={solid, mycolor1}]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 1000	0.122737174680521\\
 1010.10101010101	0.126747646377177\\
@@ -128,8 +128,8 @@ ylabel={Amplitude[mils]},
 1989.89898989899	0.788972532291365\\
 2000	0.770363320301798\\
 };
-\addlegendentry{Z}
-\addplot [color=mycolor2,mark size=1pt, mark=*, mark options={solid, mycolor2}]
+\addlegendentry{v}
+\addplot [color=mycolor2,dashed]
   table[row sep=crcr]{%
 1000	0.138772490331103\\
 1010.10101010101	0.143030224283161\\
@@ -232,7 +232,7 @@ ylabel={Amplitude[mils]},
 1989.89898989899	1.24389807448315\\
 2000	1.20645142596741\\
 };
-\addlegendentry{Y}
+\addlegendentry{w}
 \end{axis}
 
 \begin{axis}[%
@@ -252,7 +252,7 @@ yticklabels={-90,0,-270,-180,-90,0},
 ylabel style={font=\color{white!15!black}},
 ylabel={Phase Angle $\beta$[deg.]},
 ]
-\addplot [color=mycolor1, mark size=1.5pt, mark=o, mark options={solid, mycolor1},forget plot]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 1000	180.577341925124\\
 1010.10101010101	180.572391295685\\
@@ -355,7 +355,7 @@ ylabel={Phase Angle $\beta$[deg.]},
 1989.89898989899	4.22090014268162\\
 2000	4.17416823093225\\
 };
-\addplot [color=mycolor2,mark size=1pt, mark=*, mark options={solid, mycolor2}, forget plot]
+\addplot [color=mycolor2,dashed]
   table[row sep=crcr]{%
 1000	90.8124130528335\\
 1010.10101010101	90.8124298113861\\

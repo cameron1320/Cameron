@@ -4,8 +4,8 @@
 %  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
 %where you can also make suggestions and rate matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
-\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor1}{rgb}{0,0,0}%
+\definecolor{mycolor2}{rgb}{.5,.5,.5}%
 %
 \begin{tikzpicture}
 
@@ -17,14 +17,14 @@ scale only axis,
 xmin=1000,
 xmax=2000,
 xlabel style={font=\color{white!15!black}},
-xlabel={Running Speed[RPM]},
+xlabel={Running Speed, $ \Omega[RPM] $},
 ymin=0,
 ymax=15,
 legend style={at={(axis description cs:.2,.5)},anchor=south},
 ylabel style={font=\color{white!15!black}},
-ylabel={Amplitude[mils]}
+ylabel={Amplitude, $ A[mils] $}
 ]
-\addplot [color=mycolor1, mark size=2.0pt, mark=o, mark options={solid, mycolor1}]
+\addplot [color=mycolor1, mark size=1.5pt, mark=o, mark options={solid, mycolor1}]
   table[row sep=crcr]{%
 1003.49181703053	2.57379130972632\\
 1008.67961660067	2.22116851117812\\
@@ -208,8 +208,8 @@ ylabel={Amplitude[mils]}
 1988.27775669382	2.58827534192295\\
 1993.69408017772	2.58818351444257\\
 };
-\addlegendentry{Horizontal}
-\addplot [color=mycolor2, mark size=0.8pt, mark=*, mark options={solid, mycolor2}]
+\addlegendentry{V}
+\addplot [color=mycolor2, mark size=0.6pt, mark=*, mark options={solid, mycolor2}]
   table[row sep=crcr]{%
 1003.49181703053	2.30126775257883\\
 1008.67961660067	2.0726194322978\\
@@ -393,7 +393,7 @@ ylabel={Amplitude[mils]}
 1988.27775669382	2.07023421160532\\
 1993.69408017772	2.040180309599\\
 };
-\addlegendentry{Vertical}
+\addlegendentry{W}
 \end{axis}
 
 \begin{axis}[%
@@ -412,7 +412,7 @@ yticklabels={0,90,180,270,0},
 ylabel style={font=\color{white!15!black}},
 ylabel={Phase Lag[deg.]}
 ]
-\addplot [color=mycolor1, mark size=2.0pt, mark=o, mark options={solid, mycolor1}, forget plot]
+\addplot [color=mycolor1, mark size=1.5pt, mark=o, mark options={solid, mycolor1}, forget plot]
   table[row sep=crcr]{%
 1003.49181703053	308.750430932814\\
 1008.67961660067	304.738569785085\\
@@ -596,7 +596,7 @@ ylabel={Phase Lag[deg.]}
 1988.27775669382	213.11383795599\\
 1993.69408017772	213.329299440397\\
 };
-\addplot [color=mycolor2, mark size=0.8pt, mark=*, mark options={solid, mycolor2}, forget plot]
+\addplot [color=mycolor2, mark size=0.6pt, mark=*, mark options={solid, mycolor2}, forget plot]
   table[row sep=crcr]{%
 1003.49181703053	68.2827176246349\\
 1008.67961660067	19.5142580047141\\

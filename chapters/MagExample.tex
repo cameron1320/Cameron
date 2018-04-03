@@ -1,7 +1,7 @@
-\chapter{Synthesis in Example of a Magnetic Bearing on an Overhung Rotor}
-Analysis and modeling techniques of the previous chapters will now be put to use in a practical example. The goal of which will be to reduce vibration on an overhung disk rotor system with the use of an Active Magnetic Bearing(AMB). An experimental test rig, not unlike the system used in the experimental example of \S\ref{ExperimentalPlots}, will be used to calibrate a  finite element theoretical model. Then, the theoretical model will be extended to include an AMB near the overhung disk. The model will be evaluated for stability, and parameters of the control algorithm for the AMB will be varied to attempt to eliminate the first natural frequency and stabilize the system.
-\section{Physical System}
-The rotor system of interest is depicted in Figure \ref{fig:OverhungDiagram}. Geometric parameters are listed in Table \ref{tab:GeometricParametersofOverhung}. The springs at nodes 1 \& 4 are intended to represent bushings, portion at node 6 is the rotating disk, and nodal numbers are shown as the rotor will be discretized for the finite element model.
+\chapter{Synthesis in Example of a Magnetic Bearing on an Overhung Rotor}\label{MagExample}
+Analysis and modeling techniques of the previous chapters will now be put to use in a practical example. The goal of which will be to reduce vibration on an overhung disk rotor system with the use of an Active Magnetic Bearing(AMB). An experimental test rig, not unlike the system used in the experimental example of \S\ref{ExperimentalPlots}, will be used to calibrate a  finite element theoretical model. Then, the theoretical model will be extended to include an AMB near the overhung disk. The model will be evaluated for stability, and parameters of the control algorithm for the AMB will be varied to attempt to eliminate modes and stabilize the system.
+\section{Physical System Description}
+The rotor system of interest is depicted in Figure \ref{fig:OverhungDiagram}. Geometric parameters are listed in Table \ref{tab:GeometricParametersofOverhung}. The springs at nodes 1 \& 4 are intended to represent bushings, portion at node 6 is the rotating disk, and nodal numbers are indications of how the rotor will be discretized for the finite element model.
 \begin{figure}
 	\centering
 	\def\svgwidth{250pt}
@@ -19,16 +19,16 @@ The rotor system of interest is depicted in Figure \ref{fig:OverhungDiagram}. Ge
 		\end{tabular}
 \end{table}
 \section{Experimental Results}
-The rotor system was tested in a start-up from slow roll to $ 3000[RPM] $. Data shown here is taken from $ 1000[RPM] $ to $ 2000[RPM] $. A set of orthogonal eddy current sensors placed near the disk on the outboard side were used to measure the position of the shaft throughout the start-up. Position data was recorded at a sampling rate of $ 128000[Hz] $ with no processing applied. The resulting 3D orbit of the start-up is shown in Figure \ref{fig:MagExampleOrbit3D}. Of note is the necking in the 3D orbit that is indicative of high anisotropy inducing a negative whirl during the first natural frequency. Also resulting from the experiment is the full spectrum cascade plot of Figure \ref{fig:MagExampleCascade}, in which it is evident that synchronous vibration dominates the spectra. Though, for the production of the bode diagram (Figure \ref{fig:MagExampleBode}) there was a benefit in clarity from filtering the data to synchronous speed.
+The rotor system was tested in a start-up from slow roll to $ 3000[RPM] $. Data shown here is taken from $ 1000[RPM] $ to $ 2000[RPM] $. A set of orthogonal eddy current position sensors placed near the disk on the outboard side were used to measure the position of the shaft throughout the start-up. Position data was recorded at a sampling rate of $ 128000[Hz] $ with no processing applied, this sampling rate is much higher than the required rate to avoid aliasing. The resulting 3D orbit of the start-up is shown in Figure \ref{fig:MagExampleOrbit3D}. Of note is the necking in the 3D orbit during the natural frequency that is indicative of high anisotropy inducing a negative whirl during the first natural frequency. Also resulting from the experiment is the full spectrum cascade plot of Figure \ref{fig:MagExampleCascade}, in which it is evident that synchronous vibration dominates the spectra. Though, for the production of the bode diagram (Figure \ref{fig:MagExampleBode}) there was a benefit in clarity from filtering the data to synchronous speed.
 \begin{figure}
 	\centering
-	\includegraphics[width=.5\linewidth]{./figures/MagExampleOrbit3D.pdf}
+	\includegraphics[width=.5\linewidth]{./figures/MagExpExampleOrbit3D.png}
 	\caption{3D Orbit of the experimental overhung rotor system.}
 	\label{fig:MagExampleOrbit3D}
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=.5\linewidth]{./figures/MagExampleCascade.pdf}
+	\includegraphics[width=.8\linewidth]{./figures/MagExampleCascade.png}
 	\caption{Cascade of the experimental overhung rotor system.}
 	\label{fig:MagExampleCascade}
 \end{figure}
@@ -38,12 +38,12 @@ The rotor system was tested in a start-up from slow roll to $ 3000[RPM] $. Data 
 	\def\sep{3em}
 	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={xshift=0},xlabel style={yshift=0}}}%, every axis/.style={hide axis}}%
 	\centering
-	\import{figures/}{MagExampleBode.tex}
+	\import{}{./figures/MagExampleBode.tex}
 	\caption{Bode diagram of the experimental overhung rotor filtered to 1X.}
 	\label{fig:MagExampleBode}
 \end{figure}
 \section{Theoretical Model}
-To create a theoretical model for this rotor system. The shaft will be discretized into 7 elements a disk at node 6 and bearings at nodes 1 and 4, as depicted in Figure \ref{fig:OverhungDiagram}. In the experiment, a small length of shaft continued after the overhung disk and has been included in this model. The AMB will be included as a nodal point element with with stiffness and damping to be derived in \S\ref{Active Magnetic Bearing}. Parameter values for the finite element model are provided in Table \ref{tab:OverhungParameters}. Discovered values such as $ \eta_v $ and the stiffnesses of bearing are listed here, but the process for their determination is discussed.
+To create a finite element model for this rotor system the shaft will be discretized into 7 elements a disk at node 6 and bearings at nodes 1 and 4, as depicted in Figure \ref{fig:OverhungDiagram}. In the experiment, a small length of shaft continued after the overhung disk and has been included in this model. The AMB will be included as a nodal point element with with stiffness and damping to be derived in \S\ref{Active Magnetic Bearing}. Parameter values for the finite element model are provided in Table \ref{tab:OverhungParameters}. Discovered values such as $ \eta_v $ and the stiffnesses of bearing are listed here, but the process for their determination is discussed.
 \begin{table}
 	\caption{Properties of disks, shaft elements, and bearings of the theoretical model.} \label{tab:MagTheoryRotorTable}
 	\centering
@@ -63,13 +63,13 @@ It is evident by inspection of the Bode diagram for the experimental system (fig
 \begin{figure}
 \begin{subfigure}{\textwidth/2}
 	\centering
-	\includegraphics[width=\linewidth]{./figures/Images/Figure_6.png}
+	\includegraphics[width=\linewidth]{./figures/MagExampleHorVertStiffAniCompare.eps}
 	\caption{3D Orbit of the experimental overhung rotor system.}
 	\label{fig:HorVertStiffAniCompare}
 \end{subfigure}
 \begin{subfigure}{\textwidth/2}
 	\centering
-	\includegraphics[width=\linewidth]{./figures/Images/Figure_5.png}
+	\includegraphics[width=\linewidth]{./figures/MagExamplePosNegStiffAniCompare.eps}
 	\caption{3D Orbit of the experimental overhung rotor system.}
 	\label{fig:PosNegStiffAniCompare}
 \end{subfigure}
@@ -82,7 +82,7 @@ Using the bode diagram, the stiffness anisotropy is adjusted until the shapes of
 	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={yshift=.5em},xlabel style={yshift=0}}}%, every axis/.style={hide axis}}%
 	\centering
 	\import{figures/}{MagTheoryBode.tex}
-	\caption{Damping ratio vs. spin speed with indication of threshold of stability.}
+	\caption{Bode Diagram of overhung system without AMB.}
 	\label{fig:MagTheoryBode}
 \end{figure}
 And now the resulting system is further described with an expanded speed range of $ 20000[RPM] $. The new Campbell diagram of Figure \ref{fig:MagTheoryCampbell}, the roots locus of Figure \ref{fig:MagTheoryRootLocus}. Additionally, the first three mode shapes are plotted for this theoretical model (Figures \ref{fig:MagTheoryShape1}, \ref{fig:MagTheoryShape2}, \& \ref{fig:MagTheoryShape3}). Note that the first mode is conical in shape, but the disk is far from an antinode at node 6 so it does not experience significant gyroscopic moments. This idea is supported by the campbell diagram, fig. \ref{fig:MagTheoryCampbell}, as the first mode natural frequency does not change significantly over the speed range. On the other hand, the second mode has its antinode atode 6 so the disk experience maximum gyroscopic moments and the second mode critical speed is much more dependent on speed.
@@ -93,17 +93,17 @@ And now the resulting system is further described with an expanded speed range o
 	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={yshift=.5em},xlabel style={yshift=0}}}%, every axis/.style={hide axis}}%
 	\centering
 	\import{figures/}{MagTheoryCampbell.tex}
-	\caption{Damping ratio vs. spin speed with indication of threshold of stability.}
+	\caption{Campbell Diagram of the overhung system without AMB.}
 	\label{fig:MagTheoryCampbell}
 \end{figure}
 \begin{figure}[!htb]
 	\def\width{.6\linewidth}
 	\def\height{.4\linewidth}
 	\def\sep{3em}
-	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={yshift=.5em},xlabel style={yshift=0}}}%, every axis/.style={hide axis}}%
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={yshift=.0},xlabel style={yshift=0}}}%, every axis/.style={hide axis}}%
 	\centering
-	\import{figures/}{MagTheoryRootLocus.tex}
-	\caption{Damping ratio vs. spin speed with indication of threshold of stability.}
+	\import{}{./figures/MagExampleRootsLocus.tex}
+	\caption{Roots Locus of overhung system without AMB.}
 	\label{fig:MagTheoryRootLocus}
 \end{figure}
 \begin{figure}
@@ -113,7 +113,7 @@ And now the resulting system is further described with an expanded speed range o
 		\centering
 		\def\width{\linewidth}
 		\def\height{\linewidth}
-		\import{figures/}{MagTheoryShape1.tex}
+		\import{}{./figures/MagTheoryShape1.tex}
 		\caption{Mode Shape 1.}
 		\label{fig:MagTheoryShape1}
 	\end{subfigure}

@@ -4,10 +4,10 @@
 %  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
 %where you can also make suggestions and rate matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
-\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
-\definecolor{mycolor3}{rgb}{0.00000,0.45000,0.74000}%
-\definecolor{mycolor4}{rgb}{0.85000,0.33000,0.10000}%
+\definecolor{mycolor1}{rgb}{0,0,0}%
+\definecolor{mycolor2}{rgb}{.5,.5,.5}%
+\definecolor{mycolor3}{rgb}{0,0,0}%
+\definecolor{mycolor4}{rgb}{.5,.5,.5}%
 %
 \begin{tikzpicture}
 
@@ -25,7 +25,7 @@ ymax=0,
 ytick={-360,-270,-180,-90,0},
 yticklabels={{0},{-270},{-180},{-90},{0}},
 ylabel style={font=\color{white!15!black}},
-ylabel={Phase Angle[deg.]},
+ylabel={Phase Angle, $ \beta[deg] $},
 legend style={at={(axis description cs:.91,.575)},anchor=south},
 ]
 \addplot [color=mycolor1]
@@ -1031,7 +1031,7 @@ legend style={at={(axis description cs:.91,.575)},anchor=south},
 19979.97997998	-173.382702498015\\
 20000	-173.426579043611\\
 };
-\addlegendentry{Z}
+\addlegendentry{v}
 \addplot [color=mycolor2]
   table[row sep=crcr]{%
 0	0\\
@@ -2035,7 +2035,7 @@ legend style={at={(axis description cs:.91,.575)},anchor=south},
 19979.97997998	-263.628246192498\\
 20000	-263.675301237791\\
 };
-\addlegendentry{Y}
+\addlegendentry{w}
 \addplot [color=mycolor3, dashed]
   table[row sep=crcr]{%
 0	0\\
@@ -2089,6 +2089,7 @@ legend style={at={(axis description cs:.91,.575)},anchor=south},
 19591.8367346939	-174.879705563775\\
 20000	-175.208146219688\\
 };
+\addlegendentry{v, with AMB}
 \addplot [color=mycolor4, dashed]
   table[row sep=crcr]{%
 0	0\\
@@ -2142,6 +2143,7 @@ legend style={at={(axis description cs:.91,.575)},anchor=south},
 19591.8367346939	-265.188996147688\\
 20000	-265.565185141304\\
 };
+\addlegendentry{w, with AMB}
 \end{axis}
 
 \begin{axis}[%
@@ -2158,7 +2160,7 @@ ymin=1e-03,
 ymax=100,
 yminorticks=true,
 ylabel style={font=\color{white!15!black}},
-ylabel={Amplitude[mils]},
+ylabel={Amplitude, A[mils]},
 ]
 \addplot [color=mycolor1, forget plot]
   table[row sep=crcr]{%
