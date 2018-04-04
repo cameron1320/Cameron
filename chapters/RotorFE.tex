@@ -1,16 +1,9 @@
 \chapter{Finite Element Method For Rotordynamic systems}
-In this chapter the Finite Element Method(FEM) will be employed in the simulation of rotordynamic systems. There are many advantages to using this discretizing method to solve problems of rotating machines. One of which is the generic form that the equation, and its parts take. The method lends itself to being able to easily create new matrices that can insert right into your equations of motion. Another, is the ability to move components around in space without the need to reevaluate the physics. Finally, the analysis techniques for Multiple Degree Of Freedom (MDOF) systems is wide reaching, and will serve to richly enhance our understanding of a complex system made of simple parts.\par 
-First, the beam element commonly refered to as the Timoshenko Beam Element will be derived from the kinematic and constitutive constraints (An alternative element, the Bernoulli-Euler element is provided in Appendix A). Then the solution to the resulting equation of motion will be discretized and variables separated in position and time to give the finite element equations of motion. Further, an extension to the beam element model is presented that will consider the viscous damping effects in the beam element. Equations for disks, bearings, and complex versions of all equations will be presented. Finally, the assembly and analysis of the model will result in intuitive figures that will be shown to compare well to experimental data.
+In this chapter the Finite Element Method(FEM) will be employed in the simulation of rotordynamic systems. There are many advantages to using this discretized method to solve problems of rotating machines. One of which is the generic form that the global equation, and its parts take. The method makes it possible to define all components of a system separately, only to combine them at the end. Also, FEM makes it possible to move components around in space without a need to reevaluate the physics. Finally, the analysis techniques for the resulting equations of motion are wide-reaching, and will serve to richly enhance our understanding of a complex system made of simple parts.\par 
+First, the beam element commonly refered to as the Timoshenko Beam Element will be derived from the kinematic and constitutive constraints (derivation of an alternative element, the Bernoulli-Euler beam element is provided in Appendix A). The solution to the resulting equation of motion will be discretized and variables separated in position and time to give the finite element equations of motion. An extension to the Timoshenko beam element model will be presented that will consider viscous damping effects in the beam element. Equations for disks, bearings, and complex versions of all equations will be presented.
 \section{Timoshenko Beam Finite Element} \label{Timoshenko Beam Finite Element}
-The Timoshenko beam element allows for the beam cross section plane at any axis location to differ from normal with the axis of the beam. In other words, the element allows for shear stresses. This element often also includes the effects of rotary inertia and gyroscopic moments, as it will in this derivation. Generalized displacements used are assumed to be variable in both time and space. The element has six degrees of freedom. Three translation and three rotations all defined on the beam axis. So then all displacements are functions of time, $ t $, and the axial spacial coordinate, $ x $.
+The Timoshenko beam element allows for the beam cross section plane at any axis location to differ from normal with the axis of the beam. In other words, the element allows for shear stresses. This element often also includes the effects of rotary inertia and gyroscopic moments, as it will in this derivation. Generalized displacements used are assumed to be variable in both time and space. The element has six degrees of freedom--three translation and three rotations all defined on the beam axis. Beam displacement coordinates are defined in Figure \ref{fig:TimoBeamDOF}. All displacements are functions of time, $ t $, and the axial spacial coordinate, $ x $. Derivations herein are a synthesis from references provided in the literature review \S\ref{LiteratureReview}, further interpretations are adapted from: \cite{andersen2008elastic},\cite{gmur1991shaft},\cite{kirchgassner2016finite}. For internal damping interpretations and sources: \cite{kandil2005rotor},\cite{forrai1996stability},\cite{wettergren1996dynamic},\cite{genta2004persistent},\cite{ertas2007influence}.
 \subsection{Kinematic Relationships} \label{Kinematic Relationships}
-\begin{figure}
-	\centering
-	\def\svgwidth{400pt}
-	\import{figures/}{kinematicbeamsurface.pdf_tex}
-	\caption{Beam Element with nodal displacements.}
-	\label{fig:KineBeamElem}
-\end{figure}
 \begin{figure}
 	\centering
 	\def\svgwidth{250pt}
@@ -18,7 +11,14 @@ The Timoshenko beam element allows for the beam cross section plane at any axis 
 	\caption{Timoshenko beam section with degrees of freedom at some point x along beam axis.}
 	\label{fig:TimoBeamDOF}
 \end{figure}
-In order to develop the stresses and strains internal to the beam, and subsequently the equations of motion, the motion of some arbitrary point on the beam must be defined in terms of the generalized coordinates. Motion of two points is taken into consideration to assist in dividing the motion into a translation and a rotation. These points are shown in Figure \ref{fig:KineBeamElem}. The first point, $ C $, falls on the beam axis at location x, and in the undeformed configuration, the vector $ \vec{r}_c^\prime= \overrightarrow{OC} $ forms a right angle with the surface of the cross section. The second point, $ P $ is at some arbitrary $ (y,z) $ location on the cross section. The vecor $ \vec{t}=\overrightarrow{CP} $ points from the beam axis to the point along the cross section. If we follow this point $ P $ we will be able to define the motion of the cross section as a whole, or more succinctly, to define the displacements $ u_p,v_p,w_p $ in terms of the coordinates $ u,v,w,\psi,\theta$, \& $\phi $. The motion of point P is split into translation and rotation, where $ \vec{t} $ is rotated and $ \vec{r}_c $ is translated to point to the deformed location $ P' $. The vector pointing to P in the undeformed state is defined as
+\begin{figure}
+\centering
+\def\svgwidth{400pt}
+\import{figures/}{kinematicbeamsurface.pdf_tex}
+\caption{Beam Element with nodal displacements.}
+\label{fig:KineBeamElem}
+\end{figure}
+In order to develop the relationship between internal stresses and strains in the beam, and subsequently the equations of motion, the motion of some arbitrary point on the beam must be defined in terms of the generalized coordinates. Motion of two points is taken into consideration to assist in dividing the motion into a translation and a rotation. These points are shown in Figure \ref{fig:KineBeamElem}. The first point, $ C $, falls on the beam axis at location x, and in the undeformed configuration, the vector $ \vec{r}_c^\prime= \overrightarrow{OC} $ forms a right angle with the surface of the cross section. The second point, $ P $ is at some arbitrary $ (y,z) $ location on the cross section. The vecor $ \vec{t}=\overrightarrow{CP} $ points from the beam axis to the point along the cross section. If we follow this point $ P $ we will be able to define the motion of the cross section as a whole, or more succinctly, to define the displacements $ u_p,v_p,w_p $ in terms of the coordinates $ u,v,w,\psi,\theta$, \& $\phi $. The motion of point P is split into translation and rotation, where $ \vec{t} $ is rotated and $ \vec{r}_c $ is translated to point to the deformed location $ P' $. The vector pointing to P in the undeformed state is defined as
 \begin{equation}\label{eq:r}
 \vec{r}=\vec{r}_c+\vec{t}
 \end{equation}
@@ -80,6 +80,7 @@ u-\theta y+\psi z\\
 v-\phi z\\
 w+\phi y\end{array}\right\}
 \end{equation}
+This equation will be used, in conjunction with material properties, to integrate over the beam cross sectional area and obtain generalized internal beam forces and moments.\par
 \subsection{Internal Constitutive Relationship} \label{Internal Constitutive Relationship}
 Stresses are assumed to exist in the beam in the axial direction, and in shear on the face of the beam section. Stresses in the transverse, or the y and z, directions are assumed negligible. Shear stresses out of the plane section are assumed to be vanishing as the differential element shrinks. Internal damping is to be considered independently from this material constitutive relationship. Written out, these stresses are represented by the matrix
 \begin{equation}\label{key}
@@ -89,7 +90,7 @@ Stresses are assumed to exist in the beam in the axial direction, and in shear o
 \sigma_{xz}&0&0
 \end{array}\right]
 \end{equation}
-using the Hooke's Law for a linear elastic isotropic material, expressed as
+Using the Hooke's Law for a linear elastic isotropic material, expressed as
 \begin{equation}\label{key}
 \epsilon_{ij}=\frac{1}{E}[(1+\nu)\sigma_{ij}-\nu\delta_{ij}\sigma_{kk}]
 \end{equation}
@@ -103,7 +104,7 @@ E&0&0\\0&2G&0\\0&0&2G
 \epsilon_{xx}\\ \epsilon_{xy}\\ \epsilon_{xz}
 \end{array}\right\}
 \end{equation}
-where, $ G=\frac{E}{2(1+\nu)} $. Strains are derived from displacements of equation \eqref{eq:DispVectEvaluated} using a linear strain-displacement relationship for infinitesimal strains: $ 2\epsilon_{ij}=u_{i,j}+u_{j,i} $.
+where, $ G=\frac{E}{2(1+\nu)} $. Strains are derived from displacements of equation \eqref{eq:DispVectEvaluated} using a linear strain-displacement relationship for infinitesimal strains: $ 2\epsilon_{ij}=u_{i,j}+u_{j,i} $. Non-trivial internal strains are
 %\begin{equation}\label{eq:LinearStrainDispRelationship}
 %
 %\end{equation}
@@ -122,7 +123,7 @@ where, $ G=\frac{E}{2(1+\nu)} $. Strains are derived from displacements of equat
 \end{equation}
 Note that in the case of the Euler-Bernoulli beam derivation the slope in a transverse direction displacement is equal to the rotation angle about the orthogonal transverse axis, i.e., $v'=\theta$ and $w'=\psi$. Application of those would reduce the system to the Euler-Bernoulli beam.\par
 
-It will be proven useful to introduce generalized strains that group strain contributions above as axial, bending, torsion, and shear, represented by the symbols $ \varepsilon $, $ \rho $, $ \varphi $, $ \gamma $,respectively.
+It will be proven useful to introduce generalized strains that group strain contributions above as axial, bending, torsion, and shear, represented by the symbols $ \varepsilon $, $ \rho $, $ \varphi $, $ \gamma $,respectively, as
 \begin{equation}\label{eq:GeneralizedStrains}
 \left\{\arraycolsep=1pt\begin{array}{rl}
 \varepsilon&=u'\\
@@ -132,7 +133,7 @@ It will be proven useful to introduce generalized strains that group strain cont
 \gamma_{y}&=v'-\theta\\
 \gamma_{z}&=w'+\psi\end{array}\right.
 \end{equation}
-allowing the representation of the strains from eq \eqref{eq:StrainEvaluatedSimple} using the generalized strains as:
+Plugging in theses new generalized strains in \eqref{eq:StrainEvaluatedSimple} gives
 \begin{equation}\label{eq:StrainEvaluatedSimpleGeneralized}
 \left\{\begin{array}{l}
 \epsilon_{xx}=\varepsilon+\rho_yy+\rho_zz\\
@@ -140,7 +141,7 @@ allowing the representation of the strains from eq \eqref{eq:StrainEvaluatedSimp
 \epsilon_{xz}=\frac{1}{2}(\gamma_z+\varphi y)
 \end{array}\right.
 \end{equation}
-Now the stresses in equation \eqref{eq:ConstitutiveRelationshipEngineeringNotation} can be represented with the displacements as 
+Now the stresses in equation \eqref{eq:ConstitutiveRelationshipEngineeringNotation} can be represented with the displacements or the generalized strains as 
 \begin{equation}\label{key}
 \left\{\begin{array}{c}
 \sigma_{xx}\\ \sigma_{xy}\\ \sigma_{xz}
@@ -165,18 +166,19 @@ E(\varepsilon+\rho_yy+\rho_zz)\\ G(\gamma_y-\varphi z)\\ G(\gamma_z+\varphi y)
 %\begin{equation}\label{key}
 %\sigma_{ij}=\lambda\delta_{ij}\epsilon_{k,k}+\mu\left(u_{i,j}+u_{j,i}\right)
 %\end{equation}
+Total strain energy from internal stresses can be expressed by the integral expression
 \begin{equation}\label{eq:TotalVirtualStrainEnergyExpression}
 U = \int_{\volume}\sigma_{ij}\epsilon_{ij}d\volume
 \end{equation}
-Now the inner product of the total virtual strain energy can be expanded
+and expanded as
 \begin{equation}\label{eq:TotalStrainEnergyExpanded}
 U=\int_{\volume}\left[\sigma_{xx}\epsilon_{xx}+2\sigma_{xy}\epsilon_{xy}+2\sigma_{xz}\epsilon_{xz}\right]d\volume
 \end{equation}
-Then expand virtual strains into the generalized strains corresponding to the degrees of freedom of the beam element and collect terms on generalized strains
+Expand strains using generalized strain expressions \eqref{eq:StrainEvaluatedSimpleGeneralized} and collect terms on generalized strains to get
 \begin{equation}\label{eq:TotalStrainEnergyGeneralized}
  U=\int_{\volume}\left[\sigma_{xx}\varepsilon+\sigma_{xx}y\rho_y+\sigma_{xx}z\rho_z+\sigma_{xy}\gamma_y+\sigma_{xz}\gamma_z+(\sigma_{xz}y-\sigma_{xy}z)\varphi\right]d\volume
 \end{equation}
-this internal mechanical energy expression allows us to recognize stresses conjugate with each generalized strain as the corresponding stress for that phenomena. Integration allows the determination of the forces and moments related to each generalized strain as
+This internal mechanical energy expression allows us to recognize stresses conjugate with each generalized strain as the corresponding stress for that phenomena. Integration allows the determination of the forces and moments related to each generalized strain as
 \begin{equation}\label{eq:generalizedForces}
 \left\{\arraycolsep=1pt\begin{array}{rcl}
 N=&\int_A\sigma_{xx}dA&=E( A\varepsilon+S_y\rho_y+S_z\rho_z)\\
@@ -196,8 +198,6 @@ I_z&=\int_Ay^2dA&&&&&J_x&=I_y+I_z
 \end{array}
 \end{array}\right. $\\\end{center}
 $ \kappa $ is the shear coefficient which attempts to correct for the fact that the shear strain is not constant over the beam cross section. Assuming the central axis of the beam is coincident with the shear center, then $ A_y=A_z=I_{xy}=0 $. Which simplifies the conjugate forces to
-
-
 \begin{equation}\label{eq:generalizedForcesSimplified}
 \left\{\arraycolsep=1pt\begin{array}{rll}
 N&=EA\varepsilon&=EAu'\\
@@ -208,7 +208,7 @@ Q_z&=\kappa G A\gamma_z&=\kappa G A(w'+\psi)\\
 M_x&=\kappa G J_x\varphi&=\kappa G J_x\phi'
 \end{array}\right.
 \end{equation}
-
+These forces will be used to evaluate the motion of a beam element using a free body diagram and resultant motion.\par
 %\begin{equation}\label{eq:TotalVirtualStrainEnergyGeneralizedExpanded}
 %\delta U=\int_{0}^{l}\left[N\delta\varepsilon+M_z\delta\rho_y+M_y\delta\rho_z+Q_y\delta\gamma_y+Q_z\delta\gamma_z+M_x\delta\varphi\right]dx
 %\end{equation}
@@ -232,7 +232,7 @@ M_x&=\kappa G J_x\varphi&=\kappa G J_x\phi'
 %\end{multline}
 %leaving $ \delta U_b $ as the boundary value terms to be neglected. The principle of virtual work for a quasistatic beam with no external work gives $ \delta U=0 $. Therefore, each term in the integrand of \eqref{eq:TotalVirtualStrainEnergyDisplacementRel} must equal zero.
 \subsection{Differential Equations of Motion} \label{Differential Equations of Motion}
-Now the equations are motion are derived for the Timoshenko beam element. External forces are not included in this derivation. Though they may easily be added to the diagram of figure \ref{fig:BeamDifferentialSection} and included in the analysis. It is also assumed that the cross section remains planar during deformation and the material properties are homogeneous through time and space. The derivation is the same as for a Euler-Bernoulli beam with the exception of the constitutive relations used at the end and the inclusion of torsion and axial degrees of freedom.
+The equations of motion will now be derived for the Timoshenko beam element. External forces are not included in this derivation. Though they may easily be added to the diagram of figure \ref{fig:BeamDifferentialSection} and included in the analysis. It is also assumed that the cross section remains planar during deformation and the material properties are homogeneous through time and space. The derivation is the same as for a Euler-Bernoulli beam with the exception of the constitutive relations used at the end and the inclusion of torsion and axial degrees of freedom.
 \begin{figure}
 	\centering
 	\def\svgwidth{600pt}
@@ -240,11 +240,11 @@ Now the equations are motion are derived for the Timoshenko beam element. Extern
 	\caption{Beam differential element with generalized forces.}
 	\label{fig:BeamDifferentialSection}
 \end{figure}
-Using conservation of momentum and conservation of the moment of momentum a relationship between inertia and internal forces is developed. Applying summation of forces in the x-direction
+Using conservation of momentum and conservation of the moment of momentum a relationship between inertia and internal forces is developed. Using Figure \ref{fig:BeamDifferentialSection} and applying summation of forces in the x-direction leads to
 \begin{equation}\label{key}
 (N+\frac{1}{2}\frac{\partial N}{\partial x}dx)-(N-\frac{1}{2}\frac{\partial N}{\partial x}dx)=\rho A dx \frac{\partial^2u}{\partial x^2}
 \end{equation}
-by Simplifying the above equation, and performing the same steps for the other directions and moments we get
+By Simplifying the above equation, and performing the same steps for the other directions and moments we get
 \begin{equation}\label{eq:EquilibriumEquations}
 \left\{\arraycolsep=1pt\begin{array}{rl}
 \frac{\partial N}{\partial x}&=\rho A\frac{\partial^2 u}{\partial x^2}\\
@@ -319,7 +319,7 @@ where,
 \end{array}\right]
 \end{array}\right.
 \end{equation}
-and $ \vec{\mathbf{u}}=[v,w,\psi,\theta,u,\phi]^{\T} $ The principle of virtual displacements is utilized on the equations of motion to obtain the weak for of the equations of motion and integrated over the length of the beam.
+and $ \vec{\mathbf{u}}=[v,w,\psi,\theta,u,\phi]^{\T} $. The principle of virtual displacements is utilized on the equations of motion to obtain the weak form of the equations of motion and integrated over the length of the beam.
 \begin{equation}\label{eq:BeamDiffEquationVirtualStart}
 \int_0^l \delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{M}}^e\ddot{\vec{\mathbf{u}}}dx+\int_0^l \delta\vec{\mathbf{u}}^\T\Omega\bunderline{\mathcal{G}}^e\dot{\vec{\mathbf{u}}}-\int_0^l\delta\vec{\mathbf{u}}^\T\frac{\partial ()}{\partial x}\bunderline{\mathcal{S}}^e\vec{\mathbf{u}}dx+\int_0^l\delta\vec{\mathbf{u}}^\T\bunderline{\mathcal{P}}\bunderline{\mathcal{S}}^e\vec{\mathbf{u}}dx=0
 \end{equation}
@@ -351,7 +351,7 @@ Notice that $ \frac{\partial ()}{\partial x}\bunderline{I}+\bunderline{\mathcal{
 \end{equation}
 $ \bunderline{\mathcal{M}}^e $ is the inertia of the element, $ \bunderline{\mathcal{G}}^e $ is the rotating inertia, $ \bunderline{\mathcal{D}}^e $ is the material stress-strain relationship, and $ \bunderline{\mathcal{B}}^e $ is the strain-displacement operator. The solution of this differential system motivates a separation of variables that will be discussed in the next section.
 \subsection{Shape Functions} \label{Shape Functions}
-The displacements thus far have been assumed to be functions of both position and time. Now the total displacement is separated into functions that depend on time and functions that depend on position. This is a fundamental part of the discretization of the beam element, and the use the finite element method. 
+The displacements thus far have been assumed to be functions of both position and time. Now the total displacement is separated into functions that depend on time and functions that depend on position. This is a fundamental part of the discretization of the beam element, and the use the finite element method.\par
 \begin{equation} \label{eq:FEGoverning}
 \left\{\begin{array}{rl}
 \vec{\mathbf{u}}(x,t)&=\bunderline{\mathbf{N}}(x)\vec{\mathbf{q}}(t)\\
@@ -360,7 +360,7 @@ The displacements thus far have been assumed to be functions of both position an
 \delta\vec{\mathbf{u}}(x,t)&=\bunderline{\mathbf{N}}(x)\delta\vec{\mathbf{q}}(t)
 \end{array}\right.
 \end{equation}
-where, $ \vec{\mathbf{u}}=[v,w,-\psi,\theta,u,\phi]^\T $ \& $ \vec{\mathbf{q}}=[v_1,w_1,-\psi_1,\theta_1,v_2,w_2,-\psi_2,\theta_2,u_1,\phi_1,u_2,\phi_2]^\T $. This specfic order of $ \vec{\mathbf{q}} $ is chosen with $ u $ and $ \phi $ at the end to ease the condensation of the axial and torsional degrees of freedom out of the system if their use is not necessary for the system of interest. $ \psi $ angles are defined as negative to allow for the same stiffness matrix to define the motion in both planes, and more importantly, to allow for the use of the complex plane to simplify the problem. The shape functions $ \bunderline{\mathbf{N}}(x) $ interpolate the displacements between the beam ends. These functions must must solve the static portion of the differential equations \eqref{eq:EquationsOfMotionIndependent}.
+$ \vec{\mathbf{u}}=[v,w,-\psi,\theta,u,\phi]^\T $ \& $ \vec{\mathbf{q}}=[v_1,w_1,-\psi_1,\theta_1,v_2,w_2,-\psi_2,\theta_2,u_1,\phi_1,u_2,\phi_2]^\T $.\ This specfic order of $ \vec{\mathbf{q}} $ is chosen with $ u $ and $ \phi $ at the end to ease the condensation of the axial and torsional degrees of freedom out of the system if their use is not necessary for the system of interest. $ \psi $ angles are defined as negative to allow for the same stiffness matrix to define the motion in both planes, and more importantly, to allow for the use of the complex plane to simplify the problem. The shape functions $ \bunderline{\mathbf{N}}(x) $ interpolate the displacements between the beam ends. These functions must must solve the static portion of the differential equations \eqref{eq:EquationsOfMotionIndependent}.
 %\begin{subequations}\label{eq:EulerLagrangianEquations}
 %	\begin{empheq}[left={\empheqlbrace\,}]{align}
 %	&EAu''=0 \label{eq:EulerLagrangianAxial}\\
@@ -395,9 +395,8 @@ $ c_{1,2,...} $ are the unknown constants of the polynomial solutions. Using tra
 \theta&=K_zc_6+c_4+2c_5x+3c_{6}x^2 \label{eq:RotationzInterpolationFunction}
 \end{empheq}
 \end{subequations}
-where, $ K_y=\frac{6EI_y}{\kappa GA} $\& $ K_z=\frac{6EI_z}{\kappa GA} $
-Boundary Conditions
-Boundary conditions for the interpolation polynomials of equations \eqref{eq:DisplacementInterpolationFunctionsChosen} \& \eqref{eq:DisplacmentInterpolationFunctionsDerived} are defined as the components of the vector $ \vec{\mathbf{q}} $$ u_j=u(x_j) $ and similarily for other degrees of freedom. Where, $ j=1,2 $ and defines the two states. In this derivation, $ x_1=0 $ and $ x_2=l $. Application of these boundary condition results in this relation between the polynomial constants and the boundary conditions.
+where, $ K_y=\frac{6EI_y}{\kappa GA} $\& $ K_z=\frac{6EI_z}{\kappa GA} $.\par 
+Boundary conditions for the interpolation polynomials of equations \eqref{eq:DisplacementInterpolationFunctionsChosen} \& \eqref{eq:DisplacmentInterpolationFunctionsDerived} are defined as the components of the vector $ \vec{\mathbf{q}} $$ u_j=u(x_j) $ and similarily for other degrees of freedom. Where, $ j=1,2 $ and defines the two states. In this derivation, $ x_1=0 $ and $ x_2=l $. Application of these boundary condition results in the below relationship with the polynomial constants.
 \begin{equation}\label{DisplacementInterpolationBoundaryMatrix}
 \def\cs{4em}
 \newcommand{\WidestEntry}{$\scriptstyle K_y\!-\!3l^2$}%
@@ -422,7 +421,7 @@ u_1\\u_2\\v_1\\v_2\\w_1\\w_2\\\psi_1\\\psi_2\\\theta_1\\\theta_2\\\phi_1\\\phi_2
 c_1\\c_2\\c_3\\c_4\\c_5\\c_6\\c_7\\c_8\\c_9\\c_{10}\\c_{11}\\c_{12}
 \end{array}\right\}
 \end{equation}
-Inversion of this matrix results in a system of equations defining the constant $ c_1 $ through $ c_{12} $. These constants are then substituted in to the polynomial expressions \eqref{eq:DisplacementInterpolationFunctionsChosen} \& \eqref{eq:DisplacmentInterpolationFunctionsDerived} giving the interpolations as functions of the nodal displacements.
+Inversion of this matrix results in a system of equations defining the constant $ c_1 $ through $ c_{12} $. These constants are then substituted in to the polynomial expressions \eqref{eq:DisplacementInterpolationFunctionsChosen} \& \eqref{eq:DisplacmentInterpolationFunctionsDerived} giving the interpolations as functions of the nodal displacements as
 \begin{equation}\label{eq:InterpolationFunctions}
 \left\{\begin{array}{l}
 u=N_1u_1+N_2u_2\\
@@ -433,7 +432,7 @@ w=T_{t_1z}w_1+T_{t_2w}w_2+T_{r_1z}\psi_1+T_{r_2z}\psi_2\\
 \phi=N_1\phi_1+N_2\phi_2
 \end{array}\right.
 \end{equation}
-with;
+with,
 \begin{equation}\label{eq:TimoShapeFunctions}
 \left\{\arraycolsep=.2em\begin{array}{@{}ll}
 N_1=1-\zeta&N_2=\zeta\\
@@ -476,7 +475,7 @@ Shape functions depend on the term $ \alpha $ which is sometimes called the shea
 	\caption{Shape Functions as they vary with $ \zeta $ using two different ratios of length to radius of beam element.}
 	\label{fig:ShapeFunctions}
 \end{figure}
-Shape functions plotted with respect to the non-dimensional length lend a visualization to the contribution of each shape function. Shape functions for axial and torsion are omitted since they are just linear polynomials. Each individual plot can be interpreted as a transformation from the input, being the coordinate multiplied to it, to the output of the variable function. For instance, the first shape function plot is the output of $ v(x) $ with an input of $ v_1 $ while all other coordinates are zero. The shape makes sense under this interpretation, as the translation starts at some value, $ v_1 $ and decreases to zero at the end since $ v_2 $ is zero. Also, the expected shape breaks as the radius approaches the length as in Figure \ref{fig:ShapeFunctions1}. All shapes this beam will make in the model is a linear combination of the shapes shown here.
+Shape functions plotted with respect to the non-dimensional length lend a visualization to the contribution of each shape function. Shape functions for axial and torsion are omitted since they are just linear polynomials. Each individual plot can be interpreted as a transformation from the corresponding input coordinate to the output. For instance, the first shape function plot is the output of $ v(x) $ with an input of $ v_1 $ while all other coordinates are zero. The shape makes sense under this interpretation, as the translation starts at some value, $ v_1 $ and decreases to zero at the end since $ v_2 $ is zero. Also, notice how bending is nearly completely eliminated as the radius approaches the length as in Figure \ref{fig:ShapeFunctions1}. All shapes the Timoshenko beam will make in the model results is a linear combination of the shapes shown here.
 \subsection{Finite Equations of Motion} \label{Finite Equations of Motion}
 To obtain the equations of motion in terms of the generalized coordinates, $ \vec{\mathbf{q}} $, displacement variables $ \vec{\mathbf{u}} $ are replaced with definitions in equation \ref{eq:FEGoverning}.
 \begin{equation}\label{key}
@@ -498,10 +497,10 @@ so that, the general equations of motion for the timoshenko beam element are
 \begin{equation}\label{eq:EquationsOfMotionTimoElementGeneral}
 \bunderline{\mathbf{M}}^e\ddot{\vec{\mathbf{q}}}+\Omega\bunderline{\mathbf{G}}^e\dot{\vec{\mathbf{q}}}+\bunderline{\mathbf{K}}^e\vec{\mathbf{q}}=0
 \end{equation}
-Notwithstanding the inclusion of viscous and hysteretic internal damping phenomena. Derivations, and inclusion of these phenomena in the equations of motion are to be included in the following section.
+notwithstanding the inclusion of viscous and hysteretic internal damping phenomena. Derivations, and inclusion of these phenomena in the equations of motion are to be included in the following section.
 \subsection{Rotating Internal Damping} \label{Rotating Internal Damping}
-Rotating damping is the main cause of instability in rotating machines. Non-rotating damping, such as the damping contributions from bearing supports, introduce a stabilizing effect. But, as rotating damping is dependent on rotation, its direction of force can contribute to destabilization. Typically, friction components such as bearings with shrink fits or oil bearings are responsible for this destabilizing force. Due to the inherent complexity of modeling loose bearing components, or shrink fit dynamics, the analysis of the internal damping in the shaft elements is considered alone. This will allow for the study of the destabilizing effect in general, and the factors that may contribute stability such as structural damping and anisotropy of supports. Another area of interest is the design of components for specific rotor geometry to maximize the stability in the system. This stability analysis is only possible with the inclusion of some destabilizing force, \cite{genta2007dynamics},\cite{genta2004persistent},\cite{kandil2005rotor},\cite{zorzi1977finite}.\par 
-To motivate understanding of this force a simple derivation is provided with a rotating damping whose force is proportional to the flex of rate of change of the flex of the shaft. Obviously this is easier to define in the rotating reference frame, as the variables in this coordinate system directly represent the flex of the shaft from its neutral position. This relationship is as follows:
+Rotating damping is the main cause of instability in rotating machines. Non-rotating damping, such as the damping contributions from bearing supports, introduce a stabilizing effect. But, as rotating damping is dependent on rotation, its direction of force can contribute to destabilization. Typically, friction components such as bearings with shrink fits or oil bearings are responsible for this destabilizing force. Due to the inherent complexity of modeling loose bearing components, or shrink fit dynamics, the analysis of the internal damping in the shaft elements is considered alone for this work. This will allow for the study of the destabilizing effect in general without requiring too much specificity in design parameters. Inclusion of the rotating damping effect in this way will allow for the design of components, and geometry of rotor system, to maximize stability. This stability analysis is only possible with the inclusion of some destabilizing force, \cite{genta2007dynamics},\cite{genta2004persistent},\cite{kandil2005rotor},\cite{zorzi1977finite}.\par 
+To motivate understanding of this force a simple derivation is provided with a rotating damping whose force is proportional to the flex of rate of change of the flex in the shaft. This is easier to define in the rotating reference frame, as the variables in this coordinate system directly represent the shaft flex from its neutral position. The rotating coordinates are located in the same plane as the fixed coordinates, but they rotate with the shaft speed, $ \Omega $. They are angularly displaced from the fixed coordinates at any poin in time by the angle $ \Omega t $. The viscous damping in this rotating coordinate system is defined as
 \begin{equation}\label{eq:LinearViscousDampingRot}
 \vec{\mathcal{F}}_{\xi\eta}=-c_r
 \left\{\begin{array}{c}
@@ -509,14 +508,14 @@ To motivate understanding of this force a simple derivation is provided with a r
 \dot{\eta}_c
 \end{array}\right\}
 \end{equation}
-Now to translate this force back to the stationary reference frame, we will see the rotation transformation matrix 
+translating this force back to the stationary reference frame requires the rotation transformation matrix 
 \begin{equation}\label{eq:RotationTransformation2D}
 \bunderline{\mathcal{R}}=\left[\begin{array}{cc}
 \cos{\Omega t}& \sin{\Omega t}\\
 -\sin{\Omega t}& \cos{\Omega t}
 \end{array}\right]
 \end{equation}
-transforms stationary into rotating coordinates 
+which transforms stationary into rotating coordinates as
 \begin{equation}\label{eq:LinRotTransformation}
 \left\{\begin{array}{rl}
 \left\{\begin{array}{c}
@@ -545,7 +544,7 @@ where, \begin{equation}
 -\cos{\Omega t}& -\sin{\Omega t}
 \end{array}\right]
 \end{equation}
-substituting the second equation in \ref{eq:LinRotTransformation} for the velocities in \ref{eq:LinearViscousDampingRot}
+Substituting the second equation in \ref{eq:LinRotTransformation} for the velocities in \ref{eq:LinearViscousDampingRot}
 \begin{equation}\label{eq:LinearViscousDampingTrans}
 \vec{\mathcal{F}}_{xy}=-c_r\left\{\begin{array}{c}
 \dot{y}_c\\
@@ -558,12 +557,12 @@ y_c\\
 z_c
 \end{array}\right\}
 \end{equation} 
-From the equation \eqref{eq:LinearViscousDampingTrans} we see a dependence on both velocity and position. The portion dependent on the velocity is inherently stable as pulls opposite the motion. Conversely, the portion dependent on position cross couples the two displacements. This causes a destabilizing effect that grows as $ \Omega $ increases. A net destabilizing force is produced once the latter portion of the exceeds the former. Without the presence of other structural damping forces, the system will destabilize.\par
-For the beam element, the constitutive relationship\cite{zorzi1977finite} is comprised of both viscous and hysteretic forms of damping, $ \eta_v $ \& $ \eta_h $ respectively.
+From equation \eqref{eq:LinearViscousDampingTrans} a dependence on both velocity and position is evident. The portion dependent on the velocity is inherently stable as pulls opposite the motion. Conversely, the portion dependent on position cross couples the two displacements. This causes a destabilizing effect that grows as $ \Omega $ increases. A net destabilizing force is produced once the latter portion of the exceeds the former. Without the presence of other non-rotating damping forces, the system will destabilize.\par
+For the beam element, the constitutive relationship given in \cite{zorzi1977finite} is comprised of both viscous and hysteretic forms of damping, $ \eta_v $ \& $ \eta_h $ respectively.
 \begin{equation}\label{eq:LinearViscousHystericConstitutiveRelation}
 \sigma_{xx}=E\left\{\frac{\epsilon_{xx}}{\sqrt{1+\eta_h^2}}+\left(\eta_v+\frac{\eta_h}{\omega\sqrt{1+\eta_h^2}}\right)\dot{\epsilon}_{xx}\right\}
 \end{equation}
-through the use of kinematics to obtain strain-displacement relations,
+Through the use of kinematics to obtain strain-displacement relations from the above constraints,
 \begin{equation}\label{eq:straindisplacement}
 \left\{\begin{array}{rl}
 \epsilon_{xx}&=-r\cos{\left(\Omega-\omega \right)t}\frac{\partial^2 R}{\partial x^2}\\
@@ -599,7 +598,7 @@ w''
 \end{array}\right\}
 \end{equation}
 where, $ \eta_a=\frac{1+\eta_h}{\sqrt{1+\eta_h^2}}\quad \& \quad \eta_b=\frac{\eta_h}{\sqrt{1+\eta_h^2}} $\par 
-Now use the same strategy followed when solving for the weak form of the beam differential equations using the Principle of Virtual Displacements starting at equation \eqref{eq:BeamDiffEquationVirtualStart}. Then use the seperation of variables of defined by equation \eqref{eq:FEGoverning} to arrive at the total beam element equations of motion including internal damping as
+Using the same strategy followed when solving for the weak form of the beam differential equations following the Principle of Virtual Displacements starting at equation \eqref{eq:BeamDiffEquationVirtualStart} will reveal the new equations of motion. Then use of a seperation of variables as defined by equation \eqref{eq:FEGoverning} to arrive at the total beam element equations of motion including internal damping as
 \begin{equation}\label{eq:TotalBeamFiniteElementEquationofMotion}
 \bunderline{\mathbf{M}}^e\ddot{\vec{\mathbf{q}}}+(\eta_v\bunderline{\mathbf{K}}^e+\Omega\bunderline{\mathbf{G}}^e)\dot{\vec{\mathbf{q}}}+[\eta_a\bunderline{\mathbf{K}}^e+(\Omega\eta_v+\eta_b)\bunderline{\mathbf{C}}^e]\vec{\mathbf{q}}=0
 \end{equation}
@@ -657,7 +656,7 @@ Since the beam element has been discretized into nodal degrees of freedom, so lo
 \begin{equation}\label{eq:DiskNodeEquationofMotion}
 \bunderline{\mathbf{M}}^d\ddot{\vec{\mathbf{q}}}_k+\Omega\bunderline{\mathbf{G}}^d\dot{\vec{\mathbf{q}}}_k=\Omega^2\vec{\mathbf{F}}^d
 \end{equation}
-the superscript $ d $ represents that the matrix or array is for a disk, and the subscript $ _k $ on the displacement array indicates the array is only displacements for a single node, written out as: $ \vec{\mathbf{q}}_k = [v,w,-\psi,\theta,u,\phi]^\T $. The matrices and forcing array of \eqref{eq:DiskNodeEquationofMotion} are as follows,
+The superscript $ ^d $ in the above equation represents that the matrix or array is for a disk, and the subscript $ _k $ on the displacement array indicates the array is only displacements for a single node, written out as: $ \vec{\mathbf{q}}_k = [v,w,\psi,\theta,u,\phi]^\T $. The matrices and forcing array of \eqref{eq:DiskNodeEquationofMotion} are as follows
 \begin{equation}\label{eq:DiskNodeEquations}
 \def\cs{3em}
 \left\{
@@ -690,15 +689,8 @@ the superscript $ d $ represents that the matrix or array is for a disk, and the
 \end{array}\right\}
 \end{array}\right.
 \end{equation}
-\begin{figure}
-	\centering
-	\includegraphics[width=.5\linewidth]{./figures/Images/Figure_1b}
-	\caption{Depiction of skew angle $\chi$}
-	\label{fig:ChiAngleDepiction}
-	\centering
-\end{figure}
 \par
- Disk unbalance is caused by an eccentricity, or a geometrical distance between the axis of rotation and the center of mass of the disk. Eccentricity is represented here as $\epsilon$ and is equivalent to that geometric distance. The moment unbalance forces, the third and fourth equations of $ \vec{\mathbf{F}}^d $ in \eqref{eq:DiskNodeEquations}, are caused by the skew angle, $ \chi $, which is the angle the disk major axis forms with the axis of rotation as in Figure \ref{fig:ChiAngleDepiction}. The major axis is the axis normal from the disk face from which the polar moment of inertia, $ J_x $ is defined.
+ Disk unbalance is caused by an eccentricity, or a distance between the axis of rotation and the center of mass of the disk. Eccentricity is represented here as $\epsilon$ and is equivalent to that geometric distance. The unbalance moments, third and fourth equations of $ \vec{\mathbf{F}}^d $ in \eqref{eq:DiskNodeEquations}, are caused by the skew angle, $ \chi $, which is the angle the disk major axis forms with the axis of rotation. A more detailed explanation of the moment function from skew angle can be found in \cite{muszynska2005rotordynamics}. The major axis is the axis normal from the disk face from which the polar moment of inertia, $ J_x $ is defined.
  \subsection{Disk in complex coordinates} \label{Disk in complex coordinates}
  Disk equations of motion \eqref{eq:DiskNodeEquationofMotion} are converted to the complex plane in the same manner the beam element was derived in \S\ref{Beam Element in Complex Coordinates}
  \begin{equation}\label{eq:DiskNodeEquationofMotionComplex}
@@ -757,13 +749,14 @@ k&0\\
 $ k $ is the isotropic bearing stiffness. It is possible to define the complex system with anisotropic terms of stiffness, but the complexity added to the system outweighs the benefit of using the complex plane in the first place.
 %\lstinputlisting[language=Matlab]{code/BearingStiff.m}
 %\lstinputlisting[language=Matlab]{code/BearingDamp.m}
-\section{Assembly of the Global Systems of Equations} \label{Assembly of the Global Systems of Equations}
+\section{Assembly of the Global System of Equations} \label{Assembly of the Global Systems of Equations}
 The matrices in the global system of equations are determined using the direct approach of taking the summation of the inertia, damping, stiffness, or force at each degree of freedom.
-\subsection{In the Real Coordinate System}
+\subsection{Assembly In the Real Coordinate System}
+Combining all beam elements, disks, and bearings leads to the following global equations of motion in real coordinates.
 \begin{equation}\label{eq:GlobalSystemofEquationsReal}
 \bunderline{\mathbf{M}}\ddot{\vec{\mathbf{q}}}+\bunderline{\mathbf{G}}\dot{\vec{\mathbf{q}}}+\bunderline{\mathbf{K}}\vec{\mathbf{q}}=\Omega^2\vec{\mathbf{F}}
 \end{equation}
-Each summation is defined as 
+where
 \begin{equation*}
 \left\{\begin{array}{rlrl}
 \bunderline{\mathbf{M}}&=\bunderline{\mathbf{M}}^e_G+\bunderline{\mathbf{M}}^b_G+\bunderline{\mathbf{M}}^d_G&\bunderline{\mathbf{D}}&=\eta_v\bunderline{\mathbf{K}}^e_G+\Omega\bunderline{\mathbf{G}}^e_G+\Omega\bunderline{\mathbf{G}}^d_G+\bunderline{\mathbf{D}}^b_G\\
@@ -772,6 +765,7 @@ Each summation is defined as
 \end{equation*}
 Subscript $ _G $ indicates the matrix is in the global coordinate system that contains all of the degrees of freedom. Care must be taken here to associate the correct degrees of freedom, and recognize that some of the matrices are elemental and others are nodal. 
 \subsection{In the Complex Coordinate System}
+Performing the same summation as in the real coordinate system, but using complex coordinates results in the following global equations of motion. There are half as many equations in this expression than in the equivalent expression in real coordinates \ref{eq:GlobalSystemofEquationsReal}.
 \begin{equation}\label{eq:GlobalSystemofEquationsComplex}
 \bunderline{\mathbf{M}}\ddot{\vec{\mathbf{q}}}^c+\bunderline{\mathbf{D}}\dot{\vec{\mathbf{q}}}^c+\bunderline{\mathbf{K}}\vec{\mathbf{q}}^c=\Omega^2\vec{\mathbf{F}}
 \end{equation}
@@ -783,4 +777,4 @@ where,
 \end{array}\right.
 \end{equation*}
 \section{Analysis of the Resulting Model}
-A benefit of the finite element method is the resulting general linear Ordinary Differential Equations (ODEs) that are left to solve in equations \eqref{eq:GlobalSystemofEquationsReal} \& \eqref{eq:GlobalSystemofEquationsComplex}. Many techniques exist to provide frequency and time domain information on the solution of this system of equations. In their current state, equations \eqref{eq:GlobalSystemofEquationsReal} \& \eqref{eq:GlobalSystemofEquationsComplex} may be analyzed using frequency domain analysis techniques to be discussed in \S\ref{FrequencyDomainAnalysis}. On the other hand, in order to provide time domain solutions, numerical integration of these ODEs must be conducted. Details of the process of numerical integration is out of the scope of this work. Resulting time domain solutions of the ODEs for a specific nodal location can then be processed using the techniques outlined in \S\ref{VibrationSignalAnalysis}. This time domain method of processing the FEM model is vital in analyzing non-linear differential equations that may result from a more detailed model of bearings, asymmetry, and many other effects.\par
+A benefit of the finite element method is the resulting general linear Ordinary Differential Equations (ODEs) that are left to solve in equations \eqref{eq:GlobalSystemofEquationsReal} \& \eqref{eq:GlobalSystemofEquationsComplex}. Many techniques exist to provide frequency and time domain information on the solution of this system of equations. In their current state, equations \eqref{eq:GlobalSystemofEquationsReal} \& \eqref{eq:GlobalSystemofEquationsComplex} may be analyzed using frequency domain analysis techniques to be discussed in \S\ref{FrequencyDomainAnalysis}. On the other hand, in order to provide time domain solutions, numerical integration of these ODEs must be conducted. Details of the process of numerical integration is out of the scope of this work. Resulting time domain solutions of the ODEs for a specific nodal location can then be processed using the techniques outlined in \S\ref{VibrationSignalAnalysis}. This time domain method of processing the FEM model is vital for analyzing non-linear differential equations because frequency domain analysis of non-linear differential equations often produces disjointed results that are difficult to extrapolate useful information from. Non-linear effects may result from a more detailed model of bearings, anisotropic beam elements, loose fittings, and many other sources.\par

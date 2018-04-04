@@ -37,8 +37,13 @@ xminorgrids,
 ymajorgrids,
 yminorgrids,
 zmajorgrids,
-zminorgrids
+zminorgrids,
+legend style={at={(1.05,1)},anchor=north east},
 ]
+\addlegendimage{mark=*,mark size=1.7pt}
+\addlegendentry{Beam Shape}
+\addlegendimage{color=mycolor1}
+\addlegendentry{Orbit Path}
 \addplot3 [color=black]
  table[row sep=crcr] {%
 0.00536764162585646	0	0.0754713629164401\\
@@ -738,35 +743,35 @@ zminorgrids
 0.0031912905937342	0.5	-0.000193247433704085\\
 0.0144910483879654	0.5	0.00912469613505404\\
 };
- \addplot3 [color=black, draw=none, mark size=1.3pt, mark=*, mark options={solid, black}]
+ \addplot3 [color=black, draw=none, mark size=1.7pt, mark=*, mark options={solid, black}]
  table[row sep=crcr] {%
 0.00536764162585646	0	0.0754713629164401\\
 };
- \addplot3 [color=black, draw=none, mark size=1.3pt, mark=*, mark options={solid, black}]
+ \addplot3 [color=black, draw=none, mark size=1.7pt, mark=*, mark options={solid, black}]
  table[row sep=crcr] {%
 0.000395300041200234	0.07	0.0855123284881907\\
 };
- \addplot3 [color=black, draw=none, mark size=1.3pt, mark=*, mark options={solid, black}]
+ \addplot3 [color=black, draw=none, mark size=1.7pt, mark=*, mark options={solid, black}]
  table[row sep=crcr] {%
 -0.00231367103372371	0.16	0.0648435345243499\\
 };
- \addplot3 [color=black, draw=none, mark size=1.3pt, mark=*, mark options={solid, black}]
+ \addplot3 [color=black, draw=none, mark size=1.7pt, mark=*, mark options={solid, black}]
  table[row sep=crcr] {%
 -0.00185982307937256	0.23	0.0308050236223844\\
 };
- \addplot3 [color=black, draw=none, mark size=1.3pt, mark=*, mark options={solid, black}]
+ \addplot3 [color=black, draw=none, mark size=1.7pt, mark=*, mark options={solid, black}]
  table[row sep=crcr] {%
 -0.00167379999310658	0.29	0.00909590332832253\\
 };
- \addplot3 [color=black, draw=none, mark size=1.3pt, mark=*, mark options={solid, black}]
+ \addplot3 [color=black, draw=none, mark size=1.7pt, mark=*, mark options={solid, black}]
  table[row sep=crcr] {%
 -0.000512757218509821	0.36	-0.000446546656194696\\
 };
- \addplot3 [color=black, draw=none, mark size=1.3pt, mark=*, mark options={solid, black}]
+ \addplot3 [color=black, draw=none, mark size=1.7pt, mark=*, mark options={solid, black}]
  table[row sep=crcr] {%
 0.00531192840234273	0.43	0.00281659558859656\\
 };
- \addplot3 [color=black, draw=none, mark size=1.3pt, mark=*, mark options={solid, black}]
+ \addplot3 [color=black, draw=none, mark size=1.7pt, mark=*, mark options={solid, black}]
  table[row sep=crcr] {%
 0.0144910483879655	0.5	0.00912469613505405\\
 };

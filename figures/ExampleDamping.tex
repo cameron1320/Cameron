@@ -7,6 +7,16 @@
 \definecolor{mycolor2}{rgb}{0,0,0}%
 \definecolor{mycolor1}{rgb}{.5,.5,.5}%
 %
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\newcommand{\bglayer}[1]{%
+	\begin{pgfonlayer}{background}
+		\begin{scope}[every picture]
+			#1
+		\end{scope}
+	\end{pgfonlayer}
+}
 \begin{tikzpicture}
 
 \begin{axis}[%
@@ -36,8 +46,9 @@ table[row sep=crcr]{%
 \addlegendentry{Negative Whirl Speed}
 \addlegendimage{color=mycolor2}
 \addlegendentry{Positive Whirl Speed}
-\begin{scope}[on background layer]
-\addplot [color=mycolor1,dashed, line width=1.0pt]
+%\begin{scope}[on background layer]
+\bglayer{%
+\addplot [color=mycolor1,dashed]
   table[row sep=crcr]{%
 0	0.00678470937912701\\
 101.351351351351	0.00737440828155143\\
@@ -115,7 +126,7 @@ table[row sep=crcr]{%
 7398.64864864865	0.0739846812640516\\
 7500	0.0753658895308798\\
 };
-\addplot [color=mycolor2, line width=1.0pt]
+\addplot [color=mycolor2]
   table[row sep=crcr]{%
 0	0.00678470937582011\\
 101.351351351351	0.00620111533069438\\
@@ -193,7 +204,7 @@ table[row sep=crcr]{%
 7398.64864864865	-0.0246210937389608\\
 7500	-0.024942190911165\\
 };
-\addplot [color=mycolor1,dashed, line width=1.0pt]
+\addplot [color=mycolor1,dashed]
   table[row sep=crcr]{%
 0	0.0152273366632727\\
 101.351351351351	0.0156544111380229\\
@@ -271,7 +282,7 @@ table[row sep=crcr]{%
 7398.64864864865	0.0495795890995691\\
 7500	0.0498489657371934\\
 };
-\addplot [color=mycolor2, line width=1.0pt, forget plot]
+\addplot [color=mycolor2, forget plot]
   table[row sep=crcr]{%
 0	0.0152273366632677\\
 101.351351351351	0.0148066941084131\\
@@ -349,7 +360,7 @@ table[row sep=crcr]{%
 7398.64864864865	-0.00195174087642756\\
 7500	-0.00211289940057334\\
 };
-\addplot [color=mycolor1,dashed, line width=1.0pt, forget plot]
+\addplot [color=mycolor1,dashed, forget plot]
   table[row sep=crcr]{%
 0	0.0367678332675595\\
 101.351351351351	0.0373102951324904\\
@@ -427,7 +438,7 @@ table[row sep=crcr]{%
 7398.64864864865	0.130592218372805\\
 7500	0.132721429469447\\
 };
-\addplot [color=mycolor2, line width=1.0pt, forget plot]
+\addplot [color=mycolor2, forget plot]
   table[row sep=crcr]{%
 0	0.0367678332675853\\
 101.351351351351	0.0362352719638901\\
@@ -498,6 +509,7 @@ table[row sep=crcr]{%
 6689.18918918919	0.011133818915257\\
 6790.54054054054	0.0108050148794386\\
 };
-\end{scope}
+};
+%\end{scope}
 \end{axis}
 \end{tikzpicture}%

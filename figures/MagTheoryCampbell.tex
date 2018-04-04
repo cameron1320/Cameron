@@ -24,7 +24,7 @@ ylabel={Whirl Speed,$  \omega[RPM] $},
 title style={font=\bfseries},
 axis x line*=bottom,
 axis y line*=left,
-legend style={at={(0.05,1)},anchor=north west},
+legend style={at={(0.15,1.08)},anchor=north west},
 ]
 \addlegendimage{color=mycolor1}
 \addlegendentry{Positive Whirl Speed}
@@ -1248,7 +1248,7 @@ table[row sep=crcr]{%
 19899.4974874372	16560.9014615819\\
 20000	16574.5898539869\\
 };
-\addplot [color=black, dashed, line width=2.0pt, forget plot]
+\addplot [color=black, loosely dashed, line width=2.0pt, forget plot]
   table[row sep=crcr]{%
 0	0\\
 100.502512562814	100.502512562814\\
@@ -1451,5 +1451,6 @@ table[row sep=crcr]{%
 19899.4974874372	19899.4974874372\\
 20000	20000\\
 };
+\addlegendentry{Synchronous $ \omega=\Omega $}
 \end{axis}
 \end{tikzpicture}%

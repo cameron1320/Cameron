@@ -1,5 +1,5 @@
 \chapter{Frequency Domain Analysis}\label{FrequencyDomainAnalysis}
-Eigenvalues and eigenvectors of equations of motion will be used to provide information on the modal content of the system being analyzed. Eigenvalues can provide information on the natural frequencies, damping, and stability of the modes of vibration. Eigenvectors will be used to describe the shape of each of these modes of vibration including relative phase information for each nodal location. Frequency response functions will describe amplitude of response, phase lag of response from forcing input, and further stability information on modes.\par
+Eigenvalues and eigenvectors of equations of motion will be used to provide information on the modal content of the system being analyzed. Eigenvalues can provide information on the natural frequencies, damping, and stability of the modes of vibration. Eigenvectors will be used to describe the shape of each of these modes of vibration including relative phase information for each nodal location. Frequency response functions will describe amplitude of response, phase lag of response from forcing input, and further stability information on modes. Inspiration for the content in this section came about as a synthesis of content provided on frequency domain analysis in \cite{craig2006fundamentals}, \& \cite{genta2007dynamics}.\par
 Rotordynamic analyses are often interested in the dependence of the system on the spin speed $ \Omega $. The inclusion of this parameter as a time dependent variable would make the solutions of the system much more difficult. In this work, the spin speed is considered to be constant in each operation, taken in a series of operations as the spin speed is changed. In this way, the effect of spin acceleration is not taken into account, but the dependence on spin speed is approximated. For the vast majority of rotordynamic systems this approximation is sufficiently accurate, especially when considering that it is not a very common neccessity to ramp up quickly in speed.\par
 For a simple critical speed computation, assuming the form of a homogeneous solution $ \vec{\mathbf{q}}=e^{i\Omega t} $ while neglecting all damping and forcing in the equations of motion will provide the dynamic undamped forced whirling matrix. Exploring the eignevalues of this equation will give the undamped critical speeds of the system. In the case that the natural frequencies (whirl speeds) need to be calculated independent of spin speed, like in the Campbell diagram, a solution of the form $  \vec{\mathbf{q}}=e^{s t}$ is assumed so that the spin speed and whirl speed can vary independently. Eigenvalues of this dynamic free whirling matrix will provide complex numbers of which the real part is proportional to damping, and the imaginary is damped natural frequencies of the system. Particular integrals of the form $ \vect{q}=e^{i\omega t}\ \&\ \vect{q}=e^{i\Omega t} $ will be assumed to find the frequency response.\par 
 Details of the different analyses to follow will be accompanied by an example problem to demonstrate the results. The problem of interest is a simple two disk rotor system depicted in Figure \ref{fig:TwoDiskDiagram}. The geometry and material properties are listed in Table \ref{tab:ExampleRotorTable}. The rotor is discretized as in figure \ref{fig:TwoDiskDiagram} into 6 elements with geometry of $ L=1.8[m] $, $ a=.3[m] $, \& $ b=.6[m] $ and bearings located at the ends of the shaft.\par 
@@ -71,6 +71,7 @@ For the example problem defined in \S\ref{FrequencyDomainAnalysis} the unbalance
 			ylabel={Phase, $ \beta $[deg]},
 			ylabel style={xshift=0},
 		},
+	every axis plot/.style={line width=1.7pt},
 		ticklabel style={
 			/pgf/number format/fixed,
 			/pgf/number format/precision=3
@@ -90,6 +91,7 @@ For the example problem defined in \S\ref{FrequencyDomainAnalysis} the unbalance
 					every axis/.style={
 			zlabel style={yshift=-1cm,xshift=1.8cm,rotate=-90},
 			zticklabel style={right,},
+				every axis plot/.style={line width=1.5pt},
 		},
 	}
 	\centering
@@ -104,6 +106,7 @@ For the example problem defined in \S\ref{FrequencyDomainAnalysis} the unbalance
 			every axis/.style={
 				zlabel style={yshift=-1cm,xshift=2cm,rotate=-90},
 				zticklabel style={right,xshift=2pt},
+					every axis plot/.style={line width=1.5pt},
 			},
 		}
 		\centering
@@ -122,6 +125,7 @@ Using the particular integral of $ \vect{q}=\vect{q}_0e^{i\omega t} $ instead of
 		every axis/.style={
 			zlabel style={yshift=-1cm,xshift=2cm,rotate=-90},
 			zticklabel style={left,xshift=-2pt},
+				every axis plot/.style={line width=1.5pt},
 			},
 	}
 	\centering
@@ -145,6 +149,7 @@ Roots Locus is the plot of eigenvalues on the $ \Re-\Im $ plane as some value th
 		ylabel={$ \Im(s)[Rad/s] $},
 		ylabel style={xshift=0},
 	},
+	every axis plot/.style={line width=1.3pt},
 	ticklabel style={
 		/pgf/number format/fixed,
 		/pgf/number format/precision=3
@@ -160,7 +165,8 @@ The Roots Locus for the example problem is also presented in three dimensions to
 	\def\width{.6*\linewidth}
 	\def\height{.3*\linewidth}
 	\def\sep{3em}
-	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={title style={yshift=-.8em}}, grid style={line width=.1pt, draw=gray!10},major grid style={line width=.2pt,draw=gray!50},minor tick style={draw=none}}
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={title style={yshift=-.8em}}, grid style={line width=.1pt, draw=gray!10},major grid style={line width=.2pt,draw=gray!50},minor tick style={draw=none},
+		every axis plot/.style={line width=1.4pt},}
 	\centering
 	\import{figures/}{ExampleRootsLocus3D.tex}
 	\caption{Roots Locus of the example problem in 3-D with an internal damping coefficient of $ 0.0002[s] $.}
@@ -191,6 +197,7 @@ where $ \zeta $ is the damping ratio, and  $ \omega_n $ is the natural frequency
 			/pgf/number format/fixed,
 			/pgf/number format/precision=3
 		},
+		every axis plot/.style={line width=1.4pt},
 	}
 	\centering
 	\import{figures/}{StabilityMargin.tex}
@@ -217,6 +224,7 @@ Finally, the stability can be analyzed using the damping coefficients($ \zeta $)
 			/pgf/number format/fixed,
 			/pgf/number format/precision=3
 		},
+		every axis plot/.style={line width=1.4pt},
 	}
 	\centering
 	\import{figures/}{ExampleDamping.tex}
@@ -229,7 +237,8 @@ The Campbell diagram correlates the spin speed and the whirl speed. Whirl speed 
 	\def\width{.7*\linewidth}
 	\def\height{.4*\linewidth}
 	\def\sep{3em}
-	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={yshift=2pt},xlabel style={yshift=0}}}%, every axis/.style={hide axis}}%
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={yshift=2pt},xlabel style={yshift=0}},
+			every axis plot/.style={line width=1.4pt},}%, every axis/.style={hide axis}}%
 	\centering
 	\import{figures/}{ExampleCampbell.tex}
 	\caption{Campbell Diagram of the example problem.}
@@ -245,7 +254,7 @@ Shape figures for the first 3 modes of the example problem are presented in Figu
 \begin{figure}[h!]
 	\def\cs{.315}	
 	\def\overlap{1em}
-	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={yticklabel style={xshift=.4em,yshift=.4em},minor tick num=2}, grid style={line width=.1pt, draw=gray!10},major grid style={line width=.2pt,draw=gray!50},ticks=none,minor tick style={draw=none}}%, every axis/.style={hide axis}}%
+	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={yticklabel style={xshift=.4em,yshift=.4em},minor tick num=2}, grid style={line width=.1pt, draw=gray!10},major grid style={line width=.2pt,draw=gray!50},ticks=none,minor tick style={draw=none},every axis plot/.style={line width=1.1pt},}%, every axis/.style={hide axis}}%
 \begin{subfigure}{\cs\textwidth}
 	\centering
 	\def\width{\linewidth+\overlap}
