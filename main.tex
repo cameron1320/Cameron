@@ -34,6 +34,9 @@
 \usepackage{siunitx}
 \usepackage{epstopdf}
 \usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage{nomencl}
+\makenomenclature
 %\usepackage{showframe}
 \usepackage[numbered,framed]{matlab-prettifier}
 \lstset{
@@ -52,8 +55,14 @@
 \newcommand{\bunderline}[2][4]{\underline{#2\mkern-#1mu}\mkern#1mu }
 \newcommand{\vect}[1]{\vec{\mathbf{#1}}}
 \newcommand{\mat}[1]{\bunderline{\mathbf{#1}}}
+\definecolor{mycolor0}{RGB}{37,52,148}
+\definecolor{mycolor1}{RGB}{44,127,184}
+\definecolor{mycolor15}{RGB}{65,182,196}
+\definecolor{mycolor2}{RGB}{161,218,180}
+\definecolor{mycolor3}{RGB}{240,240,172}
 \makeindex
 \makeglossaries
+
 \graphicspath{{./figures/}}
 % Shrink the size of headers
 \titleformat{\chapter}[display]
@@ -126,6 +135,14 @@
 \listoftables
 
 \listoffigures
+%something
+%\clearpage
+%\mbox{}
+%%\input{nomenclature}
+%\nomenclature{$c$}{Speed of light in a vacuum inertial frame}
+%\nomenclature{$h$}{Planck constant}
+%
+%\printnomenclature
 
 % Add CHAPTER into table of contents.
 \addtocontents{toc}{%

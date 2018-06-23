@@ -6,11 +6,8 @@
 %
 
 \begin{tikzpicture}
-\def\1col{black}
-\def\2col{black!90}
-\def\3col{black!50}
-\def\4col{black!25}
-\def\5col{black!15}
+
+
 \def\marptsz{1pt}
 \begin{axis}[%
 width=\width,
@@ -27,17 +24,17 @@ ylabel={$ \Im(s) $},
 axis x line*=bottom,
 axis y line*=center
 ]
-\addlegendimage{color=\1col}
+\addlegendimage{color=mycolor0}
 \addlegendentry{Uncontrolled}
-\addlegendimage{color=\2col}
+\addlegendimage{color=mycolor1}
 \addlegendentry{$ k_p=0\ \&\ k_v=0.0 $}
-\addlegendimage{color=\3col}
+\addlegendimage{color=mycolor15}
 \addlegendentry{$ k_p=0\ \&\ k_v=0.1 $}
-\addlegendimage{color=\4col}
+\addlegendimage{color=mycolor2}
 \addlegendentry{$ k_p=0\ \&\ k_v=1.0 $}
-\addlegendimage{color=\5col}
+\addlegendimage{color=mycolor3}
 \addlegendentry{$ k_p=0\ \&\ k_v=10. $}
-\addplot [color=\1col]
+\addplot [color=mycolor0]
   table[row sep=crcr]{%
 -3.22825824841989	171.238986569182\\
 -3.10518422827729	171.412345028453\\
@@ -66,7 +63,7 @@ axis y line*=center
 4.42842189190936	196.526266234293\\
 };
 
-\addplot [color=\1col]
+\addplot [color=mycolor0]
   table[row sep=crcr]{%
 -3.24342992310929	163.531343098187\\
 -3.37467608644723	163.358789449683\\
@@ -94,7 +91,7 @@ axis y line*=center
 -14.5334967322179	139.8929147426\\
 -15.0861840672276	138.803010314263\\
 };
-\addplot [color=\1col]
+\addplot [color=mycolor0]
   table[row sep=crcr]{%
 -199.51044243111	1151.94334987543\\
 -199.667287631138	1154.22563163143\\
@@ -122,7 +119,7 @@ axis y line*=center
 -251.229018862791	1356.64846401313\\
 -252.754953876766	1362.7051543654\\
 };
-\addplot [color=\1col]
+\addplot [color=mycolor0]
   table[row sep=crcr]{%
 -179.921914962923	1067.01352234691\\
 -179.923153790618	1064.62980152744\\
@@ -150,7 +147,7 @@ axis y line*=center
 -174.205856633028	801.022821460251\\
 -174.224990594934	790.419060691652\\
 };
-\addplot [color=\1col]
+\addplot [color=mycolor0]
   table[row sep=crcr]{%
 -305.296943699428	1671.41161963512\\
 -304.643614995548	1670.72403260006\\
@@ -178,7 +175,7 @@ axis y line*=center
 -83.5215684840538	1795.3116255878\\
 -74.3417909683164	1804.69143618743\\
 };
-\addplot [color=\1col]
+\addplot [color=mycolor0]
   table[row sep=crcr]{%
 -275.139040533777	1600.05408507312\\
 -275.564103896999	1600.92098601198\\
@@ -206,7 +203,7 @@ axis y line*=center
 -410.585713121057	1575.6650205558\\
 -414.483761580034	1574.00858480335\\
 };
-\addplot [color=\2col]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 -3.47475634240735	203.331360777991\\
 -3.45276773607706	203.369786505952\\
@@ -260,7 +257,7 @@ axis y line*=center
 2.35097694925933	225.456649275669\\
 };
 
-\addplot [color=\2col]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 -3.51052534869583	196.021692363501\\
 -3.534125269061	195.982247465878\\
@@ -313,7 +310,7 @@ axis y line*=center
 -12.6807963938514	172.355274764685\\
 -12.9119389484838	171.803607916627\\
 };
-\addplot [color=\2col]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 -200.84465793935	1159.22392021873\\
 -200.888260007603	1159.77683102004\\
@@ -366,7 +363,7 @@ axis y line*=center
 -253.619490890117	1362.69337284267\\
 -254.302195436188	1365.56138091257\\
 };
-\addplot [color=\2col]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 -181.058814762416	1073.83255476553\\
 -181.054414144556	1073.25066980741\\
@@ -419,7 +416,7 @@ axis y line*=center
 -174.738603271839	799.914952069364\\
 -174.757136946732	794.673265755851\\
 };
-\addplot [color=\2col]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 -303.871252890653	1673.4605931825\\
 -303.706798638959	1673.29145762059\\
@@ -472,7 +469,7 @@ axis y line*=center
 -77.3926679593194	1807.40354887288\\
 -72.9699771250061	1812.05004879435\\
 };
-\addplot [color=\2col]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 -273.950807142496	1602.90495840092\\
 -274.059724082762	1603.11976627306\\
@@ -525,7 +522,7 @@ axis y line*=center
 -412.621147571793	1575.69723059451\\
 -414.517752416222	1574.87894475039\\
 };
-\addplot [color=\3col]
+\addplot [color=mycolor15]
   table[row sep=crcr]{%
 -6.43178127435737	203.237355850231\\
 -6.40983555701962	203.275405969156\\
@@ -579,7 +576,7 @@ axis y line*=center
 -0.606751914412293	225.294890579971\\
 };
 
-\addplot [color=\3col]
+\addplot [color=mycolor15]
   table[row sep=crcr]{%
 -6.38025372120704	195.926216210501\\
 -6.40368971168409	195.88713126882\\
@@ -632,7 +629,7 @@ axis y line*=center
 -15.29560016115	172.284908106975\\
 -15.518261211575	171.732208962394\\
 };
-\addplot [color=\3col]
+\addplot [color=mycolor15]
   table[row sep=crcr]{%
 -204.920470679955	1157.700947002\\
 -204.961466052467	1158.24962179929\\
@@ -685,7 +682,7 @@ axis y line*=center
 -255.411729731194	1361.27840715132\\
 -256.056145996983	1364.18055357979\\
 };
-\addplot [color=\3col]
+\addplot [color=mycolor15]
   table[row sep=crcr]{%
 -184.609334388853	1072.5931127387\\
 -184.604560952288	1072.0148486182\\
@@ -738,7 +735,7 @@ axis y line*=center
 -176.451117219256	799.31576121308\\
 -176.42564077084	794.079375688422\\
 };
-\addplot [color=\3col]
+\addplot [color=mycolor15]
   table[row sep=crcr]{%
 -305.83916632567	1674.33077001255\\
 -305.671344849171	1674.17066280999\\
@@ -791,7 +788,7 @@ axis y line*=center
 -84.0553631111516	1808.3360741936\\
 -79.6882573555088	1812.94773091939\\
 };
-\addplot [color=\3col]
+\addplot [color=mycolor15]
   table[row sep=crcr]{%
 -276.435069354927	1603.44646035492\\
 -276.549645290548	1603.6528329557\\
@@ -844,7 +841,7 @@ axis y line*=center
 -413.31705601619	1575.4869353742\\
 -415.201656826769	1574.66927936082\\
 };
-\addplot [color=\4col]
+\addplot [color=mycolor2]
   table[row sep=crcr]{%
 -33.1095502451293	200.864567558612\\
 -33.0873952504399	200.901433354282\\
@@ -898,7 +895,7 @@ axis y line*=center
 -27.335126357491	222.967689557437\\
 };
 
-\addplot [color=\4col]
+\addplot [color=mycolor2]
   table[row sep=crcr]{%
 -32.2725755087658	193.59101513599\\
 -32.295200449055	193.553044011144\\
@@ -951,7 +948,7 @@ axis y line*=center
 -38.9554070051007	169.70161003611\\
 -39.1021847656975	169.135495913893\\
 };
-\addplot [color=\4col]
+\addplot [color=mycolor2]
   table[row sep=crcr]{%
 -240.792807602301	1142.78182362389\\
 -240.812606465786	1143.30845394274\\
@@ -1004,7 +1001,7 @@ axis y line*=center
 -273.329596541029	1349.33767014089\\
 -273.620159276312	1352.51622111213\\
 };
-\addplot [color=\4col]
+\addplot [color=mycolor2]
   table[row sep=crcr]{%
 -216.125420136411	1060.47517049675\\
 -216.117318829916	1059.91781621048\\
@@ -1057,7 +1054,7 @@ axis y line*=center
 -191.556477898166	792.574703150513\\
 -191.133826573748	787.412428463521\\
 };
-\addplot [color=\4col]
+\addplot [color=mycolor2]
   table[row sep=crcr]{%
 -324.224829855754	1679.7844214157\\
 -324.049347245294	1679.70165844262\\
@@ -1110,7 +1107,7 @@ axis y line*=center
 -142.063243503248	1812.67421349159\\
 -138.205423734728	1817.02295930503\\
 };
-\addplot [color=\4col]
+\addplot [color=mycolor2]
   table[row sep=crcr]{%
 -299.042579048786	1605.64702834882\\
 -299.183066095348	1605.77829003481\\
@@ -1163,7 +1160,7 @@ axis y line*=center
 -419.625478239066	1573.13922058865\\
 -421.401359531116	1572.34555266943\\
 };
-\addplot [color=\5col]
+\addplot [color=mycolor3]
   table[row sep=crcr]{%
 -344.231554842577	695.582609495584\\
 -344.008982302347	695.737648687403\\
@@ -1217,7 +1214,7 @@ axis y line*=center
 -219.417903580283	653.474704201586\\
 };
 
-\addplot [color=\5col]
+\addplot [color=mycolor3]
   table[row sep=crcr]{%
 -380.622445668464	736.286341514894\\
 -380.899384787165	736.084340849358\\
@@ -1270,7 +1267,7 @@ axis y line*=center
 -628.268853497566	558.536353018783\\
 -627.073141862562	547.659653459376\\
 };
-\addplot [color=\5col]
+\addplot [color=mycolor3]
   table[row sep=crcr]{%
 -413.115764971885	1594.99084764272\\
 -413.106406417256	1594.9799737234\\
@@ -1323,7 +1320,7 @@ axis y line*=center
 -365.667436556044	1574.72105196077\\
 -363.281787457282	1575.47051055244\\
 };
-\addplot [color=\5col]
+\addplot [color=mycolor3]
   table[row sep=crcr]{%
 -386.103489947632	1482.71480788392\\
 -386.107541084761	1482.73437404672\\

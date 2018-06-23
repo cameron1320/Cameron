@@ -4,8 +4,8 @@
 %  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
 %where you can also make suggestions and rate matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{.5,.5,.5}%
-\definecolor{mycolor2}{rgb}{0,0,0}%
+%\definecolor{mycolor1}{rgb}{.5,.5,.5}%
+%\definecolor{mycolor1}{rgb}{0,0,0}%
 %
 \begin{tikzpicture}
 
@@ -27,7 +27,7 @@ axis x line*=bottom,
 axis y line*=left,
 legend style={at={(1.15,0.3)},anchor=south east},
 ]
-\addplot [color=mycolor1,dashed]
+\addplot [color=mycolor2,dashed]
   table[row sep=crcr]{%
 0	1176.9352450294\\
 75.7575757575758	1176.26538621406\\
@@ -131,7 +131,7 @@ legend style={at={(1.15,0.3)},anchor=south east},
 7500	1082.86776098364\\
 };
 \addlegendentry{Negative Whirl Speed}
-\addplot [color=mycolor2]
+\addplot [color=mycolor1]
   table[row sep=crcr]{%
 0	1176.93524502958\\
 75.7575757575758	1177.60103573573\\
@@ -235,7 +235,7 @@ legend style={at={(1.15,0.3)},anchor=south east},
 7500	1228.05408928786\\
 };
 \addlegendentry{Positive Whirl Speed}
-\addplot [color=mycolor1,dashed, forget plot]
+\addplot [color=mycolor2,dashed, forget plot]
   table[row sep=crcr]{%
 0	3729.80120674188\\
 75.7575757575758	3708.33839224273\\
@@ -338,7 +338,7 @@ legend style={at={(1.15,0.3)},anchor=south east},
 7424.24242424242	2161.53519779029\\
 7500	2151.61146482166\\
 };
-\addplot [color=mycolor2, forget plot]
+\addplot [color=mycolor1, forget plot]
   table[row sep=crcr]{%
 0	3729.80120674418\\
 75.7575757575758	3751.32749384226\\
@@ -441,7 +441,7 @@ legend style={at={(1.15,0.3)},anchor=south east},
 7424.24242424242	5626.0932359856\\
 7500	5639.30193664478\\
 };
-\addplot [color=mycolor1,dashed, forget plot]
+\addplot [color=mycolor2,dashed, forget plot]
   table[row sep=crcr]{%
 0	7398.1526528987\\
 75.7575757575758	7385.22209019074\\
@@ -544,7 +544,7 @@ legend style={at={(1.15,0.3)},anchor=south east},
 7424.24242424242	5954.15851620797\\
 7500	5935.78354217701\\
 };
-\addplot [color=mycolor2, forget plot]
+\addplot [color=mycolor1, forget plot]
   table[row sep=crcr]{%
 0	7398.15265290066\\
 75.7575757575758	7411.10711454558\\
