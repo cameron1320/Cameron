@@ -79,7 +79,7 @@ For the example problem defined in \S\ref{FrequencyDomainAnalysis} the unbalance
 	}
 	\centering
 	\import{}{./figures/ExampleBode.tex}
-	\caption{Bode diagram of the second disk subject to an unbalance at the second disk. Amplitudes of $ \mathbf{v\ \&\ w} $ are identical for this asymmetric system, phase of $ \mathbf{w} $ would be lagging $ \mathbf{v} $ by $ \mathbf{90[deg]} $.}
+	\caption{Bode diagram of the second disk subject to an unbalance at the second disk. Amplitudes of $ v\ \&\ w $ are identical for this asymmetric system, phase of $ w $ would be lagging $ v $ by $ 90 $[deg].}
 	\label{fig:ExampleBode}
 \end{figure}
 \begin{figure}
@@ -130,15 +130,15 @@ Using the particular integral of $ \vect{q}=\vect{q}_0e^{i\omega t} $ instead of
 	}
 	\centering
 	\import{}{./figures/ExampleNyquistIndependent1.tex}
-	\caption{Nyquist Diagram for the first mode at node 6 in the whirl speed range $ 1100 < \omega < 1300[RPM] $ at a spin speed, $ \Omega=4000[RPM] $. Counter-clockwise path indicates instability.}
+	\caption{Nyquist Diagram for the first mode at node 6 in the whirl speed range $ 1100 < \omega < 1300 $[RPM] at a spin speed, $ \Omega=4000 $[RPM]. Counter-clockwise path indicates instability.}
 	\label{fig:ExampleNyquistIndependent1}
 \end{figure}
 \section{Roots Locus and Stability Analysis}
 One valuable facet of a rotordynamic model is its ability to predict instability. Unstable operation of rotor systems can lead to failures and unsafe operating conditions. Before the advent of modern predictive models for rotating machinery, it was not common to operate a machine above the first critical speed. Internal damping and other rotating damping can cause a subsynchronous whirl when operating above the first critical speed, this would often lead to failure of machines. The rotating damping effect is worse for machines with stiff bending modes, and is often instigated by loose fittings, shrink fits, and couplings. As mentioned in \S\ref{Rotating Internal Damping}, the effect of external rotating damping sources will not be investigated here. Rather, the stability will be tested by modeling the internal damping of the rotor due to viscous heat production during loading and unloading of the beam in bending. See \S\ref{Rotating Internal Damping} for a more detailed explanation and derivation.\par 
 Roots Locus is the plot of eigenvalues on the $ \Re-\Im $ plane as some value they are dependent on changes. In rotordynamic analysis the dependent variable is often the spin speed $ \Omega $. Using the definition of the state space eigenvalue problem set out in \eqref{eq:StateSpaceEigenValueProblem}, the eigenvalues $ s $ represent a complex set of which the real part is proportional to damping and the imaginary is the damped natural frequency. The roots locus is useful in determining stability of the system, and which mode is responsible for the instability. Using the eigenvalues $ s $ of the eigenvalue problem defined in equation \eqref{eq:StateSpaceEigenValueProblem} on the example problem defined in \S\ref{FrequencyDomainAnalysis} a plot of the roots locus can be found as in figure \ref{fig:ExampleRootsLocus}. Internal damping coefficient, $ \eta_v $, is added to the system at the value of $ 0.0002[s] $. The first three modes are presented with the negative complex eigenvalue being represented in the positive imaginary axis alongside each positive mode of vibration. In completely symmetric systems, positive and negative modes have identical eigenvalues at a spin speed of zero. As the spin speed increases, positive modes move in the positive real direction--becoming more unstable. On the other hand, the negative frequencies move in the negative real direction--becoming more stable. This phenomena of the positive modes becoming more unstable and the negative becoming more stable is a general trend, but not a rule, rotating damping defined in \S\ref{Rotating Internal Damping} assists in this trend. It is evident by looking at figure \ref{fig:ExampleRootsLocus} that the system becomes unstable at some point, as many of the eigenvalues are in the positive real region of the plane. According to the plot, the first and second modes both become unstable as speed increases. Gyroscopic effects tend to increase the whirl frequency (imaginary part of eigenvalue) of the positive mode, while the opposite effect is seen in the negative mode. In general, the effect of non-rotating damping is to rotate modes in the counter-clockwise direction, at first away from the imaginary axis, and eventually on to the real axis when the mode becomes over-damped. The goal of the application of the magnetic bearing in \S\ref{MagExample} will be to provide enough non-rotating damping to render as many modes as possible over-damped.\par 
 \begin{figure}
-	\def\width{.6*\linewidth}
-	\def\height{.3*\linewidth}
+	\def\width{.75*\linewidth}
+	\def\height{.5*\linewidth}
 	\def\sep{3em}
 		\pgfplotsset{
 	every picture/.style={trim axis left,trim axis right},
@@ -163,8 +163,8 @@ Roots Locus is the plot of eigenvalues on the $ \Re-\Im $ plane as some value th
 \end{figure}
 The Roots Locus for the example problem is also presented in three dimensions to lend in the understanding of the relationship with spin speed. This can be seen in Figure \ref{fig:ExampleRootsLocus3D}.
 \begin{figure}
-	\def\width{.6*\linewidth}
-	\def\height{.3*\linewidth}
+	\def\width{.8*\linewidth}
+	\def\height{.5*\linewidth}
 	\def\sep{3em}
 	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={title style={yshift=-.8em}}, grid style={line width=.1pt, draw=gray!10},major grid style={line width=.2pt,draw=gray!50},minor tick style={draw=none},
 		every axis plot/.style={line width=1.4pt},}
@@ -180,8 +180,8 @@ Damping is commonly represented as a the ratio of the real part of the eigenvalu
 \end{equation}
 where $ \zeta $ is the damping ratio, and  $ \omega_n $ is the natural frequency. The stability margin, or the range of speeds through which the system remains stable can be determined by plotting the maximum real part, $ \Re(s) $, of the set against spin speed. The point at which $ \Re(s) $, or $ \sigma $, crosses the real axis is the threshold of stability. The plot which represents this is termed the Stability Margin plot, and is shown in \ref{fig:ExampleStabilityMargin} for the example problem defined in \S\ref{FrequencyDomainAnalysis}.\par
 \begin{figure}
-	\def\width{.6*\linewidth}
-	\def\height{.4*\linewidth}
+	\def\width{.75*\linewidth}
+	\def\height{.5*\linewidth}
 	\def\sep{3em}
 	\pgfplotsset{
 		every picture/.style={trim axis left,trim axis right},
@@ -207,7 +207,7 @@ where $ \zeta $ is the damping ratio, and  $ \omega_n $ is the natural frequency
 \end{figure}
 Finally, the stability can be analyzed using the damping coefficients($ \zeta $) plotted against speed. This figure, shown in \ref{fig:ExampleDamping}, indicates instability as when $ \zeta $ drops below zero.
 \begin{figure}[!htb]
-	\def\width{.7\linewidth}
+	\def\width{.75\linewidth}
 	\def\height{.5\linewidth}
 	\def\sep{3em}
 	\pgfplotsset{
@@ -235,8 +235,8 @@ Finally, the stability can be analyzed using the damping coefficients($ \zeta $)
 \section{Campbell}
 The Campbell diagram correlates the spin speed and the whirl speed. Whirl speed is calculated as the imaginary part of the complex eigenvalue defined by the eigenvalue problem in equation \ref{eq:StateSpaceEigenValueProblem}. Spin speed is varied while calculating all of the critical whirl speeds at each step of spin speed. The campbell diagram for the example problem is given in figure \ref{fig:ExampleCampbell}. This diagram can be used to discern the critical speeds of the system by inspecting where the $ \omega=\Omega $ synchronous line passes through positive and negative modes in this speed range. Here the synchronous line passes through three separate modes, each with a positive and negative whirl speed. Note: with the large influence of the gyroscopic effect in the example problem presented here, the positive and negative whirl speeds for the second and third modes diverge from one another rather quickly, but this is not the case for the first mode. A physical interpretation of this phenomena will be presented in \S\ref{Shapes} 
 \begin{figure}[!htb]
-	\def\width{.7*\linewidth}
-	\def\height{.4*\linewidth}
+	\def\width{.75*\linewidth}
+	\def\height{.5*\linewidth}
 	\def\sep{3em}
 	\pgfplotsset{every picture/.style={trim axis left, trim axis right}, every axis/.style={ylabel style={yshift=2pt},xlabel style={yshift=0}},
 			every axis plot/.style={line width=1.4pt},}%, every axis/.style={hide axis}}%

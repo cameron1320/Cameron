@@ -29,7 +29,7 @@ The windowing approach is visually depicted using $ \Omega $ in figure \ref{fig:
 \begin{figure}
 	\centering
 	\includegraphics{./figures/SSTime.eps}
-	\caption{A window in time of the transient vibration signals for a window, $ N $, with $ nspw $ of $ 2048[samples] $.}
+	\caption{A window in time of the transient vibration signals for a window, $ N $, with nspw of $ 2048 $[samples].}
 	\label{fig:WindowedData}
 \end{figure}
 The variables $ V(t) $, $ W(t) $\& $ R(t) $ will now take the form $ V(n) $, $ W(n) $\& $ R(n) $ inside the window (fig. \ref{fig:WindowedData}), where $ n $ is sample number. Spin Speed is simply taken as an average in the window, $ \Omega(N)=avg(\Omega(0:nspw)) $, where $ N $ is the current window index. Therefore, no further explanation is given for its determination. Amplitude, Phase, Amplitude Spectrum, and Spin Speed must be calculated in each window, for a series of windows that cover the entire length of signals. Then a vector of each variable will exist where the length is equal to the number of windows, $ NW $, and is given by
@@ -96,7 +96,7 @@ A single Complex Amplitude Spectrum at a specific speed, $ \tilde{A}_\pm(1500[RP
 \begin{figure}
 	\centering
 	\includegraphics[]{./figures/ExpExampleSpectrum.eps}
-	\caption{Example Full Spectrum of experimental example system at $ \Omega=1500[RPM] $.}
+	\caption{Example Full Spectrum of experimental example system at $ \Omega=1500 $[RPM].}
 	\label{fig:ExpExampleSpectrum}
 \end{figure}
 A Cascade plot is demonstrated with the experimental system described in \S\ref{ExperimentalPlots}, as Figure \ref{fig:ExpExampleCascade}. Using this figure it is easy to detect the portion of the start-up in which the orbit is whirling opposite the spin speed. A sharp dip in positive amplitude, $ \tilde{A}_\pm(\omega) $, correlated with a sharp rise in negative amplitude, $ \tilde{A}_\pm(-\omega) $, at around 1320[RPM] leads to this phenomena.\par 
